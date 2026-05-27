@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SA Research and Advisors | FP&A and Valuation</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #001f3f;
+            --blue-accent: #003366;
+            --white: #ffffff;
+            --light-gray: #f4f7f6;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ccc;
+        }
+
+        /* Hero Section (Page 1) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, var(--navy) 60%, transparent 60%), 
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            border-left: 4px solid white;
+            padding-left: 15px;
+        }
+
+        /* Introduction Section (Page 3) */
+        .section {
+            padding: 80px 10%;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .founders {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .founder-card {
+            text-align: center;
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .founder-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #ddd;
+            margin-bottom: 10px;
+        }
+
+        /* Services (Page 5) */
+        .services-bg {
+            background-color: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-bottom: 5px solid var(--navy);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        /* Pricing (Page 8) */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        .pricing-table th, .pricing-table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .pricing-table th {
+            background: var(--navy);
+            color: white;
+        }
+
+        .price-tag {
+            background: var(--blue-accent);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* Contact (Page 10) */
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .intro-grid { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">SA Research and Advisors</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#valuation">Valuation Sample</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Business<br>Proposal</h1>
+            <p>FP&A and Valuation Advisory<br><small>By SA Research and advisors</small></p>
+        </div>
+    </header>
+
+    <!-- Introduction -->
+    <section id="about" class="section">
+        <div class="intro-grid">
+            <div>
+                <h2 style="color: var(--navy); font-size: 2.5rem; margin-bottom: 20px;">Introduction</h2>
+                <p>SA Research and advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support. We act as a trusted extension of your leadership team to bridge the gap between complex financial data and strategic execution.</p>
+                <p style="margin-top: 15px;">By delivering structured budgeting, 13-week cash flow forecasting, and dynamic, investor-ready financial models, we equip founders with the visibility needed to optimize performance and drive predictable growth.</p>
+            </div>
+            <div class="founders">
+                <div class="founder-card">
+                    <img src="https://via.placeholder.com/100" alt="Founder">
+                    <h4>Shwet Kumr Rai</h4>
+                    <p>Founder</p>
+                </div>
+                <div class="founder-card">
+                    <img src="https://via.placeholder.com/100" alt="Co-Founder">
+                    <h4>Aditya Harshvardhan</h4>
+                    <p>Co-Founder</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission/Vision -->
+    <section class="section services-bg">
+        <div class="intro-grid">
+            <div>
+                <h2 style="color: var(--navy);">Our Mission</h2>
+                <p>To bridge the gap between financial complexity and strategic execution for startups, SMEs, and growth-stage businesses through predictability, unlocking true worth, and data-backed decisions.</p>
+            </div>
+            <div>
+                <h2 style="color: var(--navy);">Our Vision</h2>
+                <p>To be the premier FP&A and valuation advisory partner for high-growth enterprises worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <h2 style="text-align: center; color: var(--navy); margin-bottom: 40px;">Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>FP&A</h3>
+                <ul>
+                    <li>Budgeting & Planning</li>
+                    <li>13-Week Cash Flow Forecasting</li>
+                    <li>Fundraising Financial Models</li>
+                    <li>MIS Reporting & Dashboards</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Business Valuation</h3>
+                <ul>
+                    <li>DCF & Comparable Analysis</li>
+                    <li>Early-Stage Frameworks</li>
+                    <li>Precedent Transaction Multiples</li>
+                    <li>Strategic Value Advisory</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section services-bg">
+        <h2 style="text-align: center; color: var(--navy); margin-bottom: 40px;">Professional Fees</h2>
+        
+        <h3 style="margin-bottom: 15px;">Monthly Retainer</h3>
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Includes</th>
+                    <th>Pricing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>FP&A Partner</strong></td>
+                    <td>Annual budgeting, Weekly forecasting, KPI tracking, Industry research</td>
+                    <td><span class="price-tag">$500 - $800 /mo</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 style="margin-top: 40px; margin-bottom: 15px;">Project-Based Pricing</h3>
+        <table class="pricing-table">
+            <tbody>
+                <tr>
+                    <td>Budgeting & Planning Setup</td>
+                    <td><span class="price-tag">$600 - $1,000</span></td>
+                </tr>
+                <tr>
+                    <td>Business Valuation Services</td>
+                    <td><span class="price-tag">$700 - $1,200</span></td>
+                </tr>
+                <tr>
+                    <td>Fundraising Financial Model</td>
+                    <td><span class="price-tag">$300 - $700</span></td>
+                </tr>
+                <tr>
+                    <td>MIS Reporting Dashboard</td>
+                    <td><span class="price-tag">$400 - $600</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="footer">
+        <h2>Contact Us</h2>
+        <p>Ready to optimize your financial strategy?</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-globe"></i>
+                <a href="https://saresearch.vercel.app/">saresearch.vercel.app</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+917982190362">+91 7982190362</a>
+            </div>
+        </div>
+        <p style="margin-top: 50px; font-size: 0.8rem; opacity: 0.6;">&copy; 2024 SA Research and advisors. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
