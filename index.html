@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SA Research and Advisors | Strategic Finance</title>
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
     <style>
         :root {
+            --brand-grey: #f4f7f6; /* The color you provided */
             --navy: #001f3f;
             --blue-accent: #003366;
             --white: #ffffff;
-            --light-gray: #f4f7f6;
-            --text-dark: #333333;
+            --text-dark: #1a1a1a;
         }
 
         * {
@@ -32,7 +30,7 @@
 
         /* Navigation */
         nav {
-            background: var(--white);
+            background: var(--navy);
             padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
@@ -41,7 +39,6 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         .logo-container {
@@ -51,228 +48,123 @@
             text-decoration: none;
         }
 
-        .nav-logo-img {
-            height: 35px;
-            width: auto;
-        }
+        .nav-logo-img { height: 30px; width: auto; }
+        .logo-text { color: white; font-weight: bold; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .logo-text {
-            color: var(--navy);
-            font-weight: bold;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 500; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: var(--navy);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
-            font-weight: 600;
-        }
-
-        nav ul li a:hover {
-            opacity: 0.7;
-        }
-
-        /* Hero Section */
+        /* NEW HERO SECTION - NO OVERLAP */
         .hero {
             height: 100vh;
-            background: var(--white);
             display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 10%;
+            align-items: stretch; /* Makes children full height */
+            background-color: var(--brand-grey);
             margin-top: 50px;
+            overflow: hidden;
+        }
+
+        .hero-left {
+            flex: 1.2; /* Takes slightly more space for text */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 5% 0 10%;
+            position: relative;
+        }
+
+        .hero-right {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            /* Optional: subtle slant to the image side */
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
 
         .hero-content {
-            max-width: 900px;
+            border-left: 8px solid var(--navy); /* The vertical bar from your image */
+            padding-left: 30px;
         }
 
         .hero-content h1 {
-            font-size: 3rem;
-            line-height: 1.5;
-            font-weight: 600;
+            font-size: 2.2rem;
+            line-height: 1.4;
             color: var(--navy);
-            margin-bottom: 25px;
-            border-left: 6px solid var(--navy);
-            padding-left: 25px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
-        .hero-brand {
-            font-size: 1.1rem;
+        .hero-brand-name {
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--blue-accent);
-            margin-left: 30px;
-            font-weight: 600;
-        }
-
-        /* Standard Sections */
-        .section {
-            padding: 80px 10%;
-        }
-
-        .content-wrap {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .services-bg {
-            background-color: var(--light-gray);
-        }
-
-        /* Services Styling */
-        .service-category {
-            margin-bottom: 60px;
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
             color: var(--navy);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .service-intro {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #444;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
-        .service-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .service-list li::before {
-            content: "•";
-            color: var(--navy);
+            opacity: 0.8;
             font-weight: bold;
-            position: absolute;
-            left: 10px;
-            top: -5px;
-            font-size: 1.5rem;
         }
 
-        .service-list li strong {
-            color: #000;
-            font-weight: 700;
-        }
+        /* Generic Section Styling */
+        .section { padding: 80px 10%; }
+        .content-wrap { max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; color: var(--navy); font-size: 2.5rem; margin-bottom: 40px; }
+        .light-bg { background-color: var(--brand-grey); }
 
-        /* Pricing Table */
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background: white;
+        /* Approach Pills */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
         }
-
-        .pricing-table td {
-            padding: 15px;
-            border: 1px solid #ddd;
-        }
-
-        .price-tag {
-            background: var(--blue-accent);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        /* Footer */
-        .footer {
+        .approach-card {
             background: var(--navy);
             color: white;
-            padding: 60px 10%;
+            padding: 30px;
             text-align: center;
+            border-radius: 50%;
+            width: 200px; height: 200px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto; font-weight: bold;
         }
 
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
+        /* Services */
+        .service-category { margin-bottom: 50px; }
+        .service-header { display: flex; align-items: center; gap: 15px; color: var(--navy); margin-bottom: 15px; }
+        .service-list { list-style: none; padding-left: 25px; }
+        .service-list li { margin-bottom: 10px; position: relative; }
+        .service-list li::before { content: "→"; color: var(--navy); position: absolute; left: -25px; font-weight: bold; }
 
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+        /* Pricing Table */
+        .pricing-table { width: 100%; border-collapse: collapse; background: white; }
+        .pricing-table td { padding: 15px; border: 1px solid #ddd; }
+        .price-tag { background: var(--navy); color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; }
 
-        .contact-item a:hover {
-            opacity: 0.7;
-        }
+        /* Footer */
+        .footer { background: var(--navy); color: white; padding: 60px 10%; text-align: center; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+        .contact-info a { color: white; text-decoration: none; }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-
-            .hero {
-                padding: 0 6%;
-                text-align: left;
-            }
-
-            .hero-content h1 {
-                font-size: 1.9rem;
-                line-height: 1.4;
-                padding-left: 18px;
-            }
-
-            .section {
-                padding: 60px 5%;
-            }
-
-            nav ul {
-                display: none;
-            }
-
-            .hero-brand {
-                margin-left: 20px;
-            }
+        @media (max-width: 992px) {
+            .hero { flex-direction: column; height: auto; }
+            .hero-right { height: 400px; clip-path: none; }
+            .hero-left { padding: 60px 10%; }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav>
         <a href="https://www.saresearcher.in/" class="logo-container">
-
-            <!-- SVG Logo -->
             <svg class="nav-logo-img" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="35" width="15" height="15" rx="2" fill="#001f3f"/>
-                <rect x="32" y="25" width="15" height="25" rx="2" fill="#001f3f"/>
-                <rect x="54" y="15" width="15" height="35" rx="2" fill="#001f3f"/>
-                <rect x="76" y="5" width="15" height="45" rx="2" fill="#001f3f"/>
+                <rect x="10" y="35" width="15" height="15" rx="2" fill="white"/>
+                <rect x="32" y="25" width="15" height="25" rx="2" fill="white"/>
+                <rect x="54" y="15" width="15" height="35" rx="2" fill="white"/>
+                <rect x="76" y="5" width="15" height="45" rx="2" fill="white"/>
             </svg>
-
             <span class="logo-text">SA Research and Advisors</span>
         </a>
-
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -281,170 +173,110 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- UPDATED HERO SECTION -->
     <header class="hero">
-        <div class="hero-content">
-
-            <h1>
-                We work as an extension of your team, delivering strategic FP&A and valuation support to drive informed decisions, sustainable growth, and investor readiness.
-            </h1>
-
-            <div class="hero-brand">
-                SA Research and Advisors
+        <div class="hero-left">
+            <div class="hero-content">
+                <h1>We work as an extension of your team, delivering strategic FP&A and valuation support to drive informed decisions, sustainable growth, and investor readiness.</h1>
+                <div class="hero-brand-name">SA Research and Advisors</div>
             </div>
-
         </div>
+        <div class="hero-right"></div>
     </header>
 
-    <!-- About Section -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="section">
-        <div class="content-wrap" style="text-align:center;">
-
-            <h2 style="color: var(--navy); font-size: 2.2rem; margin-bottom: 20px;">
-                Strategic Finance Advisory
-            </h2>
-
-            <p style="font-size: 1.15rem; color: #555; max-width: 800px; margin: 0 auto;">
-                SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support.
-                We act as a trusted extension of your leadership team to bridge the gap between complex financial data and strategic execution.
+        <div class="content-wrap" style="text-align: center;">
+            <h2 class="section-title">Strategic Finance Advisory</h2>
+            <p style="font-size: 1.1rem; color: #444; max-width: 800px; margin: 0 auto;">
+                SA Research and advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support. We act as a trusted extension of your leadership team to bridge the gap between complex financial data and strategic execution.
             </p>
-
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section services-bg">
-
+    <!-- APPROACH SECTION -->
+    <section class="section light-bg">
         <div class="content-wrap">
-
-            <h2 style="text-align:center; color: var(--navy); font-size: 2.5rem; margin-bottom: 50px;">
-                Our Services
-            </h2>
-
-            <!-- FP&A -->
-            <div class="service-category">
-
-                <div class="service-header">
-                    <i class="fas fa-arrow-circle-right"></i>
-                    <h3>Financial Planning & Analysis (FP&A)</h3>
-                </div>
-
-                <p class="service-intro">
-                    We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.
-                </p>
-
-                <ul class="service-list">
-                    <li>
-                        <strong>Budgeting & Planning:</strong>
-                        Structured annual and quarterly budgets aligned with operational planning and business growth objectives.
-                    </li>
-
-                    <li>
-                        <strong>Cash Flow Forecasting:</strong>
-                        13-week cash flow models, liquidity forecasting, and runway analysis.
-                    </li>
-
-                    <li>
-                        <strong>Fundraising Financial Models:</strong>
-                        Investor-ready financial models with projections and scenario analysis.
-                    </li>
-
-                    <li>
-                        <strong>MIS Reporting & Dashboards:</strong>
-                        KPI tracking, variance analysis, and investor reporting packs.
-                    </li>
-                </ul>
-
+            <h2 class="section-title">Our Approach</h2>
+            <div class="approach-grid">
+                <div class="approach-card">Understanding Your Business</div>
+                <div class="approach-card">Creative Execution</div>
+                <div class="approach-card">Data-Driven Optimization</div>
+                <div class="approach-card">Continuous Improvement</div>
             </div>
-
-            <!-- Valuation -->
-            <div class="service-category">
-
-                <div class="service-header">
-                    <i class="fas fa-arrow-circle-right"></i>
-                    <h3>Business Valuation Support</h3>
-                </div>
-
-                <p class="service-intro">
-                    Whether preparing for fundraising, M&A, or strategic planning, we deliver structured valuation support with analytical depth and investor alignment.
-                </p>
-
-                <ul class="service-list">
-                    <li>
-                        <strong>DCF Valuation Models:</strong>
-                        Detailed discounted cash flow models with assumptions and sensitivity analysis.
-                    </li>
-
-                    <li>
-                        <strong>Startup & Growth Valuation:</strong>
-                        Valuation support tailored for high-growth companies and fundraising rounds.
-                    </li>
-
-                    <li>
-                        <strong>Investor Presentation Support:</strong>
-                        Financial insights and valuation narratives for investor discussions.
-                    </li>
-                </ul>
-
-            </div>
-
         </div>
-
     </section>
 
-    <!-- Pricing -->
-    <section id="pricing" class="section">
-
+    <!-- SERVICES SECTION (Full Content) -->
+    <section id="services" class="section">
         <div class="content-wrap">
+            <h2 class="section-title">Our Services</h2>
+            
+            <div class="service-category">
+                <div class="service-header"><i class="fas fa-chart-pie fa-2x"></i> <h3>Financial Planning & Analysis (FP&A)</h3></div>
+                <p style="margin-bottom: 15px;">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
+                <ul class="service-list">
+                    <li><strong>Budgeting & Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</li>
+                    <li><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</li>
+                    <li><strong>Fundraising Financial Models:</strong> Investor-ready models including scenario analysis and valuation sensitivity.</li>
+                    <li><strong>MIS Reporting & Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</li>
+                </ul>
+            </div>
 
-            <h2 style="text-align:center; color: var(--navy); font-size: 2.3rem; margin-bottom: 40px;">
-                Pricing
-            </h2>
+            <div class="service-category">
+                <div class="service-header"><i class="fas fa-balance-scale fa-2x"></i> <h3>Business Valuation Support</h3></div>
+                <p style="margin-bottom: 15px;">Whether preparing for funding, M&A, or restructuring, we provide independent, institutional-grade valuation mechanics.</p>
+                <ul class="service-list">
+                    <li><strong>Valuation Methodologies:</strong> Rigorous execution of DCF, comparable company analysis, and precedent transactions.</li>
+                    <li><strong>Early-Stage Frameworks:</strong> Tailored approaches for pre-revenue or early-growth companies.</li>
+                    <li><strong>Strategic Advisory:</strong> Analysis to help founders understand and optimize core value drivers.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="section light-bg">
+        <div class="content-wrap">
+            <h2 class="section-title">Professional Fees</h2>
+            <h3 style="margin-bottom: 15px; color: var(--navy);">Monthly Retainer</h3>
             <table class="pricing-table">
-
                 <tr>
-                    <td>Financial Planning & Analysis Support</td>
-                    <td><span class="price-tag">Custom Quote</span></td>
+                    <td><strong>FP&A Partner</strong><br><small>Annual budgeting, weekly updates, KPI tracking</small></td>
+                    <td style="text-align:right;"><span class="price-tag">$500 - $800 /mo</span></td>
                 </tr>
-
-                <tr>
-                    <td>Business Valuation Support</td>
-                    <td><span class="price-tag">Custom Quote</span></td>
-                </tr>
-
-                <tr>
-                    <td>Investor Financial Models</td>
-                    <td><span class="price-tag">Custom Quote</span></td>
-                </tr>
-
             </table>
 
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: var(--navy);">Project-Based</h3>
+            <table class="pricing-table">
+                <tr><td>Budgeting & Planning Setup</td><td style="text-align:right;"><span class="price-tag">$600 - $1,000</span></td></tr>
+                <tr><td>Business Valuation Services</td><td style="text-align:right;"><span class="price-tag">$700 - $1,200</span></td></tr>
+                <tr><td>Fundraising Financial Model</td><td style="text-align:right;"><span class="price-tag">$300 - $700</span></td></tr>
+                <tr><td>MIS Reporting Dashboard Setup</td><td style="text-align:right;"><span class="price-tag">$400 - $600</span></td></tr>
+            </table>
         </div>
-
     </section>
 
-    <!-- Footer -->
+    <!-- CONTACT SECTION -->
     <footer id="contact" class="footer">
-
-        <h2>Contact Us</h2>
-
-        <div class="contact-info">
-
-            <div class="contact-item">
-                <a href="mailto:info@saresearcher.in">
-                    <i class="fas fa-envelope"></i> info@saresearcher.in
-                </a>
+        <div class="content-wrap">
+            <h2 style="margin-bottom: 20px;">Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i><br>
+                    <a href="https://www.saresearcher.in/">www.saresearcher.in</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i><br>
+                    <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i><br>
+                    <a href="tel:+917982190362">+91 7982190362</a>
+                </div>
             </div>
-
-            <div class="contact-item">
-                <a href="https://www.saresearcher.in/">
-                    <i class="fas fa-globe"></i> www.saresearcher.in
-                </a>
-            </div>
-
+            <p style="margin-top: 40px; font-size: 0.8rem; opacity: 0.6;">&copy; 2024 SA Research and Advisors. All rights reserved.</p>
         </div>
-
     </footer>
 
 </body>
