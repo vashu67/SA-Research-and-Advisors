@@ -13,7 +13,8 @@
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --text-muted: #444444;
-            --accent: #ffcc00;
+            --price-bg: #dbeafe;
+            --price-text: #1e3a8a;
         }
 
         * {
@@ -60,7 +61,7 @@
 
         .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -70,116 +71,109 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-left { flex: 1.2; padding: 60px 5% 60px 10%; z-index: 2; }
-        
         .hero-right {
-            flex: 1;
-            height: 100vh;
+            flex: 1; height: 100vh;
             background: linear-gradient(rgba(0,31,63,0.2), rgba(0,31,63,0.2)), 
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            background-size: cover; background-position: center; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
-
         .hero-content { border-left: 8px solid var(--navy); padding-left: 30px; max-width: 650px; }
         .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.3; color: var(--navy); margin-bottom: 20px; }
         .hero-brand { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; color: var(--navy); }
 
-        /* --- GENERIC SECTION --- */
-        .section { padding: clamp(60px, 10vw, 100px) 10%; }
+        /* --- SECTIONS --- */
+        .section { padding: clamp(50px, 10vw, 100px) 10%; }
         .content-wrap { max-width: 1100px; margin: 0 auto; }
-        .section-title { text-align: center; color: var(--navy); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 50px; font-weight: 700; }
+        .section-title { text-align: left; color: var(--navy); font-size: clamp(2.2rem, 5vw, 3rem); margin-bottom: 40px; font-weight: 700; }
         .light-bg { background-color: var(--light-grey); }
 
         /* --- APPROACH PILLS --- */
-        .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
         .approach-card {
-            background: var(--navy);
-            color: white;
-            padding: 30px;
-            text-align: center;
-            border-radius: 50%;
-            aspect-ratio: 1/1;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 0.9rem;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            background: var(--navy); color: white; padding: 30px; text-align: center;
+            border-radius: 50%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 0.9rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
         /* --- SERVICES --- */
         .service-category { margin-bottom: 70px; }
-        
         .service-header { display: flex; align-items: center; gap: 20px; color: var(--navy); margin-bottom: 25px; }
         .service-header i { font-size: 2rem; }
         .service-header h3 { font-size: 1.6rem; font-weight: 700; }
-
-        .service-description { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 25px; max-width: 95%; }
-
         .service-list { list-style: none; padding-left: 0; }
         .service-list li { position: relative; padding-left: 35px; margin-bottom: 15px; font-size: 1.05rem; }
         .service-list li::before { content: "→"; color: var(--navy); position: absolute; left: 0; font-weight: bold; font-size: 1.2rem; }
-        .service-list li strong { color: #000; font-weight: 700; }
 
-        /* --- PRICING --- */
-        .pricing-table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 40px; }
-        .pricing-table td { padding: 20px; border: 1px solid #eee; vertical-align: middle; }
-        .price-tag { background: var(--navy); color: white; padding: 8px 15px; border-radius: 4px; font-weight: bold; white-space: nowrap; text-decoration: none; display: inline-block; cursor: pointer; border: none; }
+        /* --- PROFESSIONAL FEES (MOBILE FRIENDLY) --- */
+        .pricing-subtitle { color: var(--navy); font-size: 1.8rem; font-weight: 700; margin: 50px 0 30px 0; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .price-row { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: flex-start; 
+            margin-bottom: 40px; 
+            gap: 20px; 
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .price-content { flex: 1; }
+        .price-header { display: flex; align-items: flex-start; gap: 12px; color: var(--navy); font-size: 1.35rem; font-weight: 700; margin-bottom: 10px; }
+        .price-header i { margin-top: 6px; font-size: 1.2rem; }
+        .price-details { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-left: 35px; }
+        .price-details ul { list-style: none; padding: 0; }
+        .price-details li { position: relative; padding-left: 20px; margin-bottom: 6px; }
+        .price-details li::before { content: "•"; position: absolute; left: 0; font-weight: bold; color: var(--navy); }
+        
+        .price-pill { 
+            background: var(--price-bg); 
+            color: var(--price-text); 
+            padding: 12px 24px; 
+            border-radius: 8px; 
+            font-weight: 800; 
+            white-space: nowrap; 
+            font-size: 1rem;
+            text-align: center;
+            min-width: 160px;
+        }
 
         /* --- MODAL SYSTEM --- */
         .modal-overlay {
-            display: none; 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%;
-            background: rgba(0, 31, 63, 0.9); 
-            z-index: 2000; 
-            justify-content: center; align-items: center; 
-            padding: 20px;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 31, 63, 0.9); z-index: 2000; justify-content: center; align-items: center; padding: 20px;
         }
         .modal-content {
-            background: white; 
-            width: 100%; 
-            max-width: 850px; 
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 50px 40px; 
-            border-radius: 15px;
-            position: relative; 
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            animation: modalFade 0.3s ease-out;
+            background: white; width: 100%; max-width: 850px; max-height: 90vh; overflow-y: auto; padding: 50px 40px; border-radius: 15px; position: relative; animation: modalFade 0.3s ease-out;
         }
         @keyframes modalFade { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         .close-modal { position: absolute; top: 15px; right: 25px; font-size: 2.5rem; color: var(--navy); cursor: pointer; font-weight: bold; }
-
-        /* --- REPORT GRID (INSIDE MODAL) --- */
         .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
-        .report-card { padding: 25px; border: 1px solid #eee; border-radius: 12px; transition: 0.3s; background: #fff; text-align: left; }
-        .report-card:hover { border-color: var(--navy); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .report-card h4 { color: var(--navy); margin-bottom: 12px; font-size: 1.2rem; }
-        .report-card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; min-height: 60px; }
-        .report-link { color: var(--navy); font-weight: bold; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; border-bottom: 2px solid transparent; transition: 0.2s; }
-        .report-link:hover { border-bottom-color: var(--navy); }
+        .report-card { padding: 25px; border: 1px solid #eee; border-radius: 12px; transition: 0.3s; background: #fff; }
+        .report-card:hover { border-color: var(--navy); transform: translateY(-5px); }
 
         /* --- FOOTER --- */
         .footer { background: var(--navy); color: white; padding: 80px 10% 40px; text-align: center; }
         .contact-info { display: flex; justify-content: center; gap: 50px; margin-top: 30px; flex-wrap: wrap; }
-        .contact-info a { color: white; text-decoration: none; font-size: 1rem; }
+        .contact-info a { color: white; text-decoration: none; }
         .contact-info i { margin-bottom: 10px; display: block; font-size: 1.5rem; }
 
-        /* --- RESPONSIVE --- */
+        /* --- RESPONSIVE FIXES --- */
         @media (max-width: 992px) {
             .hero-right { clip-path: none; opacity: 0.15; position: absolute; width: 100%; height: 100%; }
             .hero-left { padding: 120px 5%; text-align: center; }
             .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 30px 0 0; margin: 0 auto; }
         }
+
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 30px; text-align: center; }
             .nav-links.active { display: flex; }
-            .approach-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-            .modal-content { padding: 40px 20px; }
-            .report-grid { grid-template-columns: 1fr; }
+            
+            /* Professional Fees Mobile Adjustment */
+            .price-row { flex-direction: column; gap: 15px; }
+            .price-pill { align-self: flex-start; width: 100%; max-width: 250px; margin-left: 35px; }
+            .section-title { text-align: center; }
+            .pricing-subtitle { text-align: center; font-size: 1.5rem; }
+            .price-header { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -221,8 +215,8 @@
     <!-- ABOUT SECTION -->
     <section id="about" class="section">
         <div class="content-wrap" style="text-align: center;">
-            <h2 class="section-title">Strategic Finance Advisory</h2>
-            <p style="max-width: 850px; margin: 0 auto 60px; font-size: 1.1rem; color: var(--text-muted);">
+            <h2 class="section-title" style="text-align:center;">Strategic Finance Advisory</h2>
+            <p style="max-width: 850px; margin: 0 auto; font-size: 1.1rem; color: var(--text-muted);">
                 SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support.
             </p>
             <div class="approach-grid">
@@ -238,35 +232,20 @@
     <section id="services" class="section light-bg">
         <div class="content-wrap">
             <h2 class="section-title">Our Services</h2>
-            
             <div class="service-category">
-                <div class="service-header">
-                    <i class="fas fa-chart-pie"></i> 
-                    <h3>Financial Planning & Analysis (FP&A)</h3>
-                </div>
-                <p class="service-description">
-                    We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.
-                </p>
+                <div class="service-header"><i class="fas fa-chart-pie"></i><h3>Financial Planning & Analysis (FP&A)</h3></div>
                 <ul class="service-list">
-                    <li><strong>Budgeting & Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</li>
-                    <li><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</li>
-                    <li><strong>Fundraising Financial Models:</strong> Investor-ready models including scenario analysis and valuation sensitivity.</li>
-                    <li><strong>MIS Reporting & Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</li>
+                    <li><strong>Budgeting & Planning:</strong> Structured annual and quarterly budgets.</li>
+                    <li><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning.</li>
+                    <li><strong>Fundraising Financial Models:</strong> Investor-ready models with scenario analysis.</li>
+                    <li><strong>MIS Reporting:</strong> Monthly KPI tracking and board reporting.</li>
                 </ul>
             </div>
-
             <div class="service-category">
-                <div class="service-header">
-                    <i class="fas fa-balance-scale"></i> 
-                    <h3>Business Valuation Support</h3>
-                </div>
-                <p class="service-description">
-                    Whether preparing for funding, M&A, or restructuring, we provide independent, institutional-grade valuation mechanics.
-                </p>
+                <div class="service-header"><i class="fas fa-balance-scale"></i><h3>Business Valuation Support</h3></div>
                 <ul class="service-list">
-                    <li><strong>Valuation Methodologies:</strong> Rigorous execution of DCF, comparable company analysis, and precedent transactions.</li>
-                    <li><strong>Early-Stage Frameworks:</strong> Tailored approaches for pre-revenue or early-growth companies.</li>
-                    <li><strong>Strategic Advisory:</strong> Analysis to help founders understand and optimize core value drivers.</li>
+                    <li><strong>Valuation Methodologies:</strong> Rigorous execution of DCF and comparable company analysis.</li>
+                    <li><strong>Strategic Advisory:</strong> Analysis to help founders optimize core value drivers.</li>
                 </ul>
             </div>
         </div>
@@ -276,30 +255,70 @@
     <section id="pricing" class="section">
         <div class="content-wrap">
             <h2 class="section-title">Professional Fees</h2>
-            
-            <h4 style="margin-bottom: 20px; color: var(--navy); font-weight: 700;">Monthly Retainer</h4>
-            <table class="pricing-table">
-                <tr>
-                    <td><strong>FP&A Partner</strong><br><small>Annual budgeting, weekly updates, KPI tracking, and strategic support</small></td>
-                    <td style="text-align:right;"><span class="price-tag">$500 - $800 /mo</span></td>
-                </tr>
-            </table>
 
-            <h4 style="margin-top: 40px; margin-bottom: 20px; color: var(--navy); font-weight: 700;">Project-Based Services</h4>
-            <table class="pricing-table">
-                <tr>
-                    <td>Budgeting & Planning Setup</td>
-                    <td style="text-align:right;"><span class="price-tag">$600 - $1,000</span></td>
-                </tr>
-                <tr>
-                    <td>Business Valuation Services</td>
-                    <td style="text-align:right;"><span class="price-tag">$700 - $1,200</span></td>
-                </tr>
-                <tr>
-                    <td>Fundraising Financial Model</td>
-                    <td style="text-align:right;"><span class="price-tag">$300 - $700</span></td>
-                </tr>
-            </table>
+            <!-- Monthly Retainer -->
+            <h3 class="pricing-subtitle">Monthly Retainer Pricing</h3>
+            
+            <div class="price-row">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> FP&A Partner</div>
+                    <div class="price-details">
+                        <ul>
+                            <li>Annual budgeting, quarterly forecast updates</li>
+                            <li>13-week cash flow forecasting</li>
+                            <li>Working capital management</li>
+                            <li>Monthly MIS & board reporting, and KPI tracking</li>
+                            <li>Scenario planning</li>
+                            <li>Quarterly Investor presentation</li>
+                            <li>Industry research</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="price-pill">($500 - $800) /month</div>
+            </div>
+
+            <!-- Project Based -->
+            <h3 class="pricing-subtitle">Project-Based Pricing</h3>
+
+            <div class="price-row">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> Budgeting & Planning Setup</div>
+                    <div class="price-details">Annual operating budget, department-wise budgets, quarterly planning templates, budget vs actual framework</div>
+                </div>
+                <div class="price-pill">($600 - $1,000)</div>
+            </div>
+
+            <div class="price-row">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> Business Valuation Services</div>
+                    <div class="price-details">DCF valuation, comparable company analysis, precedent transactions, valuation sensitivity analysis, investor valuation support</div>
+                </div>
+                <div class="price-pill">($700 - $1,200)</div>
+            </div>
+
+            <div class="price-row">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> Fundraising Financial Model</div>
+                    <div class="price-details">3–5 year integrated model, scenario analysis, unit economics, investor-ready outputs</div>
+                </div>
+                <div class="price-pill">($300 - $700)</div>
+            </div>
+
+            <div class="price-row">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> MIS Reporting & Dashboard Setup</div>
+                    <div class="price-details">KPI dashboards, MIS reports, variance analysis, investor reporting templates</div>
+                </div>
+                <div class="price-pill">($400 - $600)</div>
+            </div>
+
+            <div class="price-row" style="border-bottom:none;">
+                <div class="price-content">
+                    <div class="price-header"><i class="fas fa-circle-arrow-right"></i> 13-Week Cash Flow Forecasting Model</div>
+                    <div class="price-details">Dynamic cash flow model, liquidity planning, runway tracking, working capital monitoring</div>
+                </div>
+                <div class="price-pill">($400 - $600)</div>
+            </div>
         </div>
     </section>
 
@@ -309,17 +328,16 @@
             <span class="close-modal" onclick="closeModal('reportsModal')">&times;</span>
             <h2 style="color: var(--navy); font-size: 2.5rem; text-align: center;">Report and Research</h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Strategic insights and sector-specific financial analysis.</p>
-            
             <div class="report-grid">
                 <div class="report-card">
                     <h4>Semiconductor Industry in India</h4>
-                    <p>Overview of the $27Bn+ market, growth drivers (AI/EV), and deep-dive into the $10Bn PLI incentive outlay for fabs and ATMP.</p>
-                    <a href="https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/view?usp=sharing" target="_blank" class="report-link">Read Analysis →</a>
+                    <p>Overview of the $27Bn+ market and deep-dive into PLI incentive outlays.</p>
+                    <a href="https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/view?usp=sharing" target="_blank" style="color:var(--navy); font-weight:bold; text-decoration:none;">Read Analysis →</a>
                 </div>
                 <div class="report-card">
                     <h4>Sample DCF Report</h4>
-                    <p>A comprehensive sample valuation report for the Finnish pharma leader, featuring WACC components and target price sensitivity.</p>
-                    <a href="https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/view?usp=sharing" target="_blank" class="report-link">View Model →</a>
+                    <p>A comprehensive sample valuation report featuring WACC and price sensitivity.</p>
+                    <a href="https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/view?usp=sharing" target="_blank" style="color:var(--navy); font-weight:bold; text-decoration:none;">View Model →</a>
                 </div>
             </div>
         </div>
@@ -330,14 +348,9 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('careerModal')">&times;</span>
             <h2 style="color: var(--navy); font-size: 2.5rem; margin-bottom: 20px; text-align: center;">Careers</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; text-align: center;">
-                We are looking for passionate financial analysts and advisors to join our team. If you are interested in high-impact finance work, we want to hear from you.
-            </p>
-            <p style="font-weight: bold; color: var(--navy); font-size: 1.3rem; margin-bottom: 30px; text-align: center;">
-                Send your resume to: <br><a href="mailto:info@saresearcher.in" style="color: var(--navy); text-decoration: underline;">info@saresearcher.in</a>
-            </p>
-            <div style="text-align: center;">
-                <a href="mailto:info@saresearcher.in?subject=Career Application" class="price-tag" style="padding: 15px 40px; font-size: 1.1rem;">Apply Now</a>
+            <p style="text-align: center;">Send your resume to: <br><a href="mailto:info@saresearcher.in" style="color: var(--navy); font-weight:bold;">info@saresearcher.in</a></p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="mailto:info@saresearcher.in" class="price-pill" style="text-decoration:none; display:inline-block;">Apply Now</a>
             </div>
         </div>
     </div>
@@ -346,18 +359,9 @@
     <footer id="contact" class="footer">
         <div class="content-wrap">
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <a href="tel:+917982190362">+91 7982190362</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://in.linkedin.com/company/saresearch" target="_blank">LinkedIn</a>
-                </div>
+                <div><i class="fas fa-envelope"></i><a href="mailto:info@saresearcher.in">info@saresearcher.in</a></div>
+                <div><i class="fas fa-phone"></i><a href="tel:+917982190362">+91 7982190362</a></div>
+                <div><i class="fab fa-linkedin"></i><a href="https://in.linkedin.com/company/saresearch" target="_blank">LinkedIn</a></div>
             </div>
             <p style="margin-top: 60px; font-size: 0.8rem; opacity: 0.5;">&copy; 2024 SA Research and Advisors. All rights reserved.</p>
         </div>
@@ -368,24 +372,19 @@
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
 
-        // Toggle Mobile Menu
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
 
-        // Modal Controls
         function openModal(modalId) {
             document.getElementById(modalId).style.display = 'flex';
-            navLinks.classList.remove('active'); // Close mobile menu
-            document.body.style.overflow = 'hidden'; // Stop background scroll
+            navLinks.classList.remove('active');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal(modalId) {
             document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto'; // Enable background scroll
+            document.body.style.overflow = 'auto';
         }
 
-        // Close Modal on clicking outside of content
         window.onclick = function(event) {
             if (event.target.classList.contains('modal-overlay')) {
                 event.target.style.display = 'none';
