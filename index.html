@@ -25,12 +25,13 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
         /* Navigation */
         nav {
             background: var(--navy);
-            padding: 1rem 5%;
+            padding: 0.8rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -38,13 +39,27 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        nav .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 35px;
+            width: auto;
+        }
+
+        .logo-text {
             color: white;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         nav ul {
@@ -59,7 +74,10 @@
             text-decoration: none;
             font-size: 0.9rem;
             transition: 0.3s;
+            font-weight: 500;
         }
+
+        nav ul li a:hover { opacity: 0.8; }
 
         /* Hero Section */
         .hero {
@@ -95,22 +113,11 @@
 
         /* Standard Sections */
         .section { padding: 80px 10%; }
-
         .content-wrap { max-width: 1000px; margin: 0 auto; }
-
-        /* Updated Services Styling */
         .services-bg { background-color: var(--light-gray); }
 
-        .service-category {
-            margin-bottom: 60px;
-        }
-
-        .service-category h2 {
-            color: var(--navy);
-            font-size: 2.2rem;
-            margin-bottom: 10px;
-        }
-
+        /* Services Styling */
+        .service-category { margin-bottom: 60px; }
         .service-header {
             display: flex;
             align-items: center;
@@ -120,21 +127,8 @@
             margin-bottom: 20px;
         }
 
-        .service-header i {
-            font-size: 1.5rem;
-            color: var(--navy);
-        }
-
-        .service-intro {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            color: #444;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
+        .service-intro { font-size: 1.1rem; margin-bottom: 30px; color: #444; }
+        .service-list { list-style: none; }
         .service-list li {
             position: relative;
             padding-left: 30px;
@@ -142,24 +136,17 @@
             font-size: 1.05rem;
         }
 
-        /* The small blue dot from the PDF */
         .service-list li::before {
             content: "•";
             color: var(--navy);
             font-weight: bold;
-            display: inline-block;
-            width: 1em;
-            margin-left: -1em;
-            font-size: 1.5rem;
             position: absolute;
             left: 10px;
             top: -5px;
+            font-size: 1.5rem;
         }
 
-        .service-list li strong {
-            color: #000;
-            font-weight: 700;
-        }
+        .service-list li strong { color: #000; font-weight: 700; }
 
         /* Pricing Table */
         .pricing-table {
@@ -199,7 +186,8 @@
             flex-wrap: wrap;
         }
 
-        .contact-item a { color: white; text-decoration: none; }
+        .contact-item a { color: white; text-decoration: none; transition: 0.3s; }
+        .contact-item a:hover { opacity: 0.7; }
 
         @media (max-width: 768px) {
             .hero { background: var(--navy); }
@@ -212,7 +200,16 @@
 <body>
 
     <nav>
-        <div class="logo">SA Research and Advisors</div>
+        <a href="https://www.saresearcher.in/" class="logo-container">
+            <!-- Recreated Bar Logo as SVG -->
+            <svg class="nav-logo-img" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="35" width="15" height="15" rx="2" fill="white"/>
+                <rect x="32" y="25" width="15" height="25" rx="2" fill="white"/>
+                <rect x="54" y="15" width="15" height="35" rx="2" fill="white"/>
+                <rect x="76" y="5" width="15" height="45" rx="2" fill="white"/>
+            </svg>
+            <span class="logo-text">SA Research and Advisors</span>
+        </a>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -238,19 +235,17 @@
         </div>
     </section>
 
-    <!-- Services Section (Exact Content from Image) -->
+    <!-- Services Section -->
     <section id="services" class="section services-bg">
         <div class="content-wrap">
-            <h2 style="text-align: center; color: var(--navy); font-size: 3rem; margin-bottom: 60px;">Our Services</h2>
+            <h2 style="text-align: center; color: var(--navy); font-size: 2.5rem; margin-bottom: 50px;">Our Services</h2>
 
-            <!-- FP&A -->
             <div class="service-category">
                 <div class="service-header">
                     <i class="fas fa-arrow-circle-right"></i>
                     <h3>Financial Planning & Analysis (FP&A)</h3>
                 </div>
                 <p class="service-intro">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
-                
                 <ul class="service-list">
                     <li><strong>Budgeting & Planning:</strong> Structured annual and quarterly budgets designed to align directly with your operational planning and business growth objectives.</li>
                     <li><strong>Cash Flow Forecasting:</strong> Implementation of 13-week cash flow models, proactive working capital planning, liquidity forecasting, and burn rate analysis to secure runway.</li>
@@ -259,64 +254,9 @@
                 </ul>
             </div>
 
-            <!-- Business Valuation -->
             <div class="service-category">
                 <div class="service-header">
                     <i class="fas fa-arrow-circle-right"></i>
                     <h3>Business Valuation Support</h3>
                 </div>
-                <p class="service-intro">Whether you are preparing for a funding round, an M&A transaction, or internal restructuring, we provide independent, institutional-grade valuation mechanics.</p>
-                
-                <ul class="service-list">
-                    <li><strong>Valuation Methodologies:</strong> Rigorous execution of Discounted Cash Flow (DCF) valuation, comparable company analysis (CCA), and precedent transaction multiples.</li>
-                    <li><strong>Early-Stage Frameworks:</strong> Tailored startup valuation approaches designed specifically for pre-revenue or early-growth companies where traditional metrics may not apply.</li>
-                    <li><strong>Strategic Advisory:</strong> Deep-dive analysis to help founders understand the core drivers of their corporate value and how to optimize them before approaching investors.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="section">
-        <div class="content-wrap">
-            <h2 style="text-align: center; color: var(--navy); margin-bottom: 40px;">Professional Fees</h2>
-            
-            <h3 style="margin-bottom: 10px;">Monthly Retainer</h3>
-            <table class="pricing-table">
-                <tr>
-                    <td><strong>FP&A Partner</strong><br><small>Annual budgeting, Weekly updates, KPI tracking</small></td>
-                    <td style="text-align:right;"><span class="price-tag">$500 - $800 /mo</span></td>
-                </tr>
-            </table>
-
-            <h3 style="margin-top: 30px; margin-bottom: 10px;">Project-Based</h3>
-            <table class="pricing-table">
-                <tr><td>Budgeting & Planning Setup</td><td style="text-align:right;"><span class="price-tag">$600 - $1,000</span></td></tr>
-                <tr><td>Business Valuation Services</td><td style="text-align:right;"><span class="price-tag">$700 - $1,200</span></td></tr>
-                <tr><td>Fundraising Financial Model</td><td style="text-align:right;"><span class="price-tag">$300 - $700</span></td></tr>
-                <tr><td>MIS Reporting Dashboard</td><td style="text-align:right;"><span class="price-tag">$400 - $600</span></td></tr>
-            </table>
-        </div>
-    </section>
-
-    <!-- Contact Footer -->
-    <footer id="contact" class="footer">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-globe"></i><br>
-                <a href="https://saresearch.vercel.app/">saresearch.vercel.app</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i><br>
-                <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i><br>
-                <a href="tel:+917982190362">+91 7982190362</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <p class="service-intro">Whether you are preparing for a funding round, an M&A transaction, or int
