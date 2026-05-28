@@ -13,6 +13,7 @@
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --text-muted: #444444;
+            --accent: #ffcc00;
         }
 
         * {
@@ -53,8 +54,8 @@
 
         .logo-text { font-weight: bold; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-        .nav-links li a { color: white; text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: opacity 0.3s; }
+        .nav-links { display: flex; list-style: none; gap: 20px; }
+        .nav-links li a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 500; transition: opacity 0.3s; text-transform: uppercase; cursor: pointer; }
         .nav-links li a:hover { opacity: 0.7; }
 
         .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
@@ -106,7 +107,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* --- SERVICES (MATCHES YOUR REQUEST) --- */
+        /* --- SERVICES --- */
         .service-category { margin-bottom: 70px; }
         
         .service-header { display: flex; align-items: center; gap: 20px; color: var(--navy); margin-bottom: 25px; }
@@ -123,7 +124,42 @@
         /* --- PRICING --- */
         .pricing-table { width: 100%; border-collapse: collapse; background: white; margin-bottom: 40px; }
         .pricing-table td { padding: 20px; border: 1px solid #eee; vertical-align: middle; }
-        .price-tag { background: var(--navy); color: white; padding: 8px 15px; border-radius: 4px; font-weight: bold; white-space: nowrap; }
+        .price-tag { background: var(--navy); color: white; padding: 8px 15px; border-radius: 4px; font-weight: bold; white-space: nowrap; text-decoration: none; display: inline-block; cursor: pointer; border: none; }
+
+        /* --- MODAL SYSTEM --- */
+        .modal-overlay {
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            background: rgba(0, 31, 63, 0.9); 
+            z-index: 2000; 
+            justify-content: center; align-items: center; 
+            padding: 20px;
+        }
+        .modal-content {
+            background: white; 
+            width: 100%; 
+            max-width: 850px; 
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 50px 40px; 
+            border-radius: 15px;
+            position: relative; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: modalFade 0.3s ease-out;
+        }
+        @keyframes modalFade { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .close-modal { position: absolute; top: 15px; right: 25px; font-size: 2.5rem; color: var(--navy); cursor: pointer; font-weight: bold; }
+
+        /* --- REPORT GRID (INSIDE MODAL) --- */
+        .report-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
+        .report-card { padding: 25px; border: 1px solid #eee; border-radius: 12px; transition: 0.3s; background: #fff; text-align: left; }
+        .report-card:hover { border-color: var(--navy); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .report-card h4 { color: var(--navy); margin-bottom: 12px; font-size: 1.2rem; }
+        .report-card p { font-size: 0.95rem; color: #555; margin-bottom: 20px; min-height: 60px; }
+        .report-link { color: var(--navy); font-weight: bold; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; border-bottom: 2px solid transparent; transition: 0.2s; }
+        .report-link:hover { border-bottom-color: var(--navy); }
 
         /* --- FOOTER --- */
         .footer { background: var(--navy); color: white; padding: 80px 10% 40px; text-align: center; }
@@ -131,39 +167,27 @@
         .contact-info a { color: white; text-decoration: none; font-size: 1rem; }
         .contact-info i { margin-bottom: 10px; display: block; font-size: 1.5rem; }
 
-        /* --- RESPONSIVE LOGIC --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
             .hero-right { clip-path: none; opacity: 0.15; position: absolute; width: 100%; height: 100%; }
             .hero-left { padding: 120px 5%; text-align: center; }
             .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 30px 0 0; margin: 0 auto; }
         }
-
         @media (max-width: 768px) {
             .menu-toggle { display: block; }
-            .nav-links {
-                display: none; flex-direction: column; position: absolute;
-                top: 60px; left: 0; width: 100%; background: var(--navy); padding: 30px; text-align: center;
-            }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 30px; text-align: center; }
             .nav-links.active { display: flex; }
-            .section { padding: 60px 5%; }
-
-            /* Pricing Table to Cards on Mobile */
-            .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td { display: block; width: 100%; }
-            .pricing-table tr { margin-bottom: 20px; border: 1px solid #ddd; }
-            .pricing-table td { text-align: left !important; border: none; }
-            .pricing-table td:first-child { background: #f9f9f9; font-weight: bold; }
-
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
-            .approach-card { font-size: 0.75rem; padding: 15px; }
+            .modal-content { padding: 40px 20px; }
+            .report-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION WITH NEW LOGO -->
+    <!-- NAVIGATION -->
     <nav>
         <a href="#" class="logo-container">
-            <!-- NEW 4-BAR LOGO SVG -->
             <svg width="35" height="30" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect x="0" y="50" width="20" height="15" rx="3" fill="white"/>
                 <rect x="26" y="35" width="20" height="30" rx="3" fill="white"/>
@@ -176,12 +200,14 @@
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a onclick="openModal('reportsModal')">Report & Research</a></li>
+            <li><a onclick="openModal('careerModal')">Career</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <header class="hero">
         <div class="hero-left">
             <div class="hero-content">
@@ -192,19 +218,13 @@
         <div class="hero-right"></div>
     </header>
 
-    <!-- ABOUT -->
+    <!-- ABOUT SECTION -->
     <section id="about" class="section">
         <div class="content-wrap" style="text-align: center;">
             <h2 class="section-title">Strategic Finance Advisory</h2>
-            <p style="max-width: 850px; margin: 0 auto; font-size: 1.1rem; color: var(--text-muted);">
+            <p style="max-width: 850px; margin: 0 auto 60px; font-size: 1.1rem; color: var(--text-muted);">
                 SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support.
             </p>
-        </div>
-    </section>
-
-    <!-- APPROACH -->
-    <section class="section light-bg">
-        <div class="content-wrap">
             <div class="approach-grid">
                 <div class="approach-card">Understanding Your Business</div>
                 <div class="approach-card">Creative Execution</div>
@@ -214,8 +234,8 @@
         </div>
     </section>
 
-    <!-- SERVICES (IMAGE MATCH) -->
-    <section id="services" class="section">
+    <!-- SERVICES SECTION -->
+    <section id="services" class="section light-bg">
         <div class="content-wrap">
             <h2 class="section-title">Our Services</h2>
             
@@ -252,8 +272,8 @@
         </div>
     </section>
 
-    <!-- PRICING -->
-    <section id="pricing" class="section light-bg">
+    <!-- PRICING SECTION -->
+    <section id="pricing" class="section">
         <div class="content-wrap">
             <h2 class="section-title">Professional Fees</h2>
             
@@ -283,6 +303,45 @@
         </div>
     </section>
 
+    <!-- REPORT & RESEARCH MODAL -->
+    <div id="reportsModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('reportsModal')">&times;</span>
+            <h2 style="color: var(--navy); font-size: 2.5rem; text-align: center;">Report and Research</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px;">Strategic insights and sector-specific financial analysis.</p>
+            
+            <div class="report-grid">
+                <div class="report-card">
+                    <h4>Semiconductor Industry in India</h4>
+                    <p>Overview of the $27Bn+ market, growth drivers (AI/EV), and deep-dive into the $10Bn PLI incentive outlay for fabs and ATMP.</p>
+                    <a href="https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/view?usp=sharing" target="_blank" class="report-link">Read Analysis →</a>
+                </div>
+                <div class="report-card">
+                    <h4>Sample DCF Report</h4>
+                    <p>A comprehensive sample valuation report for the Finnish pharma leader, featuring WACC components and target price sensitivity.</p>
+                    <a href="https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/view?usp=sharing" target="_blank" class="report-link">View Model →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAREER MODAL -->
+    <div id="careerModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('careerModal')">&times;</span>
+            <h2 style="color: var(--navy); font-size: 2.5rem; margin-bottom: 20px; text-align: center;">Careers</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px; font-size: 1.1rem; text-align: center;">
+                We are looking for passionate financial analysts and advisors to join our team. If you are interested in high-impact finance work, we want to hear from you.
+            </p>
+            <p style="font-weight: bold; color: var(--navy); font-size: 1.3rem; margin-bottom: 30px; text-align: center;">
+                Send your resume to: <br><a href="mailto:info@saresearcher.in" style="color: var(--navy); text-decoration: underline;">info@saresearcher.in</a>
+            </p>
+            <div style="text-align: center;">
+                <a href="mailto:info@saresearcher.in?subject=Career Application" class="price-tag" style="padding: 15px 40px; font-size: 1.1rem;">Apply Now</a>
+            </div>
+        </div>
+    </div>
+
     <!-- CONTACT / FOOTER -->
     <footer id="contact" class="footer">
         <div class="content-wrap">
@@ -296,26 +355,43 @@
                     <a href="tel:+917982190362">+91 7982190362</a>
                 </div>
                 <div class="contact-item">
-                    <i class="fas fa-globe"></i>
-                    <a href="https://www.saresearcher.in/" target="_blank">www.saresearcher.in</a>
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://in.linkedin.com/company/saresearch" target="_blank">LinkedIn</a>
                 </div>
             </div>
             <p style="margin-top: 60px; font-size: 0.8rem; opacity: 0.5;">&copy; 2024 SA Research and Advisors. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- MOBILE MENU SCRIPT -->
+    <!-- SCRIPTS -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
 
+        // Toggle Mobile Menu
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => navLinks.classList.remove('active'));
-        });
+        // Modal Controls
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+            navLinks.classList.remove('active'); // Close mobile menu
+            document.body.style.overflow = 'hidden'; // Stop background scroll
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable background scroll
+        }
+
+        // Close Modal on clicking outside of content
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
     </script>
 </body>
 </html>
