@@ -46,7 +46,7 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             text-decoration: none;
             color: white;
         }
@@ -106,7 +106,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* --- SERVICES (MATCHES YOUR IMAGE) --- */
+        /* --- SERVICES (MATCHES YOUR REQUEST) --- */
         .service-category { margin-bottom: 70px; }
         
         .service-header { display: flex; align-items: center; gap: 20px; color: var(--navy); margin-bottom: 25px; }
@@ -160,13 +160,15 @@
 </head>
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVIGATION WITH NEW LOGO -->
     <nav>
         <a href="#" class="logo-container">
-            <svg width="30" height="30" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="60" width="15" height="30" rx="2" fill="white"/>
-                <rect x="35" y="40" width="15" height="50" rx="2" fill="white"/>
-                <rect x="60" y="20" width="15" height="70" rx="2" fill="white"/>
+            <!-- NEW 4-BAR LOGO SVG -->
+            <svg width="35" height="30" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="50" width="20" height="15" rx="3" fill="white"/>
+                <rect x="26" y="35" width="20" height="30" rx="3" fill="white"/>
+                <rect x="52" y="20" width="20" height="45" rx="3" fill="white"/>
+                <rect x="78" y="5" width="20" height="60" rx="3" fill="white"/>
             </svg>
             <span class="logo-text">SA Research and Advisors</span>
         </a>
@@ -212,12 +214,11 @@
         </div>
     </section>
 
-    <!-- SERVICES (EXACT MATCH TO YOUR IMAGE) -->
+    <!-- SERVICES (IMAGE MATCH) -->
     <section id="services" class="section">
         <div class="content-wrap">
             <h2 class="section-title">Our Services</h2>
             
-            <!-- Category 1 -->
             <div class="service-category">
                 <div class="service-header">
                     <i class="fas fa-chart-pie"></i> 
@@ -234,7 +235,6 @@
                 </ul>
             </div>
 
-            <!-- Category 2 -->
             <div class="service-category">
                 <div class="service-header">
                     <i class="fas fa-balance-scale"></i> 
@@ -313,7 +313,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when a link is clicked
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => navLinks.classList.remove('active'));
         });
