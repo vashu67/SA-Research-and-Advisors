@@ -39,7 +39,6 @@
         .nav-links li a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
         .nav-links li a:hover { color: var(--price-bg); }
 
-        /* FIX 1: Mobile-friendly hamburger — hidden on desktop, shown on mobile */
         .menu-toggle {
             display: none;
             color: white;
@@ -82,12 +81,8 @@
             font-weight: bold; font-size: 0.9rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* === OUR SERVICES — pixel-matched to reference image === */
-
-        /* Light grey background — same as hero (1st page) */
+        /* === OUR SERVICES === */
         #services { background-color: var(--light-grey) !important; }
-
-        /* "Our Services" — centred, bold serif, large */
         #services .section-title {
             text-align: center;
             font-family: 'Times New Roman', serif;
@@ -97,7 +92,6 @@
             margin-bottom: 45px;
         }
 
-        /* Icon + heading on SAME ROW — matches image exactly */
         .service-header {
             display: flex;
             align-items: center;
@@ -109,14 +103,12 @@
             margin-bottom: 16px;
         }
         .service-header:first-of-type { margin-top: 0; }
-        /* Icon same size as heading text, never wraps */
         .service-header i {
             font-size: clamp(1.3rem, 2.8vw, 1.75rem);
             flex-shrink: 0;
             color: var(--navy);
         }
 
-        /* Description paragraph — plain, muted, matches image */
         .service-description {
             font-size: 1rem;
             color: var(--text-dark);
@@ -125,7 +117,6 @@
             max-width: 960px;
         }
 
-        /* Arrow list — → on left, bold label + text on right, same line */
         .service-list {
             list-style: none;
             padding: 0;
@@ -140,9 +131,8 @@
             color: var(--text-dark);
             line-height: 1.55;
         }
-        /* → arrow — navy, bold, never shrinks */
         .service-list li::before {
-            content: "\2192";   /* → */
+            content: "\2192";
             color: var(--navy);
             font-weight: 700;
             font-size: 1rem;
@@ -152,15 +142,15 @@
         .service-list li span { display: inline; }
 
         /* --- PROFESSIONAL FEES --- */
-        .pricing-subtitle { color: var(--navy); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin: 50px 0 35px 0; font-family: 'Times New Roman', serif; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
-        .price-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 45px; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
+        .pricing-subtitle { color: var(--navy); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-weight: 700; margin: 50px 0 35px 0; font-family: inherit; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
+        .price-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
         .price-content { flex: 1; }
         .price-item-header {
             display: flex;
-            align-items: center;   /* FIX 2: icon and heading vertically centred on same row */
+            align-items: center;
             gap: 12px;
             color: var(--navy);
-            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-size: 1.4rem;
             font-weight: 700;
         }
         .price-item-header i { flex-shrink: 0; }
@@ -170,7 +160,21 @@
             font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; 
         }
 
-        /* FIX 2: Pricing service-list bullets also aligned same row */
+        /* Pipe-tag list for FP&A Partner */
+        .pipe-list {
+            padding-left: 42px;
+            margin-top: 10px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 2;
+            letter-spacing: 0.01em;
+        }
+        .pipe-list .pipe-sep {
+            color: var(--navy);
+            font-weight: 700;
+            margin: 0 6px;
+        }
+
         #pricing .service-list { padding-left: 42px; margin-bottom: 0; }
         #pricing .service-list li { display: flex; align-items: baseline; gap: 10px; }
 
@@ -196,7 +200,7 @@
         .contact-info a { color: white; text-decoration: none; transition: 0.3s; }
         .contact-info a:hover { color: var(--price-bg); }
 
-        /* --- RESPONSIVE LOGIC --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
             .hero-right { clip-path: none; opacity: 0.15; position: absolute; width: 100%; height: 100%; }
             .hero-left { padding: 120px 5%; text-align: center; }
@@ -204,7 +208,6 @@
         }
 
         @media (max-width: 768px) {
-            /* FIX 1: Show toggle button, hide nav by default on mobile */
             .menu-toggle { display: block; }
             .nav-links {
                 display: none;
@@ -218,17 +221,9 @@
                 gap: 0;
                 border-top: 1px solid rgba(255,255,255,0.1);
             }
-            .nav-links li {
-                width: 100%;
-                border-bottom: 1px solid rgba(255,255,255,0.08);
-            }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
             .nav-links li:last-child { border-bottom: none; }
-            .nav-links li a {
-                display: block;
-                padding: 14px 0;
-                font-size: 0.9rem;
-                letter-spacing: 0.5px;
-            }
+            .nav-links li a { display: block; padding: 14px 0; font-size: 0.9rem; letter-spacing: 0.5px; }
             .nav-links.active { display: flex; }
 
             .price-row { flex-direction: column; gap: 15px; }
@@ -241,6 +236,7 @@
             .service-header i { font-size: 1.2rem; }
             .service-list li { font-size: 0.95rem; }
             .service-description { font-size: 0.95rem; }
+            .pipe-list { font-size: 0.9rem; padding-left: 0; }
         }
     </style>
 </head>
@@ -254,7 +250,6 @@
             </svg>
             <span class="logo-text">SA Research and Advisors</span>
         </a>
-        <!-- FIX 1: Semantic <button> with icon swap and aria support -->
         <button class="menu-toggle" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
             <i class="fas fa-bars" id="menu-icon"></i>
         </button>
@@ -296,20 +291,16 @@
             </div>
         </section>
 
-        <!-- SERVICES — matches reference image exactly -->
+        <!-- SERVICES -->
         <section id="services" class="section light-bg">
             <div class="content-wrap">
-                <!-- Centred bold serif title, matching image -->
                 <h2 class="section-title">Our Services</h2>
 
-                <!-- Icon (chart-pie) + heading on exact same row -->
                 <div class="service-header">
                     <i class="fas fa-chart-pie"></i>
                     Financial Planning &amp; Analysis (FP&amp;A)
                 </div>
-                <!-- Plain description paragraph, full width -->
                 <p class="service-description">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
-                <!-- → arrow list with bold label + description inline -->
                 <ul class="service-list">
                     <li><span><strong>Budgeting &amp; Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</span></li>
                     <li><span><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</span></li>
@@ -317,7 +308,6 @@
                     <li><span><strong>MIS Reporting &amp; Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</span></li>
                 </ul>
 
-                <!-- Icon (scale-balanced) + heading on exact same row -->
                 <div class="service-header">
                     <i class="fas fa-scale-balanced"></i>
                     Business Valuation Support
@@ -339,17 +329,25 @@
                 <h3 class="pricing-subtitle">Monthly Retainer Pricing</h3>
                 <div class="price-row">
                     <div class="price-content">
-                        <!-- FIX 2: icon + heading on same row -->
                         <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> FP&amp;A Partner</div>
-                        <ul class="service-list" style="padding-left: 42px; margin-bottom: 0;">
-                            <li><span>Annual budgeting, quarterly forecast updates</span></li>
-                            <li><span>13-week cash flow forecasting</span></li>
-                            <li><span>Working capital management</span></li>
-                            <li><span>Monthly MIS &amp; board reporting, and KPI tracking</span></li>
-                            <li><span>Scenario planning</span></li>
-                            <li><span>Quarterly Investor presentation</span></li>
-                            <li><span>Industry research</span></li>
-                        </ul>
+                        <!-- UPDATED: pipe-separated inline format -->
+                        <p class="pipe-list">
+                            Annual Budgeting
+                            <span class="pipe-sep">|</span>
+                            Quarterly Forecast Updates
+                            <span class="pipe-sep">|</span>
+                            13-Week Cash Flow Forecasting
+                            <span class="pipe-sep">|</span>
+                            Working Capital Management
+                            <span class="pipe-sep">|</span>
+                            MIS Reporting
+                            <span class="pipe-sep">|</span>
+                            KPI Tracking
+                            <span class="pipe-sep">|</span>
+                            Investor Presentations
+                            <span class="pipe-sep">|</span>
+                            Industry Research
+                        </p>
                     </div>
                     <div class="price-pill">($500 - $800) /month</div>
                 </div>
@@ -450,7 +448,6 @@
     </footer>
 
     <script>
-        // FIX 1: Proper mobile nav with icon swap and aria state
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         const menuIcon = document.getElementById('menu-icon');
@@ -461,7 +458,6 @@
             menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
         });
 
-        // Close nav when any link is tapped on mobile
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
