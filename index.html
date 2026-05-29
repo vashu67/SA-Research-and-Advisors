@@ -38,7 +38,19 @@
         .nav-links { display: flex; list-style: none; gap: 20px; }
         .nav-links li a { color: white; text-decoration: none; font-size: 0.8rem; font-weight: 500; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
         .nav-links li a:hover { color: var(--price-bg); }
-        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        /* FIX 1: Mobile-friendly hamburger — hidden on desktop, shown on mobile */
+        .menu-toggle {
+            display: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+            line-height: 1;
+            z-index: 1100;
+        }
 
         /* --- HERO --- */
         .hero {
@@ -57,7 +69,7 @@
         .hero-brand { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; color: var(--navy); }
 
         /* --- SECTIONS --- */
-        .section { padding: 60px 10%; } /* CHANGE 1: Normalized spacing */
+        .section { padding: 60px 10%; }
         .content-wrap { max-width: 1100px; margin: 0 auto; }
         .section-title { text-align: left; color: var(--navy); font-size: clamp(2.5rem, 5vw, 3.2rem); margin-bottom: 50px; font-weight: 700; font-family: 'Times New Roman', serif; }
         .light-bg { background-color: var(--light-grey); }
@@ -70,22 +82,97 @@
             font-weight: bold; font-size: 0.9rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* --- OUR SERVICES --- */
-        .service-header { display: flex; align-items: center; gap: 15px; color: var(--navy); margin-bottom: 20px; font-size: clamp(1.4rem, 3vw, 1.8rem); font-weight: 700; }
-        .service-list { list-style: none; padding-left: 20px; margin-bottom: 50px; }
-        .service-list li { position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 1rem; color: var(--text-dark); } /* CHANGE 1: Normal vertical list spacing */
-        .service-list li::before { content: "•"; position: absolute; left: 0; font-weight: bold; font-size: 1.5rem; line-height: 1; }
+        /* === OUR SERVICES — pixel-matched to reference image === */
+
+        /* Pure white background — explicitly overrides any inherited class */
+        #services { background-color: #ffffff !important; }
+
+        /* "Our Services" — centred, bold serif, large */
+        #services .section-title {
+            text-align: center;
+            font-family: 'Times New Roman', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 45px;
+        }
+
+        /* Icon + heading on SAME ROW — matches image exactly */
+        .service-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--navy);
+            font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+            font-weight: 700;
+            margin-top: 45px;
+            margin-bottom: 16px;
+        }
+        .service-header:first-of-type { margin-top: 0; }
+        /* Icon same size as heading text, never wraps */
+        .service-header i {
+            font-size: clamp(1.3rem, 2.8vw, 1.75rem);
+            flex-shrink: 0;
+            color: var(--navy);
+        }
+
+        /* Description paragraph — plain, muted, matches image */
+        .service-description {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.75;
+            margin-bottom: 22px;
+            max-width: 960px;
+        }
+
+        /* Arrow list — → on left, bold label + text on right, same line */
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .service-list li {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.55;
+        }
+        /* → arrow — navy, bold, never shrinks */
+        .service-list li::before {
+            content: "\2192";   /* → */
+            color: var(--navy);
+            font-weight: 700;
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .service-list li span { display: inline; }
 
         /* --- PROFESSIONAL FEES --- */
         .pricing-subtitle { color: var(--navy); font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; margin: 50px 0 35px 0; font-family: 'Times New Roman', serif; border-bottom: 1px solid #ddd; padding-bottom: 10px;}
         .price-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 45px; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 25px; }
         .price-content { flex: 1; }
-        .price-item-header { display: flex; align-items: flex-start; gap: 15px; color: var(--navy); font-size: clamp(1.2rem, 3vw, 1.5rem); font-weight: 700; }
+        .price-item-header {
+            display: flex;
+            align-items: center;   /* FIX 2: icon and heading vertically centred on same row */
+            gap: 12px;
+            color: var(--navy);
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-weight: 700;
+        }
+        .price-item-header i { flex-shrink: 0; }
         .price-sub-desc { color: var(--text-muted); font-size: 0.95rem; padding-left: 42px; margin-top: 8px; }
         .price-pill { 
             background: var(--price-bg); color: var(--price-text); padding: 12px 24px; border-radius: 10px; 
             font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; 
         }
+
+        /* FIX 2: Pricing service-list bullets also aligned same row */
+        #pricing .service-list { padding-left: 42px; margin-bottom: 0; }
+        #pricing .service-list li { display: flex; align-items: baseline; gap: 10px; }
 
         /* --- MODAL SYSTEM & RESEARCH VIEWER --- */
         .modal-overlay {
@@ -115,18 +202,45 @@
             .hero-left { padding: 120px 5%; text-align: center; }
             .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 30px 0 0; margin: 0 auto; }
         }
+
         @media (max-width: 768px) {
+            /* FIX 1: Show toggle button, hide nav by default on mobile */
             .menu-toggle { display: block; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 30px; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: var(--navy);
+                padding: 20px 5%;
+                gap: 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.08);
+            }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links li a {
+                display: block;
+                padding: 14px 0;
+                font-size: 0.9rem;
+                letter-spacing: 0.5px;
+            }
             .nav-links.active { display: flex; }
+
             .price-row { flex-direction: column; gap: 15px; }
             .price-pill { align-self: flex-start; margin-left: 42px; width: 80%; }
             .section-title { text-align: center; }
             .reports-grid { grid-template-columns: 1fr; }
             .viewer-box { height: 400px; }
-            
-            /* CHANGE 2: Circle becomes normal card on mobile */
             .approach-card { border-radius: 15px; aspect-ratio: auto; padding: 25px; }
+            .service-header { font-size: 1.15rem; gap: 10px; }
+            .service-header i { font-size: 1.2rem; }
+            .service-list li { font-size: 0.95rem; }
+            .service-description { font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -140,12 +254,15 @@
             </svg>
             <span class="logo-text">SA Research and Advisors</span>
         </a>
-        <i class="fas fa-bars menu-toggle" id="menu-btn"></i>
+        <!-- FIX 1: Semantic <button> with icon swap and aria support -->
+        <button class="menu-toggle" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </button>
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a onclick="openModal('reportsModal')">Report & Research</a></li>
-            <li><a onclick="openModal('careerModal')">Career</a></li>
+            <li><a href="#" onclick="openModal('reportsModal'); return false;">Report &amp; Research</a></li>
+            <li><a href="#" onclick="openModal('careerModal'); return false;">Career</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -156,7 +273,7 @@
         <header class="hero">
             <div class="hero-left">
                 <div class="hero-content">
-                    <h1>We work as an extension of your team, delivering strategic FP&A and valuation support to drive informed decisions.</h1>
+                    <h1>We work as an extension of your team, delivering strategic FP&amp;A and valuation support to drive informed decisions.</h1>
                     <div class="hero-brand">SA Research and Advisors</div>
                 </div>
             </div>
@@ -168,7 +285,7 @@
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Strategic Finance Advisory</h2>
                 <p style="text-align: center; max-width: 850px; margin: 0 auto; font-size: 1.1rem; color: var(--text-muted);">
-                    SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning & Analysis (FP&A) and Business Valuation Support.
+                    SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning &amp; Analysis (FP&amp;A) and Business Valuation Support.
                 </p>
                 <div class="approach-grid">
                     <div class="approach-card">Understanding Your Business</div>
@@ -179,31 +296,42 @@
             </div>
         </section>
 
-        <!-- SERVICES -->
-        <section id="services" class="section light-bg">
+        <!-- SERVICES — matches reference image exactly -->
+        <section id="services" class="section">
             <div class="content-wrap">
+                <!-- Centred bold serif title, matching image -->
                 <h2 class="section-title">Our Services</h2>
-                
-                <div class="service-header"><i class="fas fa-circle-arrow-right"></i> Financial Planning & Analysis (FP&A)</div>
+
+                <!-- Icon (chart-pie) + heading on exact same row -->
+                <div class="service-header">
+                    <i class="fas fa-chart-pie"></i>
+                    Financial Planning &amp; Analysis (FP&amp;A)
+                </div>
+                <!-- Plain description paragraph, full width -->
                 <p class="service-description">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
+                <!-- → arrow list with bold label + description inline -->
                 <ul class="service-list">
-                    <li><strong>Budgeting & Planning:</strong> Structured annual and quarterly budgets designed to align directly with your operational planning and business growth objectives.</li>
-                    <li><strong>Cash Flow Forecasting:</strong> Implementation of 13-week cash flow models, proactive working capital planning, liquidity forecasting, and burn rate analysis to secure runway.</li>
-                    <li><strong>Fundraising Financial Models:</strong> Dynamic, investor-ready financial models that include detailed projections, scenario/what-if analysis, unit economics, runway analysis, and valuation sensitivity.</li>
-                    <li><strong>MIS Reporting & Dashboards:</strong> Monthly MIS dashboards, key performance indicator (KPI) tracking, budget vs. actual variance analysis, and comprehensive investor reporting packs to keep stakeholders aligned.</li>
+                    <li><span><strong>Budgeting &amp; Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</span></li>
+                    <li><span><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</span></li>
+                    <li><span><strong>Fundraising Financial Models:</strong> Investor-ready models including scenario analysis and valuation sensitivity.</span></li>
+                    <li><span><strong>MIS Reporting &amp; Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</span></li>
                 </ul>
 
-                <div class="service-header"><i class="fas fa-circle-arrow-right"></i> Business Valuation Support</div>
-                <p class="service-description">Whether you are preparing for a funding round, an M&A transaction, or internal restructuring, we provide independent, institutional-grade valuation mechanics.</p>
+                <!-- Icon (scale-balanced) + heading on exact same row -->
+                <div class="service-header">
+                    <i class="fas fa-scale-balanced"></i>
+                    Business Valuation Support
+                </div>
+                <p class="service-description">Whether preparing for funding, M&amp;A, or restructuring, we provide independent, institutional-grade valuation mechanics.</p>
                 <ul class="service-list">
-                    <li><strong>Valuation Methodologies:</strong> Rigorous execution of Discounted Cash Flow (DCF) valuation, comparable company analysis (CCA), and precedent transaction multiples.</li>
-                    <li><strong>Early-Stage Frameworks:</strong> Tailored startup valuation approaches designed specifically for pre-revenue or early-growth companies where traditional metrics may not apply.</li>
-                    <li><strong>Strategic Advisory:</strong> Deep-dive analysis to help founders understand the core drivers of their corporate value and how to optimize them before approaching investors.</li>
+                    <li><span><strong>Valuation Methodologies:</strong> Rigorous execution of DCF, comparable company analysis, and precedent transactions.</span></li>
+                    <li><span><strong>Early-Stage Frameworks:</strong> Tailored approaches for pre-revenue or early-growth companies.</span></li>
+                    <li><span><strong>Strategic Advisory:</strong> Analysis to help founders understand and optimize core value drivers.</span></li>
                 </ul>
             </div>
         </section>
 
-        <!-- PRICING (EXACT MATCH IMAGE 1 TEXT) -->
+        <!-- PRICING -->
         <section id="pricing" class="section">
             <div class="content-wrap">
                 <h2 class="section-title">Professional Fees</h2>
@@ -211,15 +339,16 @@
                 <h3 class="pricing-subtitle">Monthly Retainer Pricing</h3>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> FP&A Partner</div>
+                        <!-- FIX 2: icon + heading on same row -->
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> FP&amp;A Partner</div>
                         <ul class="service-list" style="padding-left: 42px; margin-bottom: 0;">
-                            <li>Annual budgeting, quarterly forecast updates</li>
-                            <li>13-week cash flow forecasting,</li>
-                            <li>Working capital management</li>
-                            <li>Monthly MIS & board reporting, and KPI tracking</li>
-                            <li>Scenario planning</li>
-                            <li>Quarterly Investor presentation</li>
-                            <li>Industry research</li>
+                            <li><span>Annual budgeting, quarterly forecast updates</span></li>
+                            <li><span>13-week cash flow forecasting</span></li>
+                            <li><span>Working capital management</span></li>
+                            <li><span>Monthly MIS &amp; board reporting, and KPI tracking</span></li>
+                            <li><span>Scenario planning</span></li>
+                            <li><span>Quarterly Investor presentation</span></li>
+                            <li><span>Industry research</span></li>
                         </ul>
                     </div>
                     <div class="price-pill">($500 - $800) /month</div>
@@ -229,7 +358,7 @@
                 
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> Budgeting & Planning Setup</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> Budgeting &amp; Planning Setup</div>
                         <div class="price-sub-desc">Annual operating budget, department-wise budgets, quarterly planning templates, budget vs actual framework</div>
                     </div>
                     <div class="price-pill">($600 - $1,000)</div>
@@ -253,7 +382,7 @@
 
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> MIS Reporting & Dashboard Setup</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> MIS Reporting &amp; Dashboard Setup</div>
                         <div class="price-sub-desc">KPI dashboards, MIS reports, variance analysis, investor reporting templates</div>
                     </div>
                     <div class="price-pill">($400 - $600)</div>
@@ -321,9 +450,25 @@
     </footer>
 
     <script>
+        // FIX 1: Proper mobile nav with icon swap and aria state
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
-        menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        });
+
+        // Close nav when any link is tapped on mobile
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', false);
+                menuIcon.className = 'fas fa-bars';
+            });
+        });
 
         function openModal(id) {
             document.getElementById(id).style.display = 'flex';
@@ -346,7 +491,12 @@
             document.getElementById('pdfFrame').src = '';
         }
 
-        window.onclick = (e) => { if(e.target.classList.contains('modal-overlay')) { closeModal('reportsModal'); closeModal('careerModal'); } }
+        window.onclick = (e) => {
+            if (e.target.classList.contains('modal-overlay')) {
+                closeModal('reportsModal');
+                closeModal('careerModal');
+            }
+        }
     </script>
 </body>
 </html>
