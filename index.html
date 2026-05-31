@@ -10,7 +10,6 @@
     <meta name="keywords" content="Strategic Finance, FP&A Gurgaon, Business Valuation India, Financial Planning and Analysis, Startup Fundraising, Cash Flow Forecasting">
     <meta name="author" content="SA Research and Advisors">
 
-    <!-- Google Site Name Structured Data (Tells Google to show your name in search results) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -20,14 +19,12 @@
     }
     </script>
 
-    <!-- Open Graph tags for Social Media & Search Consistency -->
     <meta property="og:site_name" content="SA Research and Advisors">
     <meta property="og:title" content="SA Research and Advisors | Strategic Finance Advisory">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.saresearcher.in/">
     <meta property="og:description" content="Strategic FP&A and Business Valuation support to drive informed business decisions.">
 
-    <!-- Icons & Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
@@ -96,6 +93,117 @@
             background: var(--navy); color: white; padding: 30px; text-align: center;
             border-radius: 50%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
             font-weight: bold; font-size: 0.9rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- TEAM SECTION --- */
+        .team-section {
+            margin-top: 60px;
+            padding-top: 50px;
+            border-top: 2px solid #e8edf2;
+        }
+        .team-title {
+            text-align: center;
+            color: var(--navy);
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 700;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 45px;
+        }
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+        .team-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            text-align: center;
+            max-width: 260px;
+        }
+
+        /* Circle photo + connect overlay */
+        .team-avatar-wrap {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 22px;
+            cursor: pointer;
+        }
+        .team-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            border: 5px solid #e8edf2;
+            box-shadow: 0 8px 30px rgba(0, 31, 63, 0.14);
+            display: block;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .team-avatar-wrap:hover .team-avatar,
+        .team-avatar-wrap.active .team-avatar {
+            transform: translateY(-4px);
+            border-color: var(--navy);
+        }
+        .team-connect-btn {
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.6);
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 4px 14px rgba(0,31,63,0.35);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+        }
+        .team-avatar-wrap:hover .team-connect-btn,
+        .team-avatar-wrap.active .team-connect-btn {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(-50%) scale(1);
+        }
+        .team-connect-btn:hover {
+            background: #1565c0;
+        }
+        .team-connect-btn i {
+            font-size: 1rem;
+        }
+
+        /* Text info below photo */
+        .team-name {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: 0.2px;
+            margin-bottom: 6px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .team-role {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #1565c0;
+            margin-bottom: 12px;
+        }
+        .team-bio {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.65;
         }
 
         /* === OUR SERVICES === */
@@ -177,7 +285,6 @@
             font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; 
         }
 
-        /* Pipe-tag list for FP&A Partner */
         .pipe-list {
             padding-left: 42px;
             margin-top: 10px;
@@ -210,12 +317,45 @@
         .viewer-box { width: 100%; height: 550px; border: 1px solid #ccc; border-radius: 10px; background: #f4f4f4; margin-top: 20px; display: none; }
 
         /* --- FOOTER & CONTACT --- */
-        .footer { background: var(--navy); color: white; padding: 80px 10% 40px; text-align: center; }
-        .contact-info { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
-        .contact-info div { display: flex; flex-direction: column; align-items: center; font-size: 0.95rem; }
-        .contact-info i { margin-bottom: 12px; font-size: 1.6rem; color: var(--price-bg); }
-        .contact-info a { color: white; text-decoration: none; transition: 0.3s; }
+        .footer {
+            background: var(--navy);
+            color: white;
+            padding: 80px 10% 50px;
+            text-align: center;
+        }
+        .footer-heading {
+            font-family: 'Times New Roman', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 50px;
+            letter-spacing: -0.5px;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        .contact-info div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.95rem;
+        }
+        .contact-info i {
+            font-size: 1.6rem;
+            color: var(--price-bg);
+            transition: color 0.3s;
+        }
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
         .contact-info a:hover { color: var(--price-bg); }
+        .contact-info span { color: white; }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 992px) {
@@ -254,6 +394,10 @@
             .service-list li { font-size: 0.95rem; }
             .service-description { font-size: 0.95rem; }
             .pipe-list { font-size: 0.9rem; padding-left: 0; }
+
+            .team-grid { gap: 40px; }
+            .team-avatar { width: 160px; height: 160px; }
+            .team-avatar-wrap { width: 160px; height: 160px; }
         }
     </style>
 </head>
@@ -305,6 +449,62 @@
                     <div class="approach-card">Data-Driven Optimization</div>
                     <div class="approach-card">Continuous Improvement</div>
                 </div>
+
+                <!-- TEAM SECTION -->
+                <div class="team-section">
+                    <h3 class="team-title">Meet the Team</h3>
+                    <div class="team-grid">
+
+                        <!-- Founder -->
+                        <div class="team-card">
+                            <div class="team-avatar-wrap">
+                                <img 
+                                    src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" 
+                                    alt="Shwet Kumar Rai – Founder" 
+                                    class="team-avatar"
+                                >
+                                <a 
+                                    href="https://www.linkedin.com/in/shwet-kumar-rai-131a15218/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="team-connect-btn"
+                                    aria-label="Connect with Shwet Kumar Rai on LinkedIn"
+                                >
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                            <div class="team-name">Shwet Kumar Rai</div>
+                            <div class="team-role">Founder &amp; Lead Advisor</div>
+                            <p class="team-bio">Strategic finance professional with deep expertise in FP&amp;A and business valuation for startups, growth-stage companies and                             investors.</p>
+                        </div>
+
+                        <!-- Co-Founder -->
+                        <div class="team-card">
+                            <div class="team-avatar-wrap">
+                                <img 
+                                    src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" 
+                                    alt="Aditya Harshvardhan – Co-Founder" 
+                                    class="team-avatar"
+                                >
+                                <a 
+                                    href="https://www.linkedin.com/in/aditya-harshvardhan-3a3b41267/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    class="team-connect-btn"
+                                    aria-label="Connect with Aditya Harshvardhan on LinkedIn"
+                                >
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                            </div>
+                            <div class="team-name">Aditya Harshvardhan</div>
+                            <div class="team-role">Co-Founder &amp; Advisor</div>
+                            <p class="team-bio">Specializes in cash flow forecasting, budgeting frameworks, and investor-ready financial models.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END TEAM SECTION -->
+
             </div>
         </section>
 
@@ -452,16 +652,30 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
     <footer id="contact" class="footer">
         <div class="content-wrap">
+            <h2 class="footer-heading">Get in Touch</h2>
             <div class="contact-info">
-                <div><i class="fas fa-envelope"></i><a href="mailto:info@saresearcher.in">info@saresearcher.in</a></div>
-                <div><i class="fas fa-phone"></i><a href="tel:+917982190362">+91 7982190362</a></div>
-                <div><i class="fab fa-linkedin"></i><a href="https://in.linkedin.com/company/saresearch" target="_blank">LinkedIn Profile</a></div>
-                <div><i class="fas fa-location-dot"></i>1178, Gurgaon, India 122001</div>
+                <div>
+                    <a href="mailto:info@saresearcher.in"><i class="fas fa-envelope"></i></a>
+                    <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
+                </div>
+                <div>
+                    <a href="tel:+917982190362"><i class="fas fa-phone"></i></a>
+                    <a href="tel:+917982190362">+91 7982190362</a>
+                </div>
+                <div>
+                    <a href="https://in.linkedin.com/company/saresearch" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in" style="border: 2px solid var(--price-bg); border-radius: 6px; padding: 5px 6px; font-size: 1.2rem;"></i>
+                    </a>
+                    <a href="https://in.linkedin.com/company/saresearch" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+                </div>
+                <div>
+                    <i class="fas fa-location-dot"></i>
+                    <span>1178, Gurgaon, India 122001</span>
+                </div>
             </div>
-            <p style="margin-top: 60px; font-size: 0.85rem; opacity: 0.6;">&copy; 2024 SA Research and Advisors. All rights reserved.</p>
+            <p style="margin-top: 60px; font-size: 0.85rem; opacity: 0.4;">&copy; 2024 SA Research and Advisors. All rights reserved.</p>
         </div>
     </footer>
 
@@ -504,6 +718,15 @@
             document.getElementById('viewerLayer').style.display = 'none';
             document.getElementById('pdfFrame').src = '';
         }
+
+        // Team card click toggle
+        document.querySelectorAll('.team-avatar-wrap').forEach(wrap => {
+            wrap.addEventListener('click', (e) => {
+                // If clicking the connect button itself, let the link work
+                if (e.target.closest('.team-connect-btn')) return;
+                wrap.classList.toggle('active');
+            });
+        });
 
         window.onclick = (e) => {
             if (e.target.classList.contains('modal-overlay')) {
