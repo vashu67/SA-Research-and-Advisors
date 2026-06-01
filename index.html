@@ -377,11 +377,38 @@
             .nav-links.active { display: flex; }
             .logo-text { font-size: 0.75rem; letter-spacing: 0.5px; }
 
-            /* HERO */
-            .hero { min-height: 60vh; }
-            .hero-left { padding: 90px 4% 50px; }
-            .hero-content h1 { font-size: 1.4rem; }
-            .hero-brand { font-size: 0.75rem; letter-spacing: 2px; }
+            /* HERO — fit full screen on mobile */
+            .hero {
+                min-height: calc(100vh - 60px);
+                height: calc(100vh - 60px);
+                display: flex;
+                align-items: center;
+            }
+            .hero-right {
+                clip-path: none;
+                opacity: 0.12;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+            .hero-left {
+                padding: 24px 5% 24px;
+                text-align: center;
+                width: 100%;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hero-content {
+                border-left: none;
+                border-top: 5px solid var(--navy);
+                padding: 20px 0 0;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+            .hero-content h1 { font-size: clamp(1.15rem, 4.5vw, 1.5rem); line-height: 1.4; margin-bottom: 14px; }
+            .hero-brand { font-size: 0.72rem; letter-spacing: 2px; }
 
             /* GENERAL SECTIONS */
             .section { padding: 40px 4%; }
@@ -390,15 +417,37 @@
 
             /* ABOUT */
             .about-split { flex-direction: column; margin-top: 30px; }
-            .about-left { border-right: none; padding: 24px 0 24px; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 24px; }
-            .about-left .mv-card-header { width: 100%; justify-content: center; margin-bottom: 0; }
-            .team-card-inline { width: calc(50% - 12px); min-width: 130px; }
-            .team-card-inline .team-avatar-wrap { width: 90px; height: 90px; }
-            .team-card-inline .team-avatar { width: 90px; height: 90px; }
-            .team-card-inline .team-name { font-size: 0.9rem; }
-            .team-card-inline .team-role { font-size: 0.6rem; }
-            .team-card-inline .team-bio { font-size: 0.78rem; }
+            .about-left {
+                border-right: none;
+                padding: 24px 0 24px;
+                border-bottom: 2px solid #e8edf2;
+                /* Force single row for team members */
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-left .mv-card-header { width: 100%; justify-content: center; margin-bottom: 16px; }
+
+            /* Team members row wrapper */
+            .team-members-row {
+                display: flex;
+                flex-direction: row;
+                gap: 16px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .team-card-inline {
+                width: calc(50% - 8px);
+                min-width: 0;
+                flex-shrink: 1;
+            }
+            .team-card-inline .team-avatar-wrap { width: 80px; height: 80px; }
+            .team-card-inline .team-avatar { width: 80px; height: 80px; }
+            .team-card-inline .team-name { font-size: 0.85rem; }
+            .team-card-inline .team-role { font-size: 0.58rem; }
+            .team-card-inline .team-bio { font-size: 0.75rem; }
             .team-card-inline { margin-top: 0 !important; }
+
             .mv-block { padding: 24px 0 24px 16px; }
             .mv-card-label { font-size: 1.1rem; }
             .mv-lead { font-size: 0.9rem; }
@@ -463,8 +512,7 @@
             .logo-text { display: none; }
 
             /* HERO */
-            .hero-left { padding: 80px 4% 40px; }
-            .hero-content h1 { font-size: 1.25rem; }
+            .hero-content h1 { font-size: clamp(1.05rem, 4vw, 1.25rem); }
 
             /* SECTIONS */
             .section { padding: 28px 4%; }
@@ -472,8 +520,8 @@
 
             /* ABOUT - team side by side */
             .team-card-inline { width: calc(50% - 8px); }
-            .team-card-inline .team-avatar-wrap { width: 80px; height: 80px; }
-            .team-card-inline .team-avatar { width: 80px; height: 80px; }
+            .team-card-inline .team-avatar-wrap { width: 72px; height: 72px; }
+            .team-card-inline .team-avatar { width: 72px; height: 72px; }
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 
             /* PRICING */
@@ -550,27 +598,30 @@
                             <i class="fas fa-users"></i>
                             <span class="mv-card-label">Meet the Team</span>
                         </div>
-                        <div class="team-card-inline">
-                            <div class="team-avatar-wrap">
-                                <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" alt="Shwet Kumar Rai" class="team-avatar">
-                                <a href="https://www.linkedin.com/in/shwet-kumar-rai-131a15218/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Shwet Kumar Rai on LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
+                        <!-- Team members wrapped in a row container -->
+                        <div class="team-members-row">
+                            <div class="team-card-inline">
+                                <div class="team-avatar-wrap">
+                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" alt="Shwet Kumar Rai" class="team-avatar">
+                                    <a href="https://www.linkedin.com/in/shwet-kumar-rai-131a15218/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Shwet Kumar Rai on LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <div class="team-name">Shwet Kumar Rai</div>
+                                <div class="team-role">Founder &amp; Lead Advisor</div>
+                                <p class="team-bio">Strategic finance professional with deep expertise in FP&amp;A and business valuation for startups, growth-stage companies and investors.</p>
                             </div>
-                            <div class="team-name">Shwet Kumar Rai</div>
-                            <div class="team-role">Founder &amp; Lead Advisor</div>
-                            <p class="team-bio">Strategic finance professional with deep expertise in FP&amp;A and business valuation for startups, growth-stage companies and investors.</p>
-                        </div>
-                        <div class="team-card-inline" style="margin-top:30px;">
-                            <div class="team-avatar-wrap">
-                                <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" alt="Aditya Harshvardhan" class="team-avatar">
-                                <a href="https://www.linkedin.com/in/aditya-harshvardhan-3a3b41267/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Aditya Harshvardhan on LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
+                            <div class="team-card-inline">
+                                <div class="team-avatar-wrap">
+                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" alt="Aditya Harshvardhan" class="team-avatar">
+                                    <a href="https://www.linkedin.com/in/aditya-harshvardhan-3a3b41267/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Aditya Harshvardhan on LinkedIn">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </div>
+                                <div class="team-name">Aditya Harshvardhan</div>
+                                <div class="team-role">Co-Founder &amp; Advisor</div>
+                                <p class="team-bio">Specializes in cash flow forecasting, budgeting frameworks, and investor-ready financial models.</p>
                             </div>
-                            <div class="team-name">Aditya Harshvardhan</div>
-                            <div class="team-role">Co-Founder &amp; Advisor</div>
-                            <p class="team-bio">Specializes in cash flow forecasting, budgeting frameworks, and investor-ready financial models.</p>
                         </div>
                     </div>
 
@@ -923,14 +974,6 @@
             }
         }
 
-        // ── EmailJS config ──────────────────────────────────────────
-        // 1. Sign up free at https://www.emailjs.com
-        // 2. Create an Email Service (Gmail) → copy your Service ID below
-        // 3. Create an Email Template with these variables:
-        //    {{from_name}}, {{from_email}}, {{phone}}, {{duration}},
-        //    {{preferred_date}}, {{time_slot}}, {{message}}
-        //    Set "To Email" in the template to: shwetrai9@gmail.com
-        // 4. Copy your Public Key and paste below
         var EMAILJS_PUBLIC_KEY  = "_CQnbmFQo2X0KA2Py";
         var EMAILJS_SERVICE_ID  = "service_r4ppl21";
         var EMAILJS_TEMPLATE_ID = "template_ycghjtq";
