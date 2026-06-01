@@ -14,6 +14,7 @@
     <meta property="og:url" content="https://www.saresearcher.in/">
     <meta property="og:description" content="Strategic FP&A and Business Valuation support to drive informed business decisions.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
         :root {
@@ -153,7 +154,7 @@
         /* --- 3 COLUMN FOOTER LAYOUT --- */
         .footer-three-col {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1.6fr;
             gap: 50px;
             margin-bottom: 60px;
         }
@@ -168,8 +169,9 @@
             color: white;
             font-size: 1.5rem;
             font-weight: 700;
-            font-family: 'Times New Roman', serif;
-            letter-spacing: -0.5px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
         }
         .contact-item {
             display: flex;
@@ -189,13 +191,8 @@
             transition: color 0.3s;
             font-size: 1rem;
         }
-        .contact-item a:hover {
-            color: var(--price-bg);
-        }
-        .contact-item span {
-            color: rgba(255,255,255,0.9);
-            font-size: 1rem;
-        }
+        .contact-item a:hover { color: var(--price-bg); }
+        .contact-item span { color: rgba(255,255,255,0.9); font-size: 1rem; }
 
         /* COLUMN 2: QUICK LINKS */
         .footer-col-2 {
@@ -226,97 +223,131 @@
             transition: color 0.3s;
             display: inline-block;
         }
-        .quick-link:hover {
-            color: var(--price-bg);
-        }
+        .quick-link:hover { color: var(--price-bg); }
 
-        /* COLUMN 3: SCHEDULE FORM */
+        /* COLUMN 3: STRATEGY CALL FORM */
         .footer-col-3 {
             display: flex;
             flex-direction: column;
         }
-        .schedule-form-wrap {
+
+        /* --- NEW STRATEGY CALL FORM --- */
+        .strategy-form-wrap {
             background: var(--white);
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 24px;
+            border-radius: 14px;
+            padding: 28px 30px 24px;
             display: flex;
             flex-direction: column;
-            gap: 14px;
+            gap: 0;
         }
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
+        .strategy-form-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--navy);
+            text-align: center;
+            margin-bottom: 22px;
+            font-family: 'Segoe UI', sans-serif;
+            letter-spacing: -0.3px;
         }
-        .form-group label {
-            font-size: 0.8rem;
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px 18px;
+            margin-bottom: 14px;
+        }
+        .strategy-label {
+            display: block;
+            font-size: 0.78rem;
             font-weight: 600;
             color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+            letter-spacing: 0.2px;
         }
-        .form-input,
-        .form-select {
+        .strategy-input,
+        .strategy-select {
+            width: 100%;
             padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            border: 1.5px solid #d1d9e0;
+            border-radius: 8px;
             background: var(--white);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-dark);
             outline: none;
             transition: border-color 0.2s, box-shadow 0.2s;
             font-family: 'Segoe UI', sans-serif;
+            appearance: none;
+            -webkit-appearance: none;
         }
-        .form-input::placeholder { color: #bbb; }
-        .form-input:focus,
-        .form-select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,31,63,0.08); }
-        .form-textarea {
+        .strategy-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23001f3f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            padding-right: 32px;
+        }
+        .strategy-input:focus,
+        .strategy-select:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(0,31,63,0.09);
+        }
+        .strategy-textarea {
+            width: 100%;
             padding: 10px 12px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
+            border: 1.5px solid #d1d9e0;
+            border-radius: 8px;
             background: var(--white);
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             color: var(--text-dark);
             outline: none;
             resize: vertical;
-            min-height: 80px;
+            min-height: 90px;
             font-family: 'Segoe UI', sans-serif;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
-        .form-textarea::placeholder { color: #bbb; }
-        .form-textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,31,63,0.08); }
-        .form-submit-btn {
+        .strategy-textarea:focus {
+            border-color: var(--navy);
+            box-shadow: 0 0 0 3px rgba(0,31,63,0.09);
+        }
+        .strategy-submit-btn {
+            width: 100%;
             background: var(--navy);
             color: white;
             border: none;
-            border-radius: 6px;
-            padding: 10px 20px;
-            font-size: 0.85rem;
+            border-radius: 8px;
+            padding: 13px 20px;
+            font-size: 0.95rem;
             font-weight: 700;
             cursor: pointer;
             font-family: 'Segoe UI', sans-serif;
             transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
             letter-spacing: 0.3px;
-            text-transform: uppercase;
-            margin-top: 6px;
+            margin-top: 16px;
         }
-        .form-submit-btn:hover { background: #0d1f2d; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,31,63,0.2); }
-        .form-submit-btn:active { transform: translateY(0); }
+        .strategy-submit-btn:hover {
+            background: #0d1f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,31,63,0.22);
+        }
+        .strategy-submit-btn:active { transform: translateY(0); }
         .form-success {
             display: none;
             text-align: center;
-            padding: 8px 0 0;
+            padding: 10px 0 0;
             color: #28c76f;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
-        .form-success i { margin-right: 4px; }
+        .form-success i { margin-right: 5px; }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 1100px) {
             .footer-three-col {
                 grid-template-columns: 1fr 1fr;
                 gap: 40px;
+            }
+            .footer-col-3 {
+                grid-column: 1 / -1;
+            }
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
@@ -325,9 +356,15 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .schedule-form-wrap {
-                padding: 20px;
+            .footer-col-3 { grid-column: auto; }
+            .strategy-grid {
+                grid-template-columns: 1fr 1fr;
             }
+            .strategy-form-wrap { padding: 22px 18px; }
+        }
+
+        @media (max-width: 480px) {
+            .strategy-grid { grid-template-columns: 1fr; }
         }
 
         /* --- FOOTER --- */
@@ -648,27 +685,62 @@
                     </div>
                 </div>
 
-                <!-- COLUMN 3: SCHEDULE FORM -->
+                <!-- COLUMN 3: STRATEGY CALL FORM -->
                 <div class="footer-col-3">
-                    <div class="schedule-form-wrap">
-                        <form id="scheduleForm">
+                    <div class="strategy-form-wrap">
+                        <h3 class="strategy-form-title">Schedule Your Strategy Call</h3>
+                        <div class="strategy-grid">
                             <div class="form-group">
-                                <label>Full Name *</label>
-                                <input type="text" id="sc-fullname" class="form-input" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address *</label>
-                                <input type="email" id="sc-email" class="form-input" placeholder="Your email" required>
+                                <label class="strategy-label">Full Name *</label>
+                                <input type="text" id="sc-fullname" class="strategy-input" placeholder="Your name">
                             </div>
                             <div class="form-group">
-                                <label>Message *</label>
-                                <textarea id="sc-message" class="form-textarea" placeholder="Your message..." required></textarea>
+                                <label class="strategy-label">Email Address *</label>
+                                <input type="email" id="sc-email" class="strategy-input" placeholder="Your email">
                             </div>
-                            <button type="button" class="form-submit-btn" onclick="submitScheduleCall()">Submit</button>
-                            <div class="form-success" id="sc-success">
-                                <i class="fas fa-check-circle"></i> Thank you!
+                            <div class="form-group">
+                                <label class="strategy-label">Phone Number</label>
+                                <input type="tel" id="sc-phone" class="strategy-input" placeholder="+91 XXXXX XXXXX">
                             </div>
-                        </form>
+                            <div class="form-group">
+                                <label class="strategy-label">Call Duration (Optional)</label>
+                                <select id="sc-duration" class="strategy-select">
+                                    <option value="">Select Duration</option>
+                                    <option value="15 min">15 minutes</option>
+                                    <option value="30 min">30 minutes</option>
+                                    <option value="45 min">45 minutes</option>
+                                    <option value="60 min">60 minutes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="strategy-label">Preferred Date (Optional)</label>
+                                <select id="sc-date" class="strategy-select">
+                                    <option value="">Select Date</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="strategy-label">Time Slot (Optional)</label>
+                                <select id="sc-timeslot" class="strategy-select">
+                                    <option value="">Select</option>
+                                    <option value="9:00 AM">9:00 AM</option>
+                                    <option value="10:00 AM">10:00 AM</option>
+                                    <option value="11:00 AM">11:00 AM</option>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="2:00 PM">2:00 PM</option>
+                                    <option value="3:00 PM">3:00 PM</option>
+                                    <option value="4:00 PM">4:00 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="strategy-label">What can our senior finance executive help you with? *</label>
+                            <textarea id="sc-message" class="strategy-textarea" rows="4" placeholder="Tell us about your needs..."></textarea>
+                        </div>
+                        <button type="button" class="strategy-submit-btn" onclick="submitStrategyCall()">Submit</button>
+                        <div class="form-success" id="sc-success">
+                            <i class="fas fa-check-circle"></i> Thank you! We'll be in touch soon.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -679,6 +751,24 @@
     </footer>
 
     <script>
+        // Populate date dropdown with next 30 days
+        (function() {
+            var sel = document.getElementById('sc-date');
+            var today = new Date();
+            var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            for (var i = 1; i <= 30; i++) {
+                var d = new Date(today);
+                d.setDate(today.getDate() + i);
+                var label = days[d.getDay()] + ', ' + d.getDate() + ' ' + months[d.getMonth()];
+                var val = d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
+                var opt = document.createElement('option');
+                opt.value = val;
+                opt.textContent = label;
+                sel.appendChild(opt);
+            }
+        })();
+
         const menuBtn = document.getElementById('menu-btn');
         const navLinks = document.getElementById('nav-links');
         const menuIcon = document.getElementById('menu-icon');
@@ -732,30 +822,67 @@
             }
         }
 
-        function submitScheduleCall() {
-            const fullname = document.getElementById('sc-fullname').value.trim();
-            const email = document.getElementById('sc-email').value.trim();
-            const message = document.getElementById('sc-message').value.trim();
+        // ── EmailJS config ──────────────────────────────────────────
+        // 1. Sign up free at https://www.emailjs.com
+        // 2. Create an Email Service (Gmail) → copy your Service ID below
+        // 3. Create an Email Template with these variables:
+        //    {{from_name}}, {{from_email}}, {{phone}}, {{duration}},
+        //    {{preferred_date}}, {{time_slot}}, {{message}}
+        //    Set "To Email" in the template to: shwetrai9@gmail.com
+        // 4. Copy your Public Key and paste below
+        var EMAILJS_PUBLIC_KEY  = "_CQnbmFQo2X0KA2Py";
+        var EMAILJS_SERVICE_ID  = "service_r4ppl21";
+        var EMAILJS_TEMPLATE_ID = "template_ycghjtq";
+
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        function submitStrategyCall() {
+            var fullname  = document.getElementById('sc-fullname').value.trim();
+            var email     = document.getElementById('sc-email').value.trim();
+            var phone     = document.getElementById('sc-phone').value.trim();
+            var duration  = document.getElementById('sc-duration').value;
+            var date      = document.getElementById('sc-date').value;
+            var timeslot  = document.getElementById('sc-timeslot').value;
+            var message   = document.getElementById('sc-message').value.trim();
 
             if (!fullname || !email || !message) {
-                alert('Please fill in all required fields.');
+                alert('Please fill in all required fields (Full Name, Email, and Message).');
                 return;
             }
 
-            const subject = encodeURIComponent('Schedule Call Request from ' + fullname);
-            const body = encodeURIComponent(
-                'Name: ' + fullname + '\n' +
-                'Email: ' + email + '\n\n' +
-                'Message:\n' + message
-            );
+            var btn = document.querySelector('.strategy-submit-btn');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
 
-            window.location.href = 'mailto:info@saresearcher.in?subject=' + subject + '&body=' + body;
-
-            document.getElementById('sc-success').style.display = 'block';
-            document.getElementById('scheduleForm').reset();
-            setTimeout(() => {
-                document.getElementById('sc-success').style.display = 'none';
-            }, 3000);
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                from_name:      fullname,
+                from_email:     email,
+                phone:          phone     || '—',
+                duration:       duration  || '—',
+                preferred_date: date      || '—',
+                time_slot:      timeslot  || '—',
+                message:        message,
+                to_email:       'shwetrai21@gmail.com'
+            })
+            .then(function() {
+                document.getElementById('sc-success').style.display = 'block';
+                document.getElementById('sc-fullname').value = '';
+                document.getElementById('sc-email').value = '';
+                document.getElementById('sc-phone').value = '';
+                document.getElementById('sc-duration').value = '';
+                document.getElementById('sc-date').value = '';
+                document.getElementById('sc-timeslot').value = '';
+                document.getElementById('sc-message').value = '';
+                btn.textContent = 'Submit';
+                btn.disabled = false;
+                setTimeout(function() {
+                    document.getElementById('sc-success').style.display = 'none';
+                }, 5000);
+            }, function(error) {
+                alert('Failed to send. Please email us directly at shwetrai21@gmail.com\n\nError: ' + JSON.stringify(error));
+                btn.textContent = 'Submit';
+                btn.disabled = false;
+            });
         }
     </script>
 </body>
