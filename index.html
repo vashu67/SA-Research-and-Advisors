@@ -101,9 +101,11 @@
 
         @media (max-width: 900px) {
             .about-split { flex-direction: column; }
-            .about-left { border-right: none; padding: 30px 0; border-bottom: 2px solid #e8edf2; }
-            .mv-block { padding: 30px 0; }
+            .about-left { border-right: none; padding: 30px 0; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 24px; }
+            .about-left .mv-card-header { width: 100%; justify-content: center; }
+            .mv-block { padding: 30px 0 30px 20px; }
             .vision-block { padding: 30px; }
+            .team-card-inline { width: calc(50% - 12px); margin-top: 0 !important; }
             .team-card-inline .team-avatar-wrap { width: 100px; height: 100px; }
             .team-card-inline .team-avatar { width: 100px; height: 100px; }
         }
@@ -335,58 +337,160 @@
         }
         .form-success i { margin-right: 5px; }
 
-        @media (max-width: 1100px) {
-            .footer-three-col {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px;
-            }
-            .footer-col-3 {
-                grid-column: 1 / -1;
-            }
-            .strategy-grid {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .footer-three-col {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .footer-col-3 { grid-column: auto; }
-            .strategy-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .strategy-form-wrap { padding: 22px 18px; }
-        }
-
-        @media (max-width: 480px) {
-            .strategy-grid { grid-template-columns: 1fr; }
-        }
-
         /* --- FOOTER --- */
         .footer { background: var(--navy); color: white; padding: 60px 6% 50px; }
         .footer-content { max-width: 1320px; margin: 0 auto; }
 
-        @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); }
-            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
-            .nav-links li:last-child { border-bottom: none; }
-            .nav-links li a { display: block; padding: 14px 0; font-size: 0.9rem; letter-spacing: 0.5px; }
-            .nav-links.active { display: flex; }
-            .price-row { flex-direction: column; gap: 15px; }
-            .price-pill { align-self: flex-start; margin-left: 42px; width: 80%; }
-            .section-title { text-align: center; }
-            .reports-grid { grid-template-columns: 1fr; }
-            .viewer-box { height: 400px; }
-            .approach-card { border-radius: 15px; aspect-ratio: auto; padding: 25px; }
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+        /* Tablet landscape */
+        @media (max-width: 1100px) {
+            .footer-three-col { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .footer-col-3 { grid-column: 1 / -1; }
+            .strategy-grid { grid-template-columns: 1fr 1fr 1fr; }
         }
 
+        /* Tablet portrait */
         @media (max-width: 992px) {
-            .hero-right { clip-path: none; opacity: 0.15; position: absolute; width: 100%; height: 100%; }
-            .hero-left { padding: 120px 5%; text-align: center; }
-            .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 30px 0 0; margin: 0 auto; }
+            /* Hero */
+            .hero { min-height: 70vh; }
+            .hero-right { clip-path: none; opacity: 0.12; position: absolute; width: 100%; height: 100%; }
+            .hero-left { padding: 100px 5% 60px; text-align: center; }
+            .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 24px 0 0; margin: 0 auto; max-width: 600px; }
+
+            /* About split */
+            .about-split { flex-direction: column; }
+            .about-left { border-right: none; padding: 30px 0; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 30px; }
+            .about-left .mv-card-header { width: 100%; justify-content: center; }
+            .mv-block { padding: 30px 0 30px 20px; }
+            .vision-block { padding: 30px; }
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            /* NAV */
+            .menu-toggle { display: block; }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); z-index: 999; }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
+            .nav-links li:last-child { border-bottom: none; }
+            .nav-links li a { display: block; padding: 14px 0; font-size: 0.95rem; letter-spacing: 0.5px; }
+            .nav-links.active { display: flex; }
+            .logo-text { font-size: 0.75rem; letter-spacing: 0.5px; }
+
+            /* HERO */
+            .hero { min-height: 60vh; }
+            .hero-left { padding: 90px 4% 50px; }
+            .hero-content h1 { font-size: 1.4rem; }
+            .hero-brand { font-size: 0.75rem; letter-spacing: 2px; }
+
+            /* GENERAL SECTIONS */
+            .section { padding: 40px 4%; }
+            .section-title { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
+            .content-wrap { overflow-x: hidden; }
+
+            /* ABOUT */
+            .about-split { flex-direction: column; margin-top: 30px; }
+            .about-left { border-right: none; padding: 24px 0 24px; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 24px; }
+            .about-left .mv-card-header { width: 100%; justify-content: center; margin-bottom: 0; }
+            .team-card-inline { width: calc(50% - 12px); min-width: 130px; }
+            .team-card-inline .team-avatar-wrap { width: 90px; height: 90px; }
+            .team-card-inline .team-avatar { width: 90px; height: 90px; }
+            .team-card-inline .team-name { font-size: 0.9rem; }
+            .team-card-inline .team-role { font-size: 0.6rem; }
+            .team-card-inline .team-bio { font-size: 0.78rem; }
+            .team-card-inline { margin-top: 0 !important; }
+            .mv-block { padding: 24px 0 24px 16px; }
+            .mv-card-label { font-size: 1.1rem; }
+            .mv-lead { font-size: 0.9rem; }
+            .mv-points li { font-size: 0.9rem; }
+            .vision-block { padding: 24px 16px; }
+            .mv-vision-text { font-size: 0.9rem; }
+
+            /* APPROACH CARDS */
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+            .approach-card { border-radius: 14px; aspect-ratio: auto; padding: 20px 14px; font-size: 0.82rem; }
+
+            /* SERVICES */
+            .service-header { font-size: 1.1rem; margin-top: 30px; gap: 10px; }
+            .service-header i { font-size: 1.2rem; }
+            .service-description { font-size: 0.9rem; }
+            .service-list li { font-size: 0.9rem; margin-bottom: 10px; }
+
+            /* PRICING */
+            .section-title { font-size: 1.9rem; }
+            .pricing-subtitle { font-size: 1rem; margin: 30px 0 20px; }
+            .price-row { flex-direction: column; gap: 10px; border-bottom: 1px solid #eee; padding-bottom: 16px; margin-bottom: 16px; }
+            .price-item-header { font-size: 1rem; gap: 8px; }
+            .price-sub-desc { padding-left: 0; font-size: 0.85rem; margin-top: 4px; }
+            .price-pill { align-self: stretch; margin-left: 0; width: 100%; text-align: center; font-size: 0.95rem; padding: 10px 16px; min-width: unset; }
+            .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.8; }
+
+            /* MODALS */
+            .modal-content { padding: 28px 20px; border-radius: 12px; }
+            .close-modal { top: 10px; right: 16px; font-size: 1.8rem; }
+            .reports-grid { grid-template-columns: 1fr; gap: 14px; }
+            .report-mini-card { padding: 18px; }
+            .viewer-box { height: 320px; }
+
+            /* FOOTER LAYOUT */
+            .footer { padding: 44px 4% 36px; }
+            .footer-three-col { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
+            .footer-col-3 { grid-column: auto; }
+
+            /* HIDE QUICK LINKS on mobile */
+            .footer-col-2 { display: none; }
+
+            /* CONTACT US */
+            .footer-col-1 { gap: 18px; }
+            .footer-col-1 h3 { font-size: 1.15rem; }
+            .contact-item { gap: 12px; align-items: center; }
+            .contact-item a, .contact-item span { font-size: 0.88rem; }
+            .contact-icon-link i { font-size: 1rem; }
+
+            /* STRATEGY FORM */
+            .strategy-form-wrap { padding: 20px 14px; border-radius: 12px; }
+            .strategy-form-title { font-size: 1.05rem; margin-bottom: 14px; }
+            .strategy-grid { grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 10px; }
+            .strategy-label { font-size: 0.72rem; margin-bottom: 4px; }
+            .strategy-input, .strategy-select { font-size: 0.85rem; padding: 9px 10px; }
+            .strategy-textarea { font-size: 0.85rem; padding: 9px 10px; min-height: 80px; }
+            .strategy-submit-btn { font-size: 0.88rem; padding: 12px; margin-top: 10px; }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            /* NAV */
+            .logo-text { display: none; }
+
+            /* HERO */
+            .hero-left { padding: 80px 4% 40px; }
+            .hero-content h1 { font-size: 1.25rem; }
+
+            /* SECTIONS */
+            .section { padding: 28px 4%; }
+            .section-title { font-size: 1.6rem; margin-bottom: 24px; }
+
+            /* ABOUT - team side by side */
+            .team-card-inline { width: calc(50% - 8px); }
+            .team-card-inline .team-avatar-wrap { width: 80px; height: 80px; }
+            .team-card-inline .team-avatar { width: 80px; height: 80px; }
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+            /* PRICING */
+            .pricing-subtitle { font-size: 0.95rem; }
+            .price-item-header { font-size: 0.95rem; }
+            .price-pill { font-size: 0.88rem; padding: 9px 12px; }
+
+            /* FOOTER */
+            .footer { padding: 36px 4% 28px; }
+            .footer-three-col { gap: 24px; }
+            .footer-col-1 h3 { font-size: 1.05rem; }
+            .contact-item a, .contact-item span { font-size: 0.82rem; }
+
+            /* FORM - single column */
+            .strategy-grid { grid-template-columns: 1fr; gap: 8px; }
+            .strategy-form-title { font-size: 0.98rem; }
+            .strategy-form-wrap { padding: 16px 12px; }
         }
     </style>
 </head>
@@ -488,7 +592,7 @@
                                 <i class="fas fa-binoculars"></i>
                                 <span class="mv-card-label" style="color:white;">Vision</span>
                             </div>
-                            <p class="mv-vision-text">To be the premier FP&amp;A and valuation advisory partner for for enterprises, providing leadership teams with the financial clarity, strategic insight, and decision-support capabilities needed to drive growth, manage risk, and create sustainable value.</p>
+                            <p class="mv-vision-text">To be the premier FP&amp;A and valuation advisory partner for high-growth enterprises, empowering leadership teams with the financial foresight and institutional-grade clarity needed to scale confidently and maximize shareholder value.</p>
                         </div>
                     </div>
                 </div>
