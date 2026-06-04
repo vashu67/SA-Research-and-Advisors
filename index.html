@@ -170,92 +170,17 @@
         .team-role { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1565c0; margin-bottom: 12px; }
         .team-bio { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
 
-        /* === SERVICES (NEW CARD LAYOUT) === */
+        /* === SERVICES === */
         #services { background-color: var(--light-grey) !important; }
-        #services .section-title { text-align: center; font-family: 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-        .services-subtitle { text-align: center; color: var(--text-muted); font-size: 1rem; max-width: 680px; margin: 0 auto 48px; line-height: 1.7; }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 48px;
-        }
-
-        .svc-card {
-            background: var(--white);
-            border-radius: 14px;
-            border: 1px solid #e2e8f0;
-            padding: 30px 28px 28px;
-            transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
-            position: relative;
-            overflow: hidden;
-        }
-        .svc-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,31,63,0.10);
-            border-color: #b6c8e0;
-        }
-        .svc-card-top-bar {
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            border-radius: 14px 14px 0 0;
-            background: var(--navy);
-        }
-
-        .svc-card-head { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #e2e8f0; }
-        .svc-icon-wrap {
-            width: 48px; height: 48px; border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0;
-            background: #e8edf5;
-        }
-        .svc-icon-wrap i { font-size: 1.3rem; color: var(--navy); }
-
-        .svc-card-titles {}
-        .svc-card-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; line-height: 1.3; }
-        .svc-card-tag { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-muted); }
-
-        .svc-bullet-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
-        .svc-bullet-list li { display: flex; align-items: baseline; gap: 10px; font-size: 0.9rem; color: var(--text-dark); line-height: 1.5; }
-        .svc-bullet-list li::before {
-            content: "";
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            margin-top: 5px;
-            background: var(--navy);
-        }
-
-        /* CTA strip */
-        .svc-cta-strip {
-            background: var(--navy);
-            border-radius: 14px;
-            padding: 28px 36px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .svc-cta-strip p { color: rgba(255,255,255,0.88); font-size: 1rem; margin: 0; }
-        .svc-cta-strip strong { color: #fff; font-size: 1.05rem; display: block; margin-bottom: 4px; }
-        .svc-cta-btn {
-            background: #fff;
-            color: var(--navy);
-            border: none;
-            border-radius: 8px;
-            padding: 12px 28px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            white-space: nowrap;
-            transition: background 0.2s, transform 0.15s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .svc-cta-btn:hover { background: #dbeafe; transform: translateY(-2px); }
+        #services .section-title { text-align: center; font-family: 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 45px; }
+        .service-header { display: flex; align-items: center; gap: 16px; color: var(--navy); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-weight: 700; margin-top: 45px; margin-bottom: 16px; }
+        .service-header:first-of-type { margin-top: 0; }
+        .service-header i { font-size: clamp(1.3rem, 2.8vw, 1.75rem); flex-shrink: 0; color: var(--navy); }
+        .service-description { font-size: 1rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 22px; max-width: 960px; }
+        .service-list { list-style: none; padding: 0; margin-bottom: 10px; }
+        .service-list li { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; font-size: 1rem; color: var(--text-dark); line-height: 1.55; }
+        .service-list li::before { content: "\2192"; color: var(--navy); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
+        .service-list li span { display: inline; }
 
         /* === Working (Sample) === */
         #reports { background-color: var(--white); }
@@ -368,27 +293,14 @@
         .footer-content { max-width: 1320px; margin: 0 auto; }
 
         /* ===== RESPONSIVE ===== */
-
-        /* --- Tablet landscape: 1024–1100px --- */
         @media (max-width: 1100px) {
             .footer-three-col { grid-template-columns: 1fr 1fr; gap: 40px; }
             .footer-col-3 { grid-column: 1 / -1; }
             .strategy-grid { grid-template-columns: 1fr 1fr 1fr; }
             .rr-grid { grid-template-columns: repeat(3, 1fr); }
-            .services-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
         }
 
-        /* --- Tablet portrait: 769–992px --- */
-        @media (max-width: 992px) {
-            .hero { min-height: 70vh; }
-            .hero-right { clip-path: none; opacity: 0.10; position: absolute; width: 100%; height: 100%; }
-            .hero-left { padding: 100px 6% 60px; text-align: center; }
-            .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 24px 0 0; margin: 0 auto; max-width: 600px; }
-            .services-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
-            .svc-card { padding: 26px 22px 24px; }
-            .svc-card-title { font-size: 0.97rem; }
-            .svc-bullet-list li { font-size: 0.88rem; }
-            .rr-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+        @media (max-width: 900px) {
             .about-split { flex-direction: column; }
             .about-left { border-right: none; padding: 30px 0; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 24px; }
             .about-left .mv-card-header { width: 100%; justify-content: center; }
@@ -397,150 +309,106 @@
             .team-card-inline { width: calc(50% - 12px); margin-top: 0 !important; }
             .team-card-inline .team-avatar-wrap { width: 100px; height: 100px; }
             .team-card-inline .team-avatar { width: 100px; height: 100px; }
-            .pricing-subtitle { font-size: 1.1rem; }
-            .price-row { gap: 16px; }
-            .footer-three-col { grid-template-columns: 1fr 1fr; gap: 36px; }
-            .footer-col-3 { grid-column: 1 / -1; }
-            .strategy-grid { grid-template-columns: 1fr 1fr 1fr; }
+            .rr-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* --- Mobile: ≤768px --- */
+        @media (max-width: 992px) {
+            .hero { min-height: 70vh; }
+            .hero-right { clip-path: none; opacity: 0.12; position: absolute; width: 100%; height: 100%; }
+            .hero-left { padding: 100px 5% 60px; text-align: center; }
+            .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 24px 0 0; margin: 0 auto; max-width: 600px; }
+        }
+
         @media (max-width: 768px) {
-            /* Nav */
             .menu-toggle { display: block; }
-            .nav-links {
-                display: none; flex-direction: column;
-                position: absolute; top: 60px; left: 0; width: 100%;
-                background: var(--navy); padding: 20px 5%; gap: 0;
-                border-top: 1px solid rgba(0,0,0,0.08); z-index: 999;
-            }
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(0,0,0,0.08); z-index: 999; }
             .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
             .nav-links li:last-child { border-bottom: none; }
             .nav-links li a { display: block; padding: 14px 0; font-size: 0.95rem; color: white; }
             .nav-links li a:hover { color: var(--price-bg); }
             .nav-links.active { display: flex; }
-            .logo-text { font-size: 0.70rem; }
+            .logo-text { font-size: 0.72rem; }
             .logo-container { gap: 8px; }
-
-            /* Hero */
-            .hero { min-height: calc(100vh - 60px); height: auto; padding-bottom: 40px; display: flex; align-items: center; }
-            .hero-right { clip-path: none; opacity: 0.08; position: absolute; width: 100%; height: 100%; }
-            .hero-left { padding: 30px 5% 20px; text-align: center; width: 100%; z-index: 2; display: flex; align-items: center; justify-content: center; }
+            .hero { min-height: calc(100vh - 60px); height: calc(100vh - 60px); display: flex; align-items: center; }
+            .hero-right { clip-path: none; opacity: 0.12; position: absolute; width: 100%; height: 100%; }
+            .hero-left { padding: 24px 5%; text-align: center; width: 100%; z-index: 2; display: flex; align-items: center; justify-content: center; }
             .hero-content { border-left: none; border-top: 5px solid var(--navy); padding: 20px 0 0; margin: 0 auto; max-width: 100%; }
-            .hero-content h1 { font-size: clamp(1.2rem, 5vw, 1.6rem); line-height: 1.4; margin-bottom: 14px; }
+            .hero-content h1 { font-size: clamp(1.15rem, 4.5vw, 1.5rem); line-height: 1.4; margin-bottom: 14px; }
             .hero-brand { font-size: 0.72rem; letter-spacing: 2px; }
-
-            /* Sections */
             .section { padding: 40px 4%; }
-            .section-title { text-align: center; font-size: clamp(1.6rem, 6vw, 2rem); margin-bottom: 24px; }
-            .services-subtitle { font-size: 0.92rem; margin-bottom: 28px; }
-
-            /* About */
-            .about-split { flex-direction: column; margin-top: 24px; }
+            .section-title { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
+            .about-split { flex-direction: column; margin-top: 30px; }
             .about-left { border-right: none; padding: 24px 0; border-bottom: 2px solid #e8edf2; flex-direction: column; align-items: center; }
             .about-left .mv-card-header { width: 100%; justify-content: center; margin-bottom: 16px; }
-            .team-members-row { display: flex; flex-direction: row; gap: 14px; width: 100%; justify-content: center; }
-            .team-card-inline { width: calc(50% - 7px); min-width: 0; flex-shrink: 1; margin-top: 0 !important; }
+            .team-members-row { display: flex; flex-direction: row; gap: 16px; width: 100%; justify-content: center; }
+            .team-card-inline { width: calc(50% - 8px); min-width: 0; flex-shrink: 1; }
             .team-card-inline .team-avatar-wrap { width: 80px; height: 80px; }
             .team-card-inline .team-avatar { width: 80px; height: 80px; }
-            .team-card-inline .team-name { font-size: 0.82rem; }
-            .team-card-inline .team-role { font-size: 0.56rem; }
-            .team-card-inline .team-bio { font-size: 0.72rem; }
+            .team-card-inline .team-name { font-size: 0.85rem; }
+            .team-card-inline .team-role { font-size: 0.58rem; }
+            .team-card-inline .team-bio { font-size: 0.75rem; }
+            .team-card-inline { margin-top: 0 !important; }
             .mv-block { padding: 24px 0 24px 16px; }
-            .mv-card-label { font-size: 1.05rem; }
-            .mv-lead { font-size: 0.88rem; }
-            .mv-points li { font-size: 0.88rem; }
-            .vision-block { padding: 22px 16px; }
-            .mv-vision-text { font-size: 0.88rem; }
-
-            /* Approach */
-            .approach-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
-            .approach-card { border-radius: 14px; aspect-ratio: auto; padding: 18px 12px; font-size: 0.8rem; }
-
-            /* Services cards — single column on mobile */
-            .services-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 0; }
-            .svc-card { padding: 22px 18px 20px; }
-            .svc-icon-wrap { width: 40px; height: 40px; }
-            .svc-icon-wrap i { font-size: 1.1rem; }
-            .svc-card-title { font-size: 0.97rem; }
-            .svc-card-tag { font-size: 0.63rem; }
-            .svc-card-head { gap: 12px; margin-bottom: 14px; padding-bottom: 14px; }
-            .svc-bullet-list { gap: 8px; }
-            .svc-bullet-list li { font-size: 0.86rem; }
-
-            /* Reports */
-            .rr-grid { grid-template-columns: 1fr; gap: 16px; }
-            .rr-card-thumb { height: 170px; }
-            .rr-iframe-wrap { height: 360px; }
-            .rr-viewer-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-
-            /* Pricing */
-            .pricing-subtitle { font-size: 1rem; margin: 28px 0 18px; }
+            .mv-card-label { font-size: 1.1rem; }
+            .mv-lead { font-size: 0.9rem; }
+            .mv-points li { font-size: 0.9rem; }
+            .vision-block { padding: 24px 16px; }
+            .mv-vision-text { font-size: 0.9rem; }
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
+            .approach-card { border-radius: 14px; aspect-ratio: auto; padding: 20px 14px; font-size: 0.82rem; }
+            .service-header { font-size: 1.1rem; margin-top: 30px; gap: 10px; }
+            .service-header i { font-size: 1.2rem; }
+            .service-description { font-size: 0.9rem; }
+            .service-list li { font-size: 0.9rem; margin-bottom: 10px; }
+            .rr-grid { grid-template-columns: 1fr; }
+            .rr-card-thumb { height: 180px; }
+            .rr-iframe-wrap { height: 380px; }
+            .rr-viewer-header { flex-direction: column; align-items: flex-start; }
+            .pricing-subtitle { font-size: 1rem; margin: 30px 0 20px; }
             .price-row { flex-direction: column; gap: 10px; padding-bottom: 16px; margin-bottom: 16px; }
             .price-item-header { font-size: 1rem; gap: 8px; }
-            .price-sub-desc { padding-left: 0; font-size: 0.84rem; margin-top: 4px; }
-            .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.92rem; padding: 10px 16px; min-width: unset; }
-            .pipe-list { padding-left: 0; font-size: 0.84rem; line-height: 1.85; }
-
-            /* Modal */
-            .modal-content { padding: 28px 18px; border-radius: 12px; }
-            .close-modal { top: 10px; right: 14px; font-size: 1.8rem; }
-
-            /* Footer */
+            .price-sub-desc { padding-left: 0; font-size: 0.85rem; margin-top: 4px; }
+            .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.95rem; padding: 10px 16px; min-width: unset; }
+            .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.8; }
+            .modal-content { padding: 28px 20px; border-radius: 12px; }
+            .close-modal { top: 10px; right: 16px; font-size: 1.8rem; }
             .footer { padding: 44px 4% 36px; }
-            .footer-three-col { grid-template-columns: 1fr; gap: 30px; margin-bottom: 36px; }
+            .footer-three-col { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
             .footer-col-3 { grid-column: auto; }
             .footer-col-2 { display: none; }
-            .footer-col-1 { gap: 16px; }
-            .footer-col-1 h3 { font-size: 1.1rem; }
+            .footer-col-1 { gap: 18px; }
+            .footer-col-1 h3 { font-size: 1.15rem; }
             .contact-item { gap: 12px; align-items: center; }
-            .contact-item a, .contact-item span { font-size: 0.86rem; }
+            .contact-item a, .contact-item span { font-size: 0.88rem; }
             .contact-icon-link i { font-size: 1rem; }
-
-            /* Contact form */
             .strategy-form-wrap { padding: 20px 14px; border-radius: 12px; }
-            .strategy-form-title { font-size: 1rem; margin-bottom: 14px; }
+            .strategy-form-title { font-size: 1.05rem; margin-bottom: 14px; }
             .strategy-grid { grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 10px; }
             .strategy-label { font-size: 0.72rem; margin-bottom: 4px; }
-            .strategy-input, .strategy-select { font-size: 0.84rem; padding: 9px 10px; }
-            .strategy-textarea { font-size: 0.84rem; padding: 9px 10px; min-height: 80px; }
+            .strategy-input, .strategy-select { font-size: 0.85rem; padding: 9px 10px; }
+            .strategy-textarea { font-size: 0.85rem; padding: 9px 10px; min-height: 80px; }
             .strategy-submit-btn { font-size: 0.88rem; padding: 12px; margin-top: 10px; }
         }
 
-        /* --- Small mobile: ≤480px --- */
         @media (max-width: 480px) {
-            .logo-text { font-size: 0.64rem; letter-spacing: 0.5px; }
-            .logo-img { height: 30px; }
-            .hero-content h1 { font-size: clamp(1.05rem, 4.5vw, 1.3rem); }
+            .logo-text { font-size: 0.68rem; }
+            .logo-img { height: 32px; }
+            .hero-content h1 { font-size: clamp(1.05rem, 4vw, 1.25rem); }
             .section { padding: 28px 4%; }
-            .section-title { font-size: clamp(1.4rem, 5.5vw, 1.7rem); margin-bottom: 20px; }
-
-            /* Team */
-            .team-card-inline .team-avatar-wrap { width: 68px; height: 68px; }
-            .team-card-inline .team-avatar { width: 68px; height: 68px; }
-
-            /* Approach */
-            .approach-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-
-            /* Services */
-            .svc-card { padding: 18px 14px 16px; }
-            .svc-card-title { font-size: 0.92rem; }
-            .svc-bullet-list li { font-size: 0.82rem; }
-
-            /* Pricing */
-            .pricing-subtitle { font-size: 0.92rem; }
-            .price-item-header { font-size: 0.92rem; }
-            .price-pill { font-size: 0.86rem; padding: 9px 12px; }
-
-            /* Footer */
-            .footer { padding: 32px 4% 28px; }
-            .footer-three-col { gap: 22px; }
-            .footer-col-1 h3 { font-size: 1rem; }
-            .contact-item a, .contact-item span { font-size: 0.8rem; }
-
-            /* Form */
+            .section-title { font-size: 1.6rem; margin-bottom: 24px; }
+            .team-card-inline { width: calc(50% - 8px); }
+            .team-card-inline .team-avatar-wrap { width: 72px; height: 72px; }
+            .team-card-inline .team-avatar { width: 72px; height: 72px; }
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .pricing-subtitle { font-size: 0.95rem; }
+            .price-item-header { font-size: 0.95rem; }
+            .price-pill { font-size: 0.88rem; padding: 9px 12px; }
+            .footer { padding: 36px 4% 28px; }
+            .footer-three-col { gap: 24px; }
+            .footer-col-1 h3 { font-size: 1.05rem; }
+            .contact-item a, .contact-item span { font-size: 0.82rem; }
             .strategy-grid { grid-template-columns: 1fr; gap: 8px; }
-            .strategy-form-title { font-size: 0.95rem; }
+            .strategy-form-title { font-size: 0.98rem; }
             .strategy-form-wrap { padding: 16px 12px; }
         }
     </style>
@@ -657,96 +525,28 @@
         <!-- SERVICES -->
         <section id="services" class="section light-bg">
             <div class="content-wrap">
-                <h2 class="section-title">Our Services</h2>
-                <p class="services-subtitle">Comprehensive financial advisory solutions covering every pillar of the modern finance function.</p>
-
-                <div class="services-grid">
-
-                    <!-- Card 1: FP&A & Cash Flow Planning -->
-                    <div class="svc-card">
-                        <div class="svc-card-top-bar"></div>
-                        <div class="svc-card-head">
-                            <div class="svc-icon-wrap">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <div class="svc-card-titles">
-                                <div class="svc-card-title">FP&amp;A &amp; Cash Flow Planning</div>
-                                <div class="svc-card-tag">Financial Planning &amp; Analysis</div>
-                            </div>
-                        </div>
-                        <ul class="svc-bullet-list">
-                            <li>Annual &amp; rolling budgets with 13-week cash flow forecasting</li>
-                            <li>Scenario, sensitivity &amp; variance analysis</li>
-                            <li>Revenue build-up &amp; cost optimization models</li>
-                            <li>Working capital optimization — receivables, payables &amp; inventory</li>
-                            <li>CapEx (Capital Expenditure) planning &amp; long-term investment budgeting</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 2: KPI & Performance Management -->
-                    <div class="svc-card">
-                        <div class="svc-card-top-bar"></div>
-                        <div class="svc-card-head">
-                            <div class="svc-icon-wrap">
-                                <i class="fas fa-gauge-high"></i>
-                            </div>
-                            <div class="svc-card-titles">
-                                <div class="svc-card-title">KPI &amp; Performance Management</div>
-                                <div class="svc-card-tag">Reporting &amp; Analytics</div>
-                            </div>
-                        </div>
-                        <ul class="svc-bullet-list">
-                            <li>KPI &amp; MIS dashboards — operational and financial</li>
-                            <li>Departmental &amp; segment-level reporting</li>
-                            <li>OKR(Objectives and Key Results) tracking &amp; performance benchmarking</li>
-                            <li>Profitability &amp; efficiency trend analysis</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 3: Business Valuation Supoort -->
-                    <div class="svc-card">
-                        <div class="svc-card-top-bar"></div>
-                        <div class="svc-card-head">
-                            <div class="svc-icon-wrap">
-                                <i class="fas fa-building-columns"></i>
-                            </div>
-                            <div class="svc-card-titles">
-                                <div class="svc-card-title">Valuation &amp; Strategic Advisory</div>
-                                <div class="svc-card-tag">M&amp;A · Fundraising · Investor Relations</div>
-                            </div>
-                        </div>
-                        <ul class="svc-bullet-list">
-                            <li>DCF, comparable company analysis &amp; precedent transactions</li>
-                            <li>Capital allocation &amp; ROI analysis</li>
-                            <li>Fundraising strategy &amp; investor communication</li>
-                            <li>Board support &amp; M&amp;A due diligence</li>
-                        </ul>
-                    </div>
-
-                    <!-- Card 4: Research & Thought Leadership -->
-                    <div class="svc-card">
-                        <div class="svc-card-top-bar"></div>
-                        <div class="svc-card-head">
-                            <div class="svc-icon-wrap">
-                                <i class="fas fa-file-chart-column"></i>
-                            </div>
-                            <div class="svc-card-titles">
-                                <div class="svc-card-title">Research &amp; Thought Leadership</div>
-                                <div class="svc-card-tag">Industry Research · Publications</div>
-                            </div>
-                        </div>
-                        <ul class="svc-bullet-list">
-                            <li>Industry research &amp; white papers</li>
-                            <li>Custom financial reports</li>
-                            <li>Investor-ready brochures &amp; pitch decks</li>
-                            <li>Market intelligence &amp; sector benchmarking</li>
-                        </ul>
-                    </div>
-
+                <h2 class="section-title" style="text-align:center;">Our Services</h2>
+                <div class="service-header">
+                    <i class="fas fa-chart-pie"></i>
+                    Financial Planning &amp; Analysis (FP&amp;A)
                 </div>
-
-
-
+                <p class="service-description">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
+                <ul class="service-list">
+                    <li><span><strong>Budgeting &amp; Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</span></li>
+                    <li><span><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</span></li>
+                    <li><span><strong>Fundraising Financial Models:</strong> Investor-ready models including scenario analysis and valuation sensitivity.</span></li>
+                    <li><span><strong>MIS Reporting &amp; Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</span></li>
+                </ul>
+                <div class="service-header" style="margin-top:50px;">
+                    <i class="fas fa-scale-balanced"></i>
+                    Business Valuation Support
+                </div>
+                <p class="service-description">Whether preparing for funding, M&amp;A, or restructuring, we provide independent, institutional-grade valuation mechanics.</p>
+                <ul class="service-list">
+                    <li><span><strong>Valuation Methodologies:</strong> Rigorous execution of DCF, comparable company analysis, and precedent transactions.</span></li>
+                    <li><span><strong>Early-Stage Frameworks:</strong> Tailored approaches for pre-revenue or early-growth companies.</span></li>
+                    <li><span><strong>Strategic Advisory:</strong> Analysis to help founders understand and optimize core value drivers.</span></li>
+                </ul>
             </div>
         </section>
 
