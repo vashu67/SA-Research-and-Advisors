@@ -64,7 +64,7 @@
       "url": "https://www.saresearcher.in/"
     }
     </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
@@ -170,17 +170,122 @@
         .team-role { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1565c0; margin-bottom: 12px; }
         .team-bio { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
 
-        /* === SERVICES === */
+        /* ===== SERVICES — CARD LAYOUT ===== */
         #services { background-color: var(--light-grey) !important; }
-        #services .section-title { text-align: center; font-family: 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 45px; }
-        .service-header { display: flex; align-items: center; gap: 16px; color: var(--navy); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-weight: 700; margin-top: 45px; margin-bottom: 16px; }
-        .service-header:first-of-type { margin-top: 0; }
-        .service-header i { font-size: clamp(1.3rem, 2.8vw, 1.75rem); flex-shrink: 0; color: var(--navy); }
-        .service-description { font-size: 1rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 22px; max-width: 960px; }
-        .service-list { list-style: none; padding: 0; margin-bottom: 10px; }
-        .service-list li { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; font-size: 1rem; color: var(--text-dark); line-height: 1.55; }
-        .service-list li::before { content: "\2192"; color: var(--navy); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
-        .service-list li span { display: inline; }
+        #services .section-title { text-align: center; font-family: 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+
+        .services-category-label {
+            text-align: center;
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            color: var(--price-text);
+            background: var(--price-bg);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 20px;
+            margin-bottom: 28px;
+        }
+        .services-category-wrap {
+            margin-bottom: 56px;
+        }
+        .services-category-wrap:last-child {
+            margin-bottom: 0;
+        }
+        .services-category-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 10px;
+        }
+        .services-category-header i {
+            font-size: 1.6rem;
+            color: var(--navy);
+            flex-shrink: 0;
+        }
+        .services-category-title {
+            font-size: clamp(1.25rem, 2.8vw, 1.7rem);
+            font-weight: 700;
+            color: var(--navy);
+            font-family: 'Times New Roman', serif;
+        }
+        .services-category-desc {
+            font-size: 0.98rem;
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-bottom: 28px;
+            max-width: 860px;
+        }
+        .services-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            background: var(--white);
+            border: 1.5px solid #e4ecf4;
+            border-radius: 14px;
+            padding: 28px 26px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+            position: relative;
+            overflow: hidden;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--navy);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            box-shadow: 0 12px 32px rgba(0,31,63,0.11);
+            transform: translateY(-4px);
+            border-color: #b8cfe8;
+        }
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        .service-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: var(--price-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-bottom: 4px;
+        }
+        .service-card-icon i {
+            font-size: 1.1rem;
+            color: var(--price-text);
+        }
+        .service-card-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.35;
+        }
+        .service-card-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+            flex: 1;
+        }
+
+        /* Divider between the two service categories */
+        .services-divider {
+            border: none;
+            border-top: 1.5px solid #d8e4ef;
+            margin: 50px 0;
+        }
 
         /* === Working (Sample) === */
         #reports { background-color: var(--white); }
@@ -298,6 +403,11 @@
             .footer-col-3 { grid-column: 1 / -1; }
             .strategy-grid { grid-template-columns: 1fr 1fr 1fr; }
             .rr-grid { grid-template-columns: repeat(3, 1fr); }
+            .services-cards-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 960px) {
+            .services-cards-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 900px) {
@@ -356,10 +466,16 @@
             .mv-vision-text { font-size: 0.9rem; }
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
             .approach-card { border-radius: 14px; aspect-ratio: auto; padding: 20px 14px; font-size: 0.82rem; }
-            .service-header { font-size: 1.1rem; margin-top: 30px; gap: 10px; }
-            .service-header i { font-size: 1.2rem; }
-            .service-description { font-size: 0.9rem; }
-            .service-list li { font-size: 0.9rem; margin-bottom: 10px; }
+            /* Services cards mobile */
+            .services-cards-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+            .service-card { padding: 20px 16px; }
+            .service-card-icon { width: 38px; height: 38px; }
+            .service-card-icon i { font-size: 0.95rem; }
+            .service-card-title { font-size: 0.92rem; }
+            .service-card-desc { font-size: 0.82rem; }
+            .services-category-title { font-size: 1.15rem; }
+            .services-category-desc { font-size: 0.9rem; margin-bottom: 20px; }
+            .services-divider { margin: 36px 0; }
             .rr-grid { grid-template-columns: 1fr; }
             .rr-card-thumb { height: 180px; }
             .rr-iframe-wrap { height: 380px; }
@@ -400,6 +516,8 @@
             .team-card-inline .team-avatar-wrap { width: 72px; height: 72px; }
             .team-card-inline .team-avatar { width: 72px; height: 72px; }
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+            /* Services cards — single column on very small screens */
+            .services-cards-grid { grid-template-columns: 1fr; gap: 12px; }
             .pricing-subtitle { font-size: 0.95rem; }
             .price-item-header { font-size: 0.95rem; }
             .price-pill { font-size: 0.88rem; padding: 9px 12px; }
@@ -522,31 +640,100 @@
             </div>
         </section>
 
-        <!-- SERVICES -->
+        <!-- SERVICES — CARD LAYOUT -->
         <section id="services" class="section light-bg">
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Our Services</h2>
-                <div class="service-header">
-                    <i class="fas fa-chart-pie"></i>
-                    Financial Planning &amp; Analysis (FP&amp;A)
+                <p style="text-align:center; max-width:780px; margin:-30px auto 50px; font-size:1rem; color:var(--text-muted);">
+                    Comprehensive financial advisory solutions covering every pillar of the modern finance function.
+                </p>
+
+                <!-- Category 1: FP&A -->
+                <div class="services-category-wrap">
+                    <div class="services-category-header">
+                        <i class="fas fa-chart-pie"></i>
+                        <span class="services-category-title">Financial Planning &amp; Analysis (FP&amp;A)</span>
+                    </div>
+                    <p class="services-category-desc">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
+                    <div class="services-cards-grid">
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-calendar-alt"></i></div>
+                            <div class="service-card-title">Budgeting &amp; Planning</div>
+                            <div class="service-card-desc">Structured annual and quarterly budgets designed to align directly with your operational planning and business growth objectives.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-water"></i></div>
+                            <div class="service-card-title">Cash Flow Forecasting</div>
+                            <div class="service-card-desc">Implementation of 13-week cash flow models, proactive working capital planning, liquidity forecasting, and burn rate analysis to secure runway.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-rocket"></i></div>
+                            <div class="service-card-title">Fundraising Financial Models</div>
+                            <div class="service-card-desc">Dynamic, investor-ready financial models including detailed projections, scenario/what-if analysis, unit economics, runway analysis, and valuation sensitivity.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-chart-bar"></i></div>
+                            <div class="service-card-title">Monthly MIS Reporting &amp; Dashboards</div>
+                            <div class="service-card-desc">Monthly MIS dashboards, KPI tracking, budget vs. actual variance analysis, and comprehensive investor reporting packs to keep stakeholders aligned.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-rotate"></i></div>
+                            <div class="service-card-title">Working Capital Management</div>
+                            <div class="service-card-desc">Optimization of receivables, payables, inventory, and cash conversion cycles to enhance liquidity, improve operational efficiency, and maintain healthy cash flow.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-building"></i></div>
+                            <div class="service-card-title">CapEx Planning</div>
+                            <div class="service-card-desc">Strategic capital expenditure planning, investment evaluation, ROI assessment, and multi-year budgeting to optimize resource allocation and support sustainable growth.</div>
+                        </div>
+
+                    </div>
                 </div>
-                <p class="service-description">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
-                <ul class="service-list">
-                    <li><span><strong>Budgeting &amp; Planning:</strong> Structured annual and quarterly budgets designed to align with growth objectives.</span></li>
-                    <li><span><strong>Cash Flow Forecasting:</strong> Implementation of 13-week models and liquidity planning to secure runway.</span></li>
-                    <li><span><strong>Fundraising Financial Models:</strong> Investor-ready models including scenario analysis and valuation sensitivity.</span></li>
-                    <li><span><strong>MIS Reporting &amp; Dashboards:</strong> Monthly KPI tracking and budget vs. actual variance analysis.</span></li>
-                </ul>
-                <div class="service-header" style="margin-top:50px;">
-                    <i class="fas fa-scale-balanced"></i>
-                    Business Valuation Support
+
+                <hr class="services-divider">
+
+                <!-- Category 2: Valuation & Advisory -->
+                <div class="services-category-wrap">
+                    <div class="services-category-header">
+                        <i class="fas fa-scale-balanced"></i>
+                        <span class="services-category-title">Business Valuation Support &amp; Strategic Advisory</span>
+                    </div>
+                    <p class="services-category-desc">Whether you are preparing for a funding round, an M&amp;A transaction, or internal restructuring, we provide independent, institutional-grade valuation mechanics.</p>
+                    <div class="services-cards-grid">
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                            <div class="service-card-title">Valuation Methodologies</div>
+                            <div class="service-card-desc">Rigorous execution of Discounted Cash Flow (DCF) valuation, comparable company analysis (CCA), and precedent transaction multiples.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-seedling"></i></div>
+                            <div class="service-card-title">Early-Stage Frameworks</div>
+                            <div class="service-card-desc">Tailored startup valuation approaches designed specifically for pre-revenue or early-growth companies where traditional metrics may not apply.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-chess-rook"></i></div>
+                            <div class="service-card-title">Strategic Advisory</div>
+                            <div class="service-card-desc">Deep-dive analysis to help founders understand the core drivers of their corporate value and how to optimize them before approaching investors.</div>
+                        </div>
+
+                        <div class="service-card">
+                            <div class="service-card-icon"><i class="fas fa-file-invoice"></i></div>
+                            <div class="service-card-title">Research &amp; Investor Communication</div>
+                            <div class="service-card-desc">Industry research, white papers, custom financial reports, market intelligence, sector benchmarking, investor-ready brochures, and pitch deck preparation.</div>
+                        </div>
+
+                    </div>
                 </div>
-                <p class="service-description">Whether preparing for funding, M&amp;A, or restructuring, we provide independent, institutional-grade valuation mechanics.</p>
-                <ul class="service-list">
-                    <li><span><strong>Valuation Methodologies:</strong> Rigorous execution of DCF, comparable company analysis, and precedent transactions.</span></li>
-                    <li><span><strong>Early-Stage Frameworks:</strong> Tailored approaches for pre-revenue or early-growth companies.</span></li>
-                    <li><span><strong>Strategic Advisory:</strong> Analysis to help founders understand and optimize core value drivers.</span></li>
-                </ul>
+
             </div>
         </section>
 
@@ -560,7 +747,7 @@
 
                 <!-- Cards grid -->
                 <div class="rr-grid" id="rr-grid">
-                     <!-- Card 1: Monthly FP&A Dashboard -->
+                    <!-- Card 1: Monthly FP&A Dashboard -->
                     <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1XjFHeQERV1dcrJL6Ewi2h3pIyl7TNXuP/preview', 'Monthly FP&A Dashboard')">
                         <div class="rr-card-thumb">
                             <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780399855/Image_1_ccsjo4.png" alt="Monthly FP&A Dashboard preview">
@@ -576,7 +763,7 @@
                     <!-- Card 2: Sample DCF Report -->
                     <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/preview', 'Sample DCF Report — Orion Oyj')">
                         <div class="rr-card-thumb">
-                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780563671/DCF_Valuation_tmelm5.png">
+                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780563671/DCF_Valuation_tmelm5.png" alt="Sample DCF Report preview">
                             <span class="rr-card-tag">Valuation</span>
                         </div>
                         <div class="rr-card-body">
@@ -584,7 +771,7 @@
                             <div class="rr-card-desc">Orion Oyj – Equity valuation summary using Discounted Cash Flow analysis with sensitivity tables.</div>
                             <span class="rr-card-btn"><i class="fas fa-file-alt"></i> View Report</span>
                         </div>
-                      </div>
+                    </div>
 
                     <!-- Card 3: Semiconductor Industry -->
                     <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/preview', 'Semiconductor Industry in India')">
@@ -598,9 +785,6 @@
                             <span class="rr-card-btn"><i class="fas fa-file-alt"></i> View Report</span>
                         </div>
                     </div>
-
-                    </div>
-
                 </div>
 
                 <!-- Inline PDF viewer -->
