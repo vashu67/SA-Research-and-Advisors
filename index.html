@@ -2,69 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>SA Research and Advisors | Strategic FP&A & Business Valuation</title>
     <meta name="description" content="SA Research and Advisors: Strategic finance advisory specializing in FP&A, Business Valuation, and Fundraising Financial Models for startups and growth companies.">
     <meta name="keywords" content="Strategic Finance, FP&A Gurgaon, Business Valuation India, Financial Planning and Analysis, Startup Fundraising, Cash Flow Forecasting">
     <meta name="author" content="SA Research and Advisors">
     <link rel="canonical" href="https://www.saresearcher.in/">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
-    <link rel="shortcut icon" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
     <meta property="og:site_name" content="SA Research and Advisors">
     <meta property="og:title" content="SA Research and Advisors | Strategic FP&A & Business Valuation">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.saresearcher.in/">
     <meta property="og:description" content="Strategic FP&A and Business Valuation support to drive informed business decisions.">
     <meta property="og:image" content="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SA Research and Advisors | Strategic FP&A & Business Valuation">
-    <meta name="twitter:description" content="Strategic FP&A and Business Valuation support to drive informed business decisions.">
-    <meta name="twitter:image" content="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "SA Research and Advisors",
       "url": "https://www.saresearcher.in/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png",
-        "width": 512,
-        "height": 512
-      },
-      "description": "Strategic finance advisory firm specializing in FP&A, Business Valuation, and Fundraising Financial Models for startups and growth companies.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1178",
-        "addressLocality": "Gurgaon",
-        "addressCountry": "IN",
-        "postalCode": "122001"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-7982190362",
-        "contactType": "customer service",
-        "email": "info@saresearcher.in"
-      },
-      "sameAs": ["https://in.linkedin.com/company/saresearch"]
+      "logo": {"@type": "ImageObject", "url": "https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png"},
+      "address": {"@type": "PostalAddress", "streetAddress": "1178", "addressLocality": "Gurgaon", "addressCountry": "IN", "postalCode": "122001"},
+      "contactPoint": {"@type": "ContactPoint", "telephone": "+91-7982190362", "contactType": "customer service", "email": "info@saresearcher.in"}
     }
     </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "SA Research and Advisors",
-      "url": "https://www.saresearcher.in/"
-    }
-    </script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
@@ -77,17 +41,27 @@
             --price-bg: #dbeafe;
             --price-text: #1e3a8a;
             --dark-blue: #1e3a5f;
+            --accent: #1565c0;
+            /* Touch target minimum */
+            --touch-min: 44px;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        html { scroll-behavior: smooth; }
-        body { line-height: 1.6; color: var(--text-dark); background-color: var(--white); }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
 
-        /* --- NAVIGATION --- */
+        /* ── NAVIGATION ── */
         nav {
             background: var(--white);
             box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-            padding: 0.7rem 6%;
+            padding: 0 5%;
+            height: 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -96,205 +70,300 @@
             top: 0;
             z-index: 1000;
         }
-        .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); }
-        .logo-img { height: 40px; width: auto; object-fit: contain; display: block; }
-        .logo-text { font-weight: 700; font-size: 1.0rem; text-transform: uppercase; letter-spacing: 1px; color: var(--navy); }
-        .nav-links { display: flex; list-style: none; gap: 20px; }
-        .nav-links li a { color: var(--navy); text-decoration: none; font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; cursor: pointer; transition: 0.3s; }
-        .nav-links li a:hover { color: #1565c0; }
-        .menu-toggle { display: none; color: var(--navy); font-size: 1.5rem; cursor: pointer; background: none; border: none; padding: 5px; line-height: 1; z-index: 1100; }
-
-        /* --- HERO --- */
-        .hero {
-            min-height: 90vh; display: flex; align-items: center; background-color: var(--white);
-            margin-top: 60px; position: relative; overflow: hidden;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--navy);
+            min-height: var(--touch-min);
+            flex-shrink: 0;
         }
-        .hero-left { flex: 1.2; padding: 60px 5% 60px 6%; z-index: 2; }
+        .logo-img { height: 36px; width: auto; object-fit: contain; display: block; }
+        .logo-text {
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+
+        /* Desktop nav */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            align-items: center;
+        }
+        .nav-links li a, .nav-links li button {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.73rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            cursor: pointer;
+            transition: color 0.2s;
+            background: none;
+            border: none;
+            padding: 8px 8px;
+            display: block;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+        .nav-links li a:hover, .nav-links li button:hover { color: var(--accent); }
+
+        /* Hamburger */
+        .menu-toggle {
+            display: none;
+            color: var(--navy);
+            font-size: 1.4rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+            line-height: 1;
+            z-index: 1100;
+            min-width: var(--touch-min);
+            min-height: var(--touch-min);
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .menu-toggle:hover { background: var(--light-grey); }
+
+        /* Mobile nav drawer */
+        .nav-drawer {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: var(--navy);
+            z-index: 999;
+            padding: 24px 5% 32px;
+            flex-direction: column;
+            gap: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            animation: slideDown 0.25s ease;
+        }
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .nav-drawer.active { display: flex; }
+        .nav-drawer li {
+            list-style: none;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .nav-drawer li:last-child { border-bottom: none; }
+        .nav-drawer li a, .nav-drawer li button {
+            display: flex;
+            align-items: center;
+            padding: 16px 0;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 100%;
+            font-family: inherit;
+            transition: color 0.2s, padding-left 0.2s;
+            min-height: var(--touch-min);
+        }
+        .nav-drawer li a:hover, .nav-drawer li button:hover {
+            color: var(--price-bg);
+            padding-left: 8px;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--white);
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-left {
+            flex: 1.2;
+            padding: 60px 5% 60px 6%;
+            z-index: 2;
+        }
         .hero-right {
-            flex: 1; height: 100vh;
+            flex: 1;
+            height: 100vh;
             background: linear-gradient(rgba(0,31,63,0.2), rgba(0,31,63,0.2)),
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80');
-            background-size: cover; background-position: center; clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
         }
-        .hero-content { border-left: 8px solid var(--navy); padding-left: 30px; max-width: 650px; }
-        .hero-content h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); line-height: 1.3; color: var(--navy); margin-bottom: 20px; }
-        .hero-brand { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 3px; font-weight: bold; color: var(--navy); }
+        .hero-content {
+            border-left: 8px solid var(--navy);
+            padding-left: 30px;
+            max-width: 650px;
+        }
+        .hero-content h1 {
+            font-size: clamp(1.45rem, 4vw, 2.2rem);
+            line-height: 1.35;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+        .hero-brand {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: var(--navy);
+        }
 
-        /* --- SECTIONS --- */
-        .section { padding: 60px 6%; }
+        /* ── SECTIONS ── */
+        .section { padding: 70px 6%; }
         .content-wrap { max-width: 1320px; margin: 0 auto; }
-        .section-title { text-align: left; color: var(--navy); font-size: clamp(2.5rem, 5vw, 3.2rem); margin-bottom: 50px; font-weight: 700; font-family: 'Times New Roman', serif; }
+        .section-title {
+            text-align: left;
+            color: var(--navy);
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 50px;
+            font-weight: 700;
+            font-family: 'Times New Roman', serif;
+        }
         .light-bg { background-color: var(--light-grey); }
 
-        /* --- APPROACH PILLS --- */
-        .approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px; }
-        .approach-card {
-            background: var(--navy); color: white; padding: 30px; text-align: center;
-            border-radius: 50%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 0.9rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        /* ── APPROACH PILLS ── */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 40px;
         }
+        .approach-card {
+            background: var(--navy);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 50%;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.88rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .approach-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,31,63,0.2); }
 
-        /* ===== ABOUT SPLIT ===== */
-        .about-split { display: flex; gap: 0; margin-top: 50px; border-top: 2px solid #e8edf2; align-items: stretch; }
-        .about-left { flex: 3; padding: 40px 40px 40px 0; display: flex; flex-direction: column; align-items: center; border-right: 2px solid #e8edf2; }
-        .about-right { flex: 7; display: flex; flex-direction: column; gap: 0; }
+        /* ── ABOUT SPLIT ── */
+        .about-split {
+            display: flex;
+            gap: 0;
+            margin-top: 50px;
+            border-top: 2px solid #e8edf2;
+            align-items: stretch;
+        }
+        .about-left {
+            flex: 3;
+            padding: 40px 40px 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 2px solid #e8edf2;
+        }
+        .about-right { flex: 7; display: flex; flex-direction: column; }
         .mv-block { padding: 40px 0 40px 40px; }
         .mv-block + .mv-block { border-top: 2px solid #e8edf2; }
         .vision-block { background: var(--navy); padding: 40px; flex: 1; }
         .mv-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
         .mv-card-header i { font-size: 1.5rem; flex-shrink: 0; color: var(--navy); }
         .vision-block .mv-card-header i { color: var(--price-bg); }
-        .mv-card-label { font-size: clamp(1.1rem, 2vw, 1.45rem); font-weight: 700; color: var(--navy); font-family: 'Times New Roman', serif; letter-spacing: 0.5px; }
+        .mv-card-label {
+            font-size: clamp(1.05rem, 2vw, 1.4rem);
+            font-weight: 700;
+            color: var(--navy);
+            font-family: 'Times New Roman', serif;
+        }
         .mv-lead { font-size: 0.97rem; color: var(--text-dark); line-height: 1.75; margin-bottom: 18px; }
-        .mv-points { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+        .mv-points { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 14px; }
         .mv-points li { display: flex; align-items: baseline; gap: 12px; font-size: 0.97rem; color: var(--text-dark); line-height: 1.55; }
         .mv-points li::before { content: "\2192"; color: var(--navy); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
         .mv-points li strong { color: var(--navy); font-weight: 700; }
         .mv-vision-text { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.85; }
 
+        /* Team */
+        .team-members-row { display: flex; flex-direction: column; gap: 32px; width: 100%; }
         .team-card-inline { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; }
-        .team-card-inline .team-avatar-wrap { width: 120px; height: 120px; margin-bottom: 12px; }
-        .team-card-inline .team-avatar { width: 120px; height: 120px; }
-        .team-card-inline .team-name { font-size: 1rem; margin-bottom: 4px; }
-        .team-card-inline .team-role { font-size: 0.68rem; margin-bottom: 8px; }
-        .team-card-inline .team-bio { font-size: 0.82rem; line-height: 1.5; color: var(--text-muted); }
-
-        /* --- TEAM --- */
-        .team-avatar-wrap { position: relative; width: 200px; height: 200px; margin-bottom: 22px; cursor: pointer; }
-        .team-avatar { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top center; border: 5px solid #e8edf2; box-shadow: 0 8px 30px rgba(0,31,63,0.14); display: block; transition: transform 0.3s ease, border-color 0.3s ease; }
-        .team-avatar-wrap:hover .team-avatar, .team-avatar-wrap.active .team-avatar { transform: translateY(-4px); border-color: var(--navy); }
-        .team-connect-btn { position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%); background: var(--navy); color: white; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 14px rgba(0,31,63,0.35); transition: background 0.2s ease, transform 0.15s ease; }
-        .team-connect-btn:hover { background: #1565c0; transform: translateX(-50%) scale(1.12); }
+        .team-avatar-wrap { position: relative; width: 130px; height: 130px; margin-bottom: 14px; cursor: pointer; }
+        .team-avatar {
+            width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: top center;
+            border: 4px solid #e8edf2; box-shadow: 0 8px 24px rgba(0,31,63,0.14);
+            display: block; transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .team-avatar-wrap:hover .team-avatar, .team-avatar-wrap.active .team-avatar { transform: translateY(-3px); border-color: var(--navy); }
+        .team-connect-btn {
+            position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+            background: var(--navy); color: white; text-decoration: none;
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%; border: 2px solid white;
+            box-shadow: 0 4px 14px rgba(0,31,63,0.35); transition: background 0.2s, transform 0.15s;
+            /* Bigger touch target */
+            min-width: 28px; min-height: 28px;
+        }
+        .team-connect-btn:hover { background: var(--accent); transform: translateX(-50%) scale(1.1); }
         .team-connect-btn i { font-size: 0.6rem; }
-        .team-name { font-size: 1.35rem; font-weight: 800; color: var(--navy); letter-spacing: 0.2px; margin-bottom: 6px; }
-        .team-role { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #1565c0; margin-bottom: 12px; }
-        .team-bio { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
+        .team-name { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
+        .team-role { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
+        .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
-        /* ===== SERVICES — CARD LAYOUT ===== */
+        /* ── SERVICES ── */
         #services { background-color: var(--light-grey) !important; }
-        #services .section-title { text-align: center; font-family: 'Times New Roman', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-
-        .services-category-label {
-            text-align: center;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            color: var(--price-text);
-            background: var(--price-bg);
-            display: inline-block;
-            padding: 6px 18px;
-            border-radius: 20px;
-            margin-bottom: 28px;
-        }
-        .services-category-wrap {
-            margin-bottom: 56px;
-        }
-        .services-category-wrap:last-child {
-            margin-bottom: 0;
-        }
-        .services-category-header {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 10px;
-        }
-        .services-category-header i {
-            font-size: 1.6rem;
-            color: var(--navy);
-            flex-shrink: 0;
-        }
+        #services .section-title { text-align: center; }
+        .services-category-wrap { margin-bottom: 56px; }
+        .services-category-wrap:last-child { margin-bottom: 0; }
+        .services-category-header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+        .services-category-header i { font-size: 1.5rem; color: var(--navy); flex-shrink: 0; }
         .services-category-title {
-            font-size: clamp(1.25rem, 2.8vw, 1.7rem);
-            font-weight: 700;
-            color: var(--navy);
+            font-size: clamp(1.15rem, 2.8vw, 1.7rem);
+            font-weight: 700; color: var(--navy);
             font-family: 'Times New Roman', serif;
         }
         .services-category-desc {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            line-height: 1.75;
-            margin-bottom: 28px;
-            max-width: 860px;
+            font-size: 0.98rem; color: var(--text-muted); line-height: 1.75;
+            margin-bottom: 28px; max-width: 860px;
         }
-        .services-cards-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+        .services-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .service-card {
-            background: var(--white);
-            border: 1.5px solid #e4ecf4;
-            border-radius: 14px;
-            padding: 28px 26px 26px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            background: var(--white); border: 1.5px solid #e4ecf4; border-radius: 14px;
+            padding: 28px 24px 24px; display: flex; flex-direction: column; gap: 10px;
             transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--navy);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+            background: var(--navy); transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
         }
-        .service-card:hover {
-            box-shadow: 0 12px 32px rgba(0,31,63,0.11);
-            transform: translateY(-4px);
-            border-color: #b8cfe8;
-        }
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        .service-card-icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            background: var(--price-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-bottom: 4px;
-        }
-        .service-card-icon i {
-            font-size: 1.1rem;
-            color: var(--price-text);
-        }
-        .service-card-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--navy);
-            line-height: 1.35;
-        }
-        .service-card-desc {
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            line-height: 1.65;
-            flex: 1;
-        }
+        .service-card:hover { box-shadow: 0 12px 32px rgba(0,31,63,0.11); transform: translateY(-4px); border-color: #b8cfe8; }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--price-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-bottom: 4px; }
+        .service-card-icon i { font-size: 1.1rem; color: var(--price-text); }
+        .service-card-title { font-size: 0.98rem; font-weight: 700; color: var(--navy); line-height: 1.35; }
+        .service-card-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.65; flex: 1; }
+        .services-divider { border: none; border-top: 1.5px solid #d8e4ef; margin: 50px 0; }
 
-        /* Divider between the two service categories */
-        .services-divider {
-            border: none;
-            border-top: 1.5px solid #d8e4ef;
-            margin: 50px 0;
-        }
-
-        /* === Working (Sample) === */
+        /* ── REPORTS ── */
         #reports { background-color: var(--white); }
         #reports .section-title { text-align: center; }
-        .rr-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
+        .rr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
         .rr-card {
             background: var(--white); border: 1px solid #e8edf2; border-radius: 12px;
             overflow: hidden; cursor: pointer;
@@ -302,260 +371,325 @@
             display: flex; flex-direction: column;
         }
         .rr-card:hover { transform: translateY(-4px); border-color: var(--navy); box-shadow: 0 10px 28px rgba(0,31,63,0.12); }
-        .rr-card-thumb {
-            height: 200px; overflow: hidden; position: relative; background: var(--navy);
-        }
-        .rr-card-thumb img {
-            width: 100%; height: 100%; object-fit: cover; object-position: top;
-            transition: transform 0.4s ease;
-            display: block;
-        }
+        .rr-card-thumb { height: 200px; overflow: hidden; position: relative; background: var(--navy); }
+        .rr-card-thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 0.4s; display: block; }
         .rr-card:hover .rr-card-thumb img { transform: scale(1.04); }
-        .rr-card-tag {
-            position: absolute; top: 14px; left: 14px;
-            background: var(--price-bg); color: var(--price-text);
-            font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.3px;
-            z-index: 1;
-        }
+        .rr-card-tag { position: absolute; top: 14px; left: 14px; background: var(--price-bg); color: var(--price-text); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.3px; z-index: 1; }
         .rr-card-body { padding: 22px 24px 24px; display: flex; flex-direction: column; flex: 1; }
         .rr-card-title { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
         .rr-card-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 18px; flex: 1; }
         .rr-card-btn {
             display: inline-flex; align-items: center; gap: 8px;
             font-size: 0.83rem; font-weight: 600; color: var(--navy);
-            border: 1.5px solid var(--navy); padding: 8px 18px; border-radius: 6px;
+            border: 1.5px solid var(--navy); padding: 9px 18px; border-radius: 6px;
             transition: background 0.2s, color 0.2s; align-self: flex-start;
+            min-height: 38px;
         }
         .rr-card:hover .rr-card-btn { background: var(--navy); color: white; }
-
-        /* Inline viewer */
         .rr-viewer { display: none; margin-top: 40px; }
         .rr-viewer.open { display: block; }
         .rr-viewer-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
         .rr-viewer-title { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
         .rr-back-btn {
             background: none; border: 1.5px solid var(--navy); color: var(--navy);
-            border-radius: 6px; padding: 8px 16px; font-size: 0.85rem; font-weight: 600;
+            border-radius: 6px; padding: 10px 16px; font-size: 0.85rem; font-weight: 600;
             cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
-            transition: background 0.2s, color 0.2s;
+            transition: background 0.2s, color 0.2s; min-height: var(--touch-min); font-family: inherit;
         }
         .rr-back-btn:hover { background: var(--navy); color: white; }
         .rr-iframe-wrap { border: 1px solid #e8edf2; border-radius: 12px; overflow: hidden; height: 620px; }
         .rr-iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
 
-        /* --- PRICING --- */
-        .pricing-subtitle { color: var(--navy); font-size: clamp(1.2rem, 2.5vw, 1.65rem); font-weight: 700; margin: 50px 0 35px 0; font-family: inherit; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        /* ── PRICING ── */
+        .pricing-subtitle { color: var(--navy); font-size: clamp(1.1rem, 2.5vw, 1.65rem); font-weight: 700; margin: 50px 0 35px; font-family: inherit; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
         .price-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
-        .price-content { flex: 1; }
-        .price-item-header { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 1.4rem; font-weight: 700; }
+        .price-content { flex: 1; min-width: 0; }
+        .price-item-header { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 1.3rem; font-weight: 700; flex-wrap: wrap; }
         .price-item-header i { flex-shrink: 0; }
         .price-sub-desc { color: var(--text-muted); font-size: 0.95rem; padding-left: 42px; margin-top: 8px; }
-        .price-pill { background: var(--price-bg); color: var(--price-text); padding: 12px 24px; border-radius: 10px; font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; }
+        .price-pill { background: var(--price-bg); color: var(--price-text); padding: 12px 24px; border-radius: 10px; font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; flex-shrink: 0; }
         .pipe-list { padding-left: 42px; margin-top: 10px; font-size: 1rem; color: var(--text-dark); line-height: 2; letter-spacing: 0.01em; }
-        .pipe-list .pipe-sep { color: var(--navy); font-weight: 700; margin: 0 6px; }
+        .pipe-sep { color: var(--navy); font-weight: 700; margin: 0 6px; }
 
-        /* --- MODAL --- */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,31,63,0.96); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
-        .modal-content { background: white; width: 100%; max-width: 950px; max-height: 90vh; overflow-y: auto; padding: 40px; border-radius: 15px; position: relative; }
-        .close-modal { position: absolute; top: 15px; right: 25px; font-size: 2.2rem; color: var(--navy); cursor: pointer; font-weight: bold; z-index: 2100; }
+        /* ── MODAL ── */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,31,63,0.96); z-index: 2000; justify-content: center; align-items: flex-start; padding: 16px; padding-top: max(16px, env(safe-area-inset-top)); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+        .modal-content { background: white; width: 100%; max-width: 950px; padding: 40px; border-radius: 15px; position: relative; margin: auto; }
+        .close-modal { position: absolute; top: 14px; right: 20px; font-size: 2rem; color: var(--navy); cursor: pointer; font-weight: bold; z-index: 2100; min-width: var(--touch-min); min-height: var(--touch-min); display: flex; align-items: center; justify-content: flex-end; line-height: 1; }
 
-        /* --- FOOTER 3-COL --- */
+        /* ── FOOTER ── */
+        .footer { background: var(--navy); color: white; padding: 60px 6% 50px; }
+        .footer-content { max-width: 1320px; margin: 0 auto; }
         .footer-three-col { display: grid; grid-template-columns: 1fr 1fr 1.6fr; gap: 50px; margin-bottom: 60px; }
-        .footer-col-1 { display: flex; flex-direction: column; gap: 28px; }
-        .footer-col-1 h3 { color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 0; }
-        .contact-item { display: flex; align-items: flex-start; gap: 16px; color: white; }
+        .footer-col-1 { display: flex; flex-direction: column; gap: 22px; }
+        .footer-col-1 h3 { color: white; font-size: 1.5rem; font-weight: 700; }
+        .contact-item { display: flex; align-items: flex-start; gap: 14px; }
         .contact-item a { color: white; text-decoration: none; transition: color 0.3s; font-size: 1rem; }
         .contact-item a:hover { color: var(--price-bg); }
         .contact-item span { color: rgba(255,255,255,0.9); font-size: 1rem; }
-        .contact-icon-link { color: var(--price-bg); text-decoration: none; flex-shrink: 0; margin-top: 3px; transition: color 0.3s; }
-        .contact-icon-link i { font-size: 1.3rem; }
+        .contact-icon-link { color: var(--price-bg); text-decoration: none; flex-shrink: 0; margin-top: 2px; transition: color 0.3s; min-width: 22px; }
+        .contact-icon-link i { font-size: 1.2rem; }
         .contact-icon-link:hover { color: white; }
         .footer-col-2 { display: flex; flex-direction: column; }
         .footer-col-2 h3 { color: white; font-size: 1.5rem; font-weight: 700; margin-bottom: 28px; }
-        .quick-links-list { display: flex; flex-direction: column; gap: 16px; }
-        .quick-link { color: white; text-decoration: none; font-size: 1rem; transition: color 0.3s; display: inline-block; cursor: pointer; }
+        .quick-links-list { display: flex; flex-direction: column; gap: 14px; }
+        .quick-link { color: white; text-decoration: none; font-size: 1rem; transition: color 0.2s; display: inline-flex; align-items: center; cursor: pointer; min-height: 36px; }
         .quick-link:hover { color: var(--price-bg); }
         .footer-col-3 { display: flex; flex-direction: column; }
 
-        /* --- FORM --- */
-        .strategy-form-wrap { background: var(--white); border-radius: 14px; padding: 28px 30px 24px; display: flex; flex-direction: column; }
+        /* ── STRATEGY FORM ── */
+        .strategy-form-wrap { background: var(--white); border-radius: 14px; padding: 28px 30px 24px; }
         .strategy-form-title { font-size: 1.35rem; font-weight: 800; color: var(--navy); text-align: center; margin-bottom: 22px; }
         .strategy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 18px; margin-bottom: 14px; }
         .strategy-label { display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-dark); margin-bottom: 5px; }
-        .strategy-input, .strategy-select { width: 100%; padding: 10px 12px; border: 1.5px solid #d1d9e0; border-radius: 8px; background: var(--white); font-size: 0.88rem; color: var(--text-dark); outline: none; transition: border-color 0.2s, box-shadow 0.2s; font-family: 'Segoe UI', sans-serif; appearance: none; -webkit-appearance: none; }
-        .strategy-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23001f3f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+        .strategy-input, .strategy-select {
+            width: 100%; padding: 11px 12px; border: 1.5px solid #d1d9e0; border-radius: 8px;
+            background: var(--white); font-size: 0.88rem; color: var(--text-dark);
+            outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: inherit; appearance: none; -webkit-appearance: none;
+            min-height: var(--touch-min);
+        }
+        .strategy-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23001f3f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px;
+        }
         .strategy-input:focus, .strategy-select:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,31,63,0.09); }
-        .strategy-textarea { width: 100%; padding: 10px 12px; border: 1.5px solid #d1d9e0; border-radius: 8px; background: var(--white); font-size: 0.88rem; color: var(--text-dark); outline: none; resize: vertical; min-height: 90px; font-family: 'Segoe UI', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; }
+        .strategy-textarea {
+            width: 100%; padding: 11px 12px; border: 1.5px solid #d1d9e0; border-radius: 8px;
+            background: var(--white); font-size: 0.88rem; color: var(--text-dark);
+            outline: none; resize: vertical; min-height: 90px;
+            font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s;
+        }
         .strategy-textarea:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(0,31,63,0.09); }
-        .strategy-submit-btn { width: 100%; background: var(--navy); color: white; border: none; border-radius: 8px; padding: 13px 20px; font-size: 0.95rem; font-weight: 700; cursor: pointer; font-family: 'Segoe UI', sans-serif; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; margin-top: 16px; }
+        .strategy-submit-btn {
+            width: 100%; background: var(--navy); color: white; border: none; border-radius: 8px;
+            padding: 14px 20px; font-size: 0.95rem; font-weight: 700; cursor: pointer;
+            font-family: inherit; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            margin-top: 16px; min-height: var(--touch-min);
+        }
         .strategy-submit-btn:hover { background: #0d1f2d; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,31,63,0.22); }
-        .strategy-submit-btn:active { transform: translateY(0); }
         .form-success { display: none; text-align: center; padding: 10px 0 0; color: #28c76f; font-size: 0.85rem; font-weight: 600; }
         .form-success i { margin-right: 5px; }
 
-        /* --- FOOTER --- */
-        .footer { background: var(--navy); color: white; padding: 60px 6% 50px; }
-        .footer-content { max-width: 1320px; margin: 0 auto; }
+        /* ══════════════════════════════
+           MOBILE BREAKPOINTS
+        ══════════════════════════════ */
 
-        /* ===== RESPONSIVE ===== */
+        /* ── Tablet: 768–1100px ── */
         @media (max-width: 1100px) {
             .footer-three-col { grid-template-columns: 1fr 1fr; gap: 40px; }
             .footer-col-3 { grid-column: 1 / -1; }
-            .strategy-grid { grid-template-columns: 1fr 1fr 1fr; }
-            .rr-grid { grid-template-columns: repeat(3, 1fr); }
             .services-cards-grid { grid-template-columns: repeat(3, 1fr); }
+            .rr-grid { grid-template-columns: repeat(3, 1fr); }
+            .approach-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .approach-card { border-radius: 20px; aspect-ratio: auto; padding: 28px 20px; }
         }
 
         @media (max-width: 960px) {
             .services-cards-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 900px) {
-            .about-split { flex-direction: column; }
-            .about-left { border-right: none; padding: 30px 0; border-bottom: 2px solid #e8edf2; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 24px; }
-            .about-left .mv-card-header { width: 100%; justify-content: center; }
-            .mv-block { padding: 30px 0 30px 20px; }
-            .vision-block { padding: 30px; }
-            .team-card-inline { width: calc(50% - 12px); margin-top: 0 !important; }
-            .team-card-inline .team-avatar-wrap { width: 100px; height: 100px; }
-            .team-card-inline .team-avatar { width: 100px; height: 100px; }
             .rr-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        @media (max-width: 992px) {
-            .hero { min-height: 70vh; }
-            .hero-right { clip-path: none; opacity: 0.12; position: absolute; width: 100%; height: 100%; }
-            .hero-left { padding: 100px 5% 60px; text-align: center; }
-            .hero-content { border-left: none; border-top: 6px solid var(--navy); padding: 24px 0 0; margin: 0 auto; max-width: 600px; }
-        }
-
+        /* ── Tablet/Mobile: ≤ 768px ── */
         @media (max-width: 768px) {
-            .menu-toggle { display: block; }
-            .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; width: 100%; background: var(--navy); padding: 20px 5%; gap: 0; border-top: 1px solid rgba(0,0,0,0.08); z-index: 999; }
-            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.08); }
-            .nav-links li:last-child { border-bottom: none; }
-            .nav-links li a { display: block; padding: 14px 0; font-size: 0.95rem; color: white; }
-            .nav-links li a:hover { color: var(--price-bg); }
-            .nav-links.active { display: flex; }
-            .logo-text { font-size: 0.72rem; }
-            .logo-container { gap: 8px; }
-            .hero { min-height: calc(100vh - 60px); height: calc(100vh - 60px); display: flex; align-items: center; }
-            .hero-right { clip-path: none; opacity: 0.12; position: absolute; width: 100%; height: 100%; }
-            .hero-left { padding: 24px 5%; text-align: center; width: 100%; z-index: 2; display: flex; align-items: center; justify-content: center; }
-            .hero-content { border-left: none; border-top: 5px solid var(--navy); padding: 20px 0 0; margin: 0 auto; max-width: 100%; }
-            .hero-content h1 { font-size: clamp(1.15rem, 4.5vw, 1.5rem); line-height: 1.4; margin-bottom: 14px; }
-            .hero-brand { font-size: 0.72rem; letter-spacing: 2px; }
-            .section { padding: 40px 4%; }
+            /* Nav */
+            .menu-toggle { display: flex; }
+            .nav-links { display: none; }
+            .logo-text { font-size: 0.7rem; letter-spacing: 0.5px; }
+            .logo-img { height: 32px; }
+
+            /* Hero */
+            .hero { min-height: calc(100svh - 60px); align-items: center; }
+            .hero-right { clip-path: none; opacity: 0.08; position: absolute; inset: 0; width: 100%; height: 100%; flex: none; }
+            .hero-left { padding: 32px 5% 48px; text-align: center; width: 100%; z-index: 2; display: flex; align-items: center; justify-content: center; }
+            .hero-content { border-left: none; border-top: 5px solid var(--navy); padding: 20px 0 0; max-width: 100%; }
+            .hero-content h1 { font-size: clamp(1.15rem, 5vw, 1.55rem); margin-bottom: 14px; }
+            .hero-brand { font-size: 0.7rem; letter-spacing: 2px; }
+
+            /* Sections */
+            .section { padding: 44px 5%; }
             .section-title { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
-            .about-split { flex-direction: column; margin-top: 30px; }
-            .about-left { border-right: none; padding: 24px 0; border-bottom: 2px solid #e8edf2; flex-direction: column; align-items: center; }
-            .about-left .mv-card-header { width: 100%; justify-content: center; margin-bottom: 16px; }
-            .team-members-row { display: flex; flex-direction: row; gap: 16px; width: 100%; justify-content: center; }
-            .team-card-inline { width: calc(50% - 8px); min-width: 0; flex-shrink: 1; }
-            .team-card-inline .team-avatar-wrap { width: 80px; height: 80px; }
-            .team-card-inline .team-avatar { width: 80px; height: 80px; }
-            .team-card-inline .team-name { font-size: 0.85rem; }
-            .team-card-inline .team-role { font-size: 0.58rem; }
-            .team-card-inline .team-bio { font-size: 0.75rem; }
-            .team-card-inline { margin-top: 0 !important; }
-            .mv-block { padding: 24px 0 24px 16px; }
-            .mv-card-label { font-size: 1.1rem; }
+
+            /* About split — stacked */
+            .about-split { flex-direction: column; margin-top: 30px; border-top: none; }
+            .about-left { border-right: none; border-bottom: 2px solid #e8edf2; padding: 0 0 28px; }
+            .team-members-row { flex-direction: row; justify-content: center; gap: 20px; }
+            .team-card-inline { width: calc(50% - 10px); }
+            .team-avatar-wrap { width: 90px; height: 90px; }
+            .team-avatar { width: 90px; height: 90px; }
+            .team-name { font-size: 0.88rem; }
+            .team-role { font-size: 0.6rem; }
+            .team-bio { font-size: 0.78rem; }
+
+            .mv-block { padding: 24px 0 24px 18px; }
+            .mv-card-label { font-size: 1.05rem; }
             .mv-lead { font-size: 0.9rem; }
             .mv-points li { font-size: 0.9rem; }
-            .vision-block { padding: 24px 16px; }
+            .vision-block { padding: 24px 18px; }
             .mv-vision-text { font-size: 0.9rem; }
-            .approach-grid { grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
-            .approach-card { border-radius: 14px; aspect-ratio: auto; padding: 20px 14px; font-size: 0.82rem; }
-            /* Services cards mobile */
+
+            /* Approach */
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
+            .approach-card { border-radius: 14px; padding: 20px 14px; font-size: 0.82rem; }
+
+            /* Services */
             .services-cards-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
             .service-card { padding: 20px 16px; }
             .service-card-icon { width: 38px; height: 38px; }
             .service-card-icon i { font-size: 0.95rem; }
-            .service-card-title { font-size: 0.92rem; }
+            .service-card-title { font-size: 0.9rem; }
             .service-card-desc { font-size: 0.82rem; }
-            .services-category-title { font-size: 1.15rem; }
+            .services-category-title { font-size: 1.1rem; }
             .services-category-desc { font-size: 0.9rem; margin-bottom: 20px; }
             .services-divider { margin: 36px 0; }
+
+            /* Reports */
             .rr-grid { grid-template-columns: 1fr; }
-            .rr-card-thumb { height: 180px; }
-            .rr-iframe-wrap { height: 380px; }
+            .rr-card-thumb { height: 200px; }
+            .rr-iframe-wrap { height: 60vw; min-height: 300px; }
             .rr-viewer-header { flex-direction: column; align-items: flex-start; }
-            .pricing-subtitle { font-size: 1rem; margin: 30px 0 20px; }
-            .price-row { flex-direction: column; gap: 10px; padding-bottom: 16px; margin-bottom: 16px; }
+            .rr-back-btn { align-self: flex-start; }
+
+            /* Pricing */
+            .pricing-subtitle { font-size: 1rem; margin: 28px 0 20px; }
+            .price-row { flex-direction: column; gap: 10px; padding-bottom: 18px; margin-bottom: 18px; }
             .price-item-header { font-size: 1rem; gap: 8px; }
-            .price-sub-desc { padding-left: 0; font-size: 0.85rem; margin-top: 4px; }
-            .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.95rem; padding: 10px 16px; min-width: unset; }
-            .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.8; }
+            .price-sub-desc { padding-left: 0; font-size: 0.85rem; margin-top: 6px; }
+            .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.95rem; padding: 12px 16px; min-width: unset; }
+            .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.85; }
+
+            /* Modal */
             .modal-content { padding: 28px 20px; border-radius: 12px; }
-            .close-modal { top: 10px; right: 16px; font-size: 1.8rem; }
-            .footer { padding: 44px 4% 36px; }
+            .close-modal { top: 10px; right: 12px; font-size: 1.8rem; }
+
+            /* Footer */
+            .footer { padding: 44px 5% 36px; }
             .footer-three-col { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
             .footer-col-3 { grid-column: auto; }
             .footer-col-2 { display: none; }
-            .footer-col-1 { gap: 18px; }
-            .footer-col-1 h3 { font-size: 1.15rem; }
-            .contact-item { gap: 12px; align-items: center; }
-            .contact-item a, .contact-item span { font-size: 0.88rem; }
-            .contact-icon-link i { font-size: 1rem; }
-            .strategy-form-wrap { padding: 20px 14px; border-radius: 12px; }
-            .strategy-form-title { font-size: 1.05rem; margin-bottom: 14px; }
-            .strategy-grid { grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 10px; }
-            .strategy-label { font-size: 0.72rem; margin-bottom: 4px; }
-            .strategy-input, .strategy-select { font-size: 0.85rem; padding: 9px 10px; }
-            .strategy-textarea { font-size: 0.85rem; padding: 9px 10px; min-height: 80px; }
-            .strategy-submit-btn { font-size: 0.88rem; padding: 12px; margin-top: 10px; }
+            .footer-col-1 h3 { font-size: 1.2rem; }
+            .contact-item a, .contact-item span { font-size: 0.9rem; }
+
+            /* Form */
+            .strategy-form-wrap { padding: 22px 16px 20px; border-radius: 12px; }
+            .strategy-form-title { font-size: 1.1rem; margin-bottom: 18px; }
+            .strategy-grid { grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 12px; }
+            .strategy-label { font-size: 0.74rem; margin-bottom: 4px; }
+            .strategy-input, .strategy-select { font-size: 0.88rem; padding: 10px 10px; }
+            .strategy-textarea { font-size: 0.88rem; padding: 10px; min-height: 80px; }
+            .strategy-submit-btn { font-size: 0.9rem; padding: 13px; margin-top: 12px; }
         }
 
+        /* ── Small phones: ≤ 480px ── */
         @media (max-width: 480px) {
-            .logo-text { font-size: 0.68rem; }
-            .logo-img { height: 32px; }
-            .hero-content h1 { font-size: clamp(1.05rem, 4vw, 1.25rem); }
-            .section { padding: 28px 4%; }
-            .section-title { font-size: 1.6rem; margin-bottom: 24px; }
-            .team-card-inline { width: calc(50% - 8px); }
-            .team-card-inline .team-avatar-wrap { width: 72px; height: 72px; }
-            .team-card-inline .team-avatar { width: 72px; height: 72px; }
-            .approach-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-            /* Services cards — single column on very small screens */
-            .services-cards-grid { grid-template-columns: 1fr; gap: 12px; }
-            .pricing-subtitle { font-size: 0.95rem; }
-            .price-item-header { font-size: 0.95rem; }
-            .price-pill { font-size: 0.88rem; padding: 9px 12px; }
-            .footer { padding: 36px 4% 28px; }
-            .footer-three-col { gap: 24px; }
-            .footer-col-1 h3 { font-size: 1.05rem; }
-            .contact-item a, .contact-item span { font-size: 0.82rem; }
+            nav { padding: 0 4%; }
+            .logo-text { font-size: 0.65rem; }
+            .logo-img { height: 28px; }
+            .logo-container { gap: 7px; }
+
+            .section { padding: 36px 4%; }
+            .section-title { font-size: 1.65rem; margin-bottom: 22px; }
+
+            /* Hero */
+            .hero-content h1 { font-size: clamp(1rem, 4.5vw, 1.2rem); }
+            .hero-brand { font-size: 0.65rem; }
+
+            /* Approach — single col on tiny screens */
+            .approach-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+            /* Team — keep 2-up */
+            .team-avatar-wrap { width: 76px; height: 76px; }
+            .team-avatar { width: 76px; height: 76px; }
+            .team-name { font-size: 0.8rem; }
+            .team-connect-btn { width: 24px; height: 24px; }
+
+            /* Services — single col */
+            .services-cards-grid { grid-template-columns: 1fr; gap: 10px; }
+            .service-card { flex-direction: row; align-items: flex-start; gap: 14px; padding: 16px; }
+            .service-card-icon { flex-shrink: 0; margin-bottom: 0; }
+            .service-card-content { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+            .service-card-title { font-size: 0.88rem; }
+            .service-card-desc { font-size: 0.8rem; }
+
+            /* Reports */
+            .rr-card-thumb { height: 170px; }
+            .rr-iframe-wrap { height: 56vw; min-height: 260px; }
+
+            /* Pricing */
+            .price-item-header { font-size: 0.92rem; }
+            .price-pill { font-size: 0.9rem; }
+
+            /* Form — single col */
             .strategy-grid { grid-template-columns: 1fr; gap: 8px; }
-            .strategy-form-title { font-size: 0.98rem; }
-            .strategy-form-wrap { padding: 16px 12px; }
+            .strategy-form-wrap { padding: 18px 14px; }
+            .strategy-form-title { font-size: 1rem; }
+
+            /* Footer */
+            .footer { padding: 36px 4% 28px; }
+            .footer-col-1 h3 { font-size: 1.05rem; }
+            .contact-item a, .contact-item span { font-size: 0.84rem; }
+        }
+
+        /* ── Very tiny: ≤ 360px ── */
+        @media (max-width: 360px) {
+            .logo-text { display: none; }
+            .logo-img { height: 30px; }
+            .hero-content h1 { font-size: 0.95rem; }
+            .approach-grid { grid-template-columns: 1fr; }
+            .team-members-row { gap: 14px; }
+        }
+
+        /* ── Safe areas (notch, home bar) ── */
+        @supports (padding: env(safe-area-inset-bottom)) {
+            .footer { padding-bottom: max(36px, calc(28px + env(safe-area-inset-bottom))); }
+            nav { padding-left: max(5%, env(safe-area-inset-left)); padding-right: max(5%, env(safe-area-inset-right)); }
+        }
+
+        /* ── Focus styles for accessibility ── */
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* ── Reduce motion ── */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+            html { scroll-behavior: auto; }
         }
     </style>
 </head>
 <body>
 
     <!-- NAVIGATION -->
-    <nav>
-        <a href="#" class="logo-container" aria-label="Home">
-            <img
-                src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png"
-                alt="SA Research and Advisors Logo"
-                class="logo-img"
-            >
-            <span class="logo-text">SA Research and Advisors</span>
+    <nav role="navigation" aria-label="Main navigation">
+        <a href="#" class="logo-container" aria-label="SA Research and Advisors — Home">
+            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780488070/only_logo_ycyypz.png" alt="SA Research and Advisors Logo" class="logo-img">
+            <span class="logo-text">SA Research<br>and Advisors</span>
         </a>
-        <button class="menu-toggle" id="menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-            <i class="fas fa-bars" id="menu-icon"></i>
+        <button class="menu-toggle" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
+            <i class="fas fa-bars" id="menu-icon" aria-hidden="true"></i>
         </button>
-        <ul class="nav-links" id="nav-links">
+        <!-- Desktop nav -->
+        <ul class="nav-links" role="list">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#reports">Report &amp; Research</a></li>
-            <li><a href="#" onclick="openModal('careerModal'); return false;">Career</a></li>
+            <li><button onclick="openModal('careerModal')">Career</button></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#" onclick="openModal('privacyModal'); return false;">Privacy Policy</a></li>
+            <li><button onclick="openModal('privacyModal')">Privacy Policy</button></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile Nav Drawer -->
+    <ul class="nav-drawer" id="nav-drawer" role="list" aria-label="Mobile navigation">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#reports">Report &amp; Research</a></li>
+        <li><button onclick="openModal('careerModal')">Career</button></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><button onclick="openModal('privacyModal')">Privacy Policy</button></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 
     <main>
         <!-- HERO -->
@@ -566,35 +700,35 @@
                     <div class="hero-brand">SA Research and Advisors</div>
                 </div>
             </div>
-            <div class="hero-right"></div>
+            <div class="hero-right" aria-hidden="true"></div>
         </header>
 
         <!-- ABOUT -->
         <section id="about" class="section">
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Strategic Finance Advisory</h2>
-                <p style="text-align:center; max-width:850px; margin:0 auto; font-size:1.1rem; color:var(--text-muted);">
+                <p style="text-align:center; max-width:850px; margin:0 auto; font-size:1.05rem; color:var(--text-muted); line-height:1.75;">
                     SA Research and Advisors is a strategic finance advisory firm specializing exclusively in high-impact Financial Planning &amp; Analysis (FP&amp;A) and Business Valuation Support.
                 </p>
-                <div class="approach-grid">
-                    <div class="approach-card">Understanding Your Business</div>
-                    <div class="approach-card">Creative Execution</div>
-                    <div class="approach-card">Data-Driven Optimization</div>
-                    <div class="approach-card">Continuous Improvement</div>
+                <div class="approach-grid" role="list">
+                    <div class="approach-card" role="listitem">Understanding Your Business</div>
+                    <div class="approach-card" role="listitem">Creative Execution</div>
+                    <div class="approach-card" role="listitem">Data-Driven Optimization</div>
+                    <div class="approach-card" role="listitem">Continuous Improvement</div>
                 </div>
 
                 <div class="about-split">
                     <div class="about-left">
-                        <div class="mv-card-header" style="justify-content:center;">
-                            <i class="fas fa-users"></i>
+                        <div class="mv-card-header" style="justify-content:center; margin-bottom:20px;">
+                            <i class="fas fa-users" aria-hidden="true"></i>
                             <span class="mv-card-label">Meet the Team</span>
                         </div>
                         <div class="team-members-row">
                             <div class="team-card-inline">
                                 <div class="team-avatar-wrap">
-                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" alt="Shwet Kumar Rai" class="team-avatar">
+                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" alt="Shwet Kumar Rai, Founder & Lead Advisor" class="team-avatar" loading="lazy">
                                     <a href="https://www.linkedin.com/in/shwet-kumar-rai-131a15218/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Shwet Kumar Rai on LinkedIn">
-                                        <i class="fab fa-linkedin-in"></i>
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="team-name">Shwet Kumar Rai</div>
@@ -603,9 +737,9 @@
                             </div>
                             <div class="team-card-inline">
                                 <div class="team-avatar-wrap">
-                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" alt="Aditya Harshvardhan" class="team-avatar">
+                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" alt="Aditya Harshvardhan, Co-Founder & Advisor" class="team-avatar" loading="lazy">
                                     <a href="https://www.linkedin.com/in/aditya-harshvardhan-3a3b41267/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Aditya Harshvardhan on LinkedIn">
-                                        <i class="fab fa-linkedin-in"></i>
+                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                     </a>
                                 </div>
                                 <div class="team-name">Aditya Harshvardhan</div>
@@ -618,7 +752,7 @@
                     <div class="about-right">
                         <div class="mv-block">
                             <div class="mv-card-header">
-                                <i class="fas fa-bullseye"></i>
+                                <i class="fas fa-bullseye" aria-hidden="true"></i>
                                 <span class="mv-card-label">Mission</span>
                             </div>
                             <p class="mv-lead">Our mission is to bridge the gap between financial complexity and strategic execution for startups, SMEs, and growth-stage businesses. We achieve this by:</p>
@@ -630,7 +764,7 @@
                         </div>
                         <div class="mv-block vision-block">
                             <div class="mv-card-header">
-                                <i class="fas fa-binoculars"></i>
+                                <i class="fas fa-binoculars" aria-hidden="true"></i>
                                 <span class="mv-card-label" style="color:white;">Vision</span>
                             </div>
                             <p class="mv-vision-text">To be the premier FP&amp;A and valuation advisory partner for high-growth enterprises, empowering leadership teams with the financial foresight and institutional-grade clarity needed to scale confidently and maximize shareholder value.</p>
@@ -640,7 +774,7 @@
             </div>
         </section>
 
-        <!-- SERVICES — CARD LAYOUT -->
+        <!-- SERVICES -->
         <section id="services" class="section light-bg">
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Our Services</h2>
@@ -648,155 +782,153 @@
                     Comprehensive financial advisory solutions covering every pillar of the modern finance function.
                 </p>
 
-                <!-- Category 1: FP&A -->
+                <!-- FP&A Category -->
                 <div class="services-category-wrap">
                     <div class="services-category-header">
-                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-chart-pie" aria-hidden="true"></i>
                         <span class="services-category-title">Financial Planning &amp; Analysis (FP&amp;A)</span>
                     </div>
                     <p class="services-category-desc">We transform your historical financial data into a forward-looking strategic roadmap, ensuring your leadership team maintains absolute control over liquidity and growth.</p>
                     <div class="services-cards-grid">
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-calendar-alt"></i></div>
-                            <div class="service-card-title">Budgeting &amp; Planning</div>
-                            <div class="service-card-desc">Structured annual and quarterly budgets designed to align directly with your operational planning and business growth objectives.</div>
+                            <div class="service-card-icon"><i class="fas fa-calendar-alt" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Budgeting &amp; Planning</div>
+                                <div class="service-card-desc">Structured annual and quarterly budgets designed to align directly with your operational planning and business growth objectives.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-water"></i></div>
-                            <div class="service-card-title">Cash Flow Forecasting</div>
-                            <div class="service-card-desc">Implementation of 13-week cash flow models, proactive working capital planning, liquidity forecasting, and burn rate analysis to secure runway.</div>
+                            <div class="service-card-icon"><i class="fas fa-water" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Cash Flow Forecasting</div>
+                                <div class="service-card-desc">Implementation of 13-week cash flow models, proactive working capital planning, liquidity forecasting, and burn rate analysis to secure runway.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-rocket"></i></div>
-                            <div class="service-card-title">Fundraising Financial Models</div>
-                            <div class="service-card-desc">Dynamic, investor-ready financial models including detailed projections, scenario/what-if analysis, unit economics, runway analysis, and valuation sensitivity.</div>
+                            <div class="service-card-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Fundraising Financial Models</div>
+                                <div class="service-card-desc">Dynamic, investor-ready financial models including detailed projections, scenario/what-if analysis, unit economics, runway analysis, and valuation sensitivity.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-chart-bar"></i></div>
-                            <div class="service-card-title">Monthly MIS Reporting &amp; Dashboards</div>
-                            <div class="service-card-desc">Monthly MIS dashboards, KPI tracking, budget vs. actual variance analysis, and comprehensive investor reporting packs to keep stakeholders aligned.</div>
+                            <div class="service-card-icon"><i class="fas fa-chart-bar" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Monthly MIS Reporting &amp; Dashboards</div>
+                                <div class="service-card-desc">Monthly MIS dashboards, KPI tracking, budget vs. actual variance analysis, and comprehensive investor reporting packs to keep stakeholders aligned.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-rotate"></i></div>
-                            <div class="service-card-title">Working Capital Management</div>
-                            <div class="service-card-desc">Optimization of receivables, payables, inventory, and cash conversion cycles to enhance liquidity, improve operational efficiency, and maintain healthy cash flow.</div>
+                            <div class="service-card-icon"><i class="fas fa-rotate" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Working Capital Management</div>
+                                <div class="service-card-desc">Optimization of receivables, payables, inventory, and cash conversion cycles to enhance liquidity, improve operational efficiency, and maintain healthy cash flow.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-building"></i></div>
-                            <div class="service-card-title">CapEx Planning</div>
-                            <div class="service-card-desc">Strategic capital expenditure planning, investment evaluation, ROI assessment, and multi-year budgeting to optimize resource allocation and support sustainable growth.</div>
+                            <div class="service-card-icon"><i class="fas fa-building" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">CapEx Planning</div>
+                                <div class="service-card-desc">Strategic capital expenditure planning, investment evaluation, ROI assessment, and multi-year budgeting to optimize resource allocation and support sustainable growth.</div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
 
                 <hr class="services-divider">
 
-                <!-- Category 2: Valuation & Advisory -->
+                <!-- Valuation Category -->
                 <div class="services-category-wrap">
                     <div class="services-category-header">
-                        <i class="fas fa-scale-balanced"></i>
+                        <i class="fas fa-scale-balanced" aria-hidden="true"></i>
                         <span class="services-category-title">Business Valuation Support &amp; Strategic Advisory</span>
                     </div>
                     <p class="services-category-desc">Whether you are preparing for a funding round, an M&amp;A transaction, or internal restructuring, we provide independent, institutional-grade valuation mechanics.</p>
                     <div class="services-cards-grid">
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-                            <div class="service-card-title">Valuation Methodologies</div>
-                            <div class="service-card-desc">Rigorous execution of Discounted Cash Flow (DCF) valuation, comparable company analysis (CCA), and precedent transaction multiples.</div>
+                            <div class="service-card-icon"><i class="fas fa-magnifying-glass-chart" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Valuation Methodologies</div>
+                                <div class="service-card-desc">Rigorous execution of Discounted Cash Flow (DCF) valuation, comparable company analysis (CCA), and precedent transaction multiples.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-seedling"></i></div>
-                            <div class="service-card-title">Early-Stage Frameworks</div>
-                            <div class="service-card-desc">Tailored startup valuation approaches designed specifically for pre-revenue or early-growth companies where traditional metrics may not apply.</div>
+                            <div class="service-card-icon"><i class="fas fa-seedling" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Early-Stage Frameworks</div>
+                                <div class="service-card-desc">Tailored startup valuation approaches designed specifically for pre-revenue or early-growth companies where traditional metrics may not apply.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-chess-rook"></i></div>
-                            <div class="service-card-title">Strategic Advisory</div>
-                            <div class="service-card-desc">Deep-dive analysis to help founders understand the core drivers of their corporate value and how to optimize them before approaching investors.</div>
+                            <div class="service-card-icon"><i class="fas fa-chess-rook" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Strategic Advisory</div>
+                                <div class="service-card-desc">Deep-dive analysis to help founders understand the core drivers of their corporate value and how to optimize them before approaching investors.</div>
+                            </div>
                         </div>
-
                         <div class="service-card">
-                            <div class="service-card-icon"><i class="fas fa-file-invoice"></i></div>
-                            <div class="service-card-title">Research &amp; Investor Communication</div>
-                            <div class="service-card-desc">Industry research, white papers, custom financial reports, market intelligence, sector benchmarking, investor-ready brochures, and pitch deck preparation.</div>
+                            <div class="service-card-icon"><i class="fas fa-file-invoice" aria-hidden="true"></i></div>
+                            <div class="service-card-content">
+                                <div class="service-card-title">Research &amp; Investor Communication</div>
+                                <div class="service-card-desc">Industry research, white papers, custom financial reports, market intelligence, sector benchmarking, investor-ready brochures, and pitch deck preparation.</div>
+                            </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Working (Sample) -->
+        <!-- REPORTS -->
         <section id="reports" class="section">
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Report &amp; Research</h2>
                 <p style="text-align:center; max-width:700px; margin:-30px auto 40px; font-size:1rem; color:var(--text-muted);">
                     Explore our published research and sample working reports below.
                 </p>
-
-                <!-- Cards grid -->
                 <div class="rr-grid" id="rr-grid">
-                    <!-- Card 1: Monthly FP&A Dashboard -->
-                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1XjFHeQERV1dcrJL6Ewi2h3pIyl7TNXuP/preview', 'Monthly FP&A Dashboard')">
+                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1XjFHeQERV1dcrJL6Ewi2h3pIyl7TNXuP/preview', 'Monthly FP&A Dashboard')" role="button" tabindex="0" aria-label="View Monthly FP&A Dashboard report">
                         <div class="rr-card-thumb">
-                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780399855/Image_1_ccsjo4.png" alt="Monthly FP&A Dashboard preview">
+                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780399855/Image_1_ccsjo4.png" alt="Monthly FP&A Dashboard preview" loading="lazy">
                             <span class="rr-card-tag">Report</span>
                         </div>
                         <div class="rr-card-body">
                             <div class="rr-card-title">Monthly FP&A Dashboard</div>
                             <div class="rr-card-desc">Detailed Monthly FP&A Dashboard prepared by SA Research and Advisors.</div>
-                            <span class="rr-card-btn"><i class="fas fa-file-alt"></i> View Report</span>
+                            <span class="rr-card-btn"><i class="fas fa-file-alt" aria-hidden="true"></i> View Report</span>
                         </div>
                     </div>
-
-                    <!-- Card 2: Sample DCF Report -->
-                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/preview', 'Sample DCF Report — Orion Oyj')">
+                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/1IOJ5ArNRmUi2UC4u0dKNCXKatYBDSMSo/preview', 'Sample DCF Report — Orion Oyj')" role="button" tabindex="0" aria-label="View Sample DCF Report">
                         <div class="rr-card-thumb">
-                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780563671/DCF_Valuation_tmelm5.png" alt="Sample DCF Report preview">
+                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780563671/DCF_Valuation_tmelm5.png" alt="Sample DCF Report preview" loading="lazy">
                             <span class="rr-card-tag">Valuation</span>
                         </div>
                         <div class="rr-card-body">
                             <div class="rr-card-title">Sample DCF Report</div>
                             <div class="rr-card-desc">Orion Oyj – Equity valuation summary using Discounted Cash Flow analysis with sensitivity tables.</div>
-                            <span class="rr-card-btn"><i class="fas fa-file-alt"></i> View Report</span>
+                            <span class="rr-card-btn"><i class="fas fa-file-alt" aria-hidden="true"></i> View Report</span>
                         </div>
                     </div>
-
-                    <!-- Card 3: Semiconductor Industry -->
-                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/preview', 'Semiconductor Industry in India')">
+                    <div class="rr-card" onclick="openReport('https://drive.google.com/file/d/11VqnoI8XJvvt-irTnPB08iX9wUMUypH4/preview', 'Semiconductor Industry in India')" role="button" tabindex="0" aria-label="View Semiconductor Industry report">
                         <div class="rr-card-thumb">
-                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780564689/semiconductor_yo0qe9.png" alt="Semiconductor Industry preview">
+                            <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780564689/semiconductor_yo0qe9.png" alt="Semiconductor Industry report preview" loading="lazy">
                             <span class="rr-card-tag">Industry Report</span>
                         </div>
                         <div class="rr-card-body">
                             <div class="rr-card-title">Semiconductor Industry</div>
                             <div class="rr-card-desc">Market overview and PLI incentive deep-dive covering the domestic semiconductor landscape and growth opportunities.</div>
-                            <span class="rr-card-btn"><i class="fas fa-file-alt"></i> View Report</span>
+                            <span class="rr-card-btn"><i class="fas fa-file-alt" aria-hidden="true"></i> View Report</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Inline PDF viewer -->
-                <div class="rr-viewer" id="rr-viewer">
+                <div class="rr-viewer" id="rr-viewer" role="region" aria-label="Report viewer">
                     <div class="rr-viewer-header">
                         <div class="rr-viewer-title" id="rr-viewer-title"></div>
                         <button class="rr-back-btn" onclick="closeReport()">
-                            <i class="fas fa-arrow-left"></i> Back to Reports
+                            <i class="fas fa-arrow-left" aria-hidden="true"></i> Back to Reports
                         </button>
                     </div>
                     <div class="rr-iframe-wrap">
-                        <iframe id="rr-iframe" src="" allowfullscreen></iframe>
+                        <iframe id="rr-iframe" src="" allowfullscreen title="Report viewer"></iframe>
                     </div>
                 </div>
             </div>
@@ -809,58 +941,56 @@
                 <h3 class="pricing-subtitle">Monthly Retainer Pricing</h3>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> FP&amp;A Partner</div>
-                        <p class="pipe-list">
-                            Annual Budgeting <span class="pipe-sep">|</span> Quarterly Forecast Updates <span class="pipe-sep">|</span> 13-Week Cash Flow Forecasting <span class="pipe-sep">|</span> Working Capital Management <span class="pipe-sep">|</span> MIS Reporting <span class="pipe-sep">|</span> KPI Tracking <span class="pipe-sep">|</span> Investor Presentations <span class="pipe-sep">|</span> Industry Research <span class="pipe-sep">|</span> Fundraising Financial Model
-                        </p>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> FP&amp;A Partner</div>
+                        <p class="pipe-list">Annual Budgeting <span class="pipe-sep">|</span> Quarterly Forecast Updates <span class="pipe-sep">|</span> 13-Week Cash Flow Forecasting <span class="pipe-sep">|</span> Working Capital Management <span class="pipe-sep">|</span> MIS Reporting <span class="pipe-sep">|</span> KPI Tracking <span class="pipe-sep">|</span> Investor Presentations <span class="pipe-sep">|</span> Industry Research <span class="pipe-sep">|</span> Fundraising Financial Model</p>
                     </div>
-                    <div class="price-pill">($500 - $800) /month</div>
+                    <div class="price-pill">($500 – $800) /month</div>
                 </div>
                 <h3 class="pricing-subtitle">Project-Based Pricing</h3>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> Budgeting &amp; Planning Setup</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Budgeting &amp; Planning Setup</div>
                         <div class="price-sub-desc">Annual operating budget, department-wise budgets, quarterly planning templates, budget vs actual framework</div>
                     </div>
-                    <div class="price-pill">($600 - $1,000)</div>
+                    <div class="price-pill">($600 – $1,000)</div>
                 </div>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> Business Valuation Services</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Business Valuation Services</div>
                         <div class="price-sub-desc">DCF valuation, comparable company analysis, precedent transactions, valuation sensitivity analysis, investor valuation support</div>
                     </div>
-                    <div class="price-pill">($700 - $1,200)</div>
+                    <div class="price-pill">($700 – $1,200)</div>
                 </div>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> Fundraising Financial Model</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Fundraising Financial Model</div>
                         <div class="price-sub-desc">3–5 year integrated model, scenario analysis, unit economics, investor-ready outputs</div>
                     </div>
-                    <div class="price-pill">($300 - $700)</div>
+                    <div class="price-pill">($300 – $700)</div>
                 </div>
                 <div class="price-row">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> MIS Reporting &amp; Dashboard Setup</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> MIS Reporting &amp; Dashboard Setup</div>
                         <div class="price-sub-desc">KPI dashboards, MIS reports, variance analysis, investor reporting templates</div>
                     </div>
-                    <div class="price-pill">($400 - $600)</div>
+                    <div class="price-pill">($400 – $600)</div>
                 </div>
                 <div class="price-row" style="border:none;">
                     <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right"></i> 3-Week Cash Flow Forecasting Model</div>
+                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> 3-Week Cash Flow Forecasting Model</div>
                         <div class="price-sub-desc">Dynamic cash flow model, liquidity planning, runway tracking, working capital monitoring</div>
                     </div>
-                    <div class="price-pill">($400 - $600)</div>
+                    <div class="price-pill">($400 – $600)</div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- PRIVACY POLICY MODAL -->
-    <div id="privacyModal" class="modal-overlay">
+    <div id="privacyModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
         <div class="modal-content" style="max-width:760px;">
-            <span class="close-modal" onclick="closeModal('privacyModal')">&times;</span>
-            <h2 style="color:var(--navy); font-size:2rem; margin-bottom:24px; font-family:'Times New Roman',serif;">Privacy Policy</h2>
+            <button class="close-modal" onclick="closeModal('privacyModal')" aria-label="Close privacy policy">&times;</button>
+            <h2 id="privacy-title" style="color:var(--navy); font-size:1.9rem; margin-bottom:24px; font-family:'Times New Roman',serif;">Privacy Policy</h2>
             <p style="font-size:0.93rem; color:var(--text-muted); line-height:1.8; margin-bottom:14px;">Welcome to SA Research and Advisors ("SA Research and Advisors," "we," "our," or "us"). We are committed to protecting the privacy and confidentiality of the information entrusted to us by our clients, business partners, and website visitors.</p>
             <p style="font-size:0.93rem; color:var(--text-muted); line-height:1.8; margin-bottom:14px;">This Privacy Policy explains how we collect, use, store, and protect information obtained through our website and professional engagements, including valuation, financial planning &amp; analysis (FP&amp;A), and financial advisory services.</p>
             <p style="font-size:0.93rem; color:var(--text-muted); line-height:1.8; margin-bottom:24px;">By accessing our website or using our services, you acknowledge and agree to the practices described in this Privacy Policy.</p>
@@ -886,73 +1016,68 @@
     </div>
 
     <!-- CAREER MODAL -->
-    <div id="careerModal" class="modal-overlay">
+    <div id="careerModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="career-title">
         <div class="modal-content" style="max-width:500px; text-align:center;">
-            <span class="close-modal" onclick="closeModal('careerModal')">&times;</span>
-            <h2 style="color:var(--navy); margin-bottom:25px; font-size:2.2rem;">Careers</h2>
-            <p>Join our team. Send your resume to:</p>
-            <p style="font-weight:800; font-size:1.4rem; margin:15px 0;"><a href="mailto:info@saresearcher.in" style="color:var(--navy);">info@saresearcher.in</a></p>
-            <a href="mailto:info@saresearcher.in" class="price-pill" style="text-decoration:none; display:inline-block; margin-top:20px;">Apply Now</a>
+            <button class="close-modal" onclick="closeModal('careerModal')" aria-label="Close careers dialog">&times;</button>
+            <h2 id="career-title" style="color:var(--navy); margin-bottom:25px; font-size:2.2rem;">Careers</h2>
+            <p style="font-size:1rem; line-height:1.7; color:var(--text-muted); margin-bottom:8px;">Join our team. Send your resume to:</p>
+            <p style="font-weight:800; font-size:1.3rem; margin:15px 0;"><a href="mailto:info@saresearcher.in" style="color:var(--navy);">info@saresearcher.in</a></p>
+            <a href="mailto:info@saresearcher.in" class="price-pill" style="text-decoration:none; display:inline-block; margin-top:20px; border-radius:10px; font-weight:800; min-height:var(--touch-min); line-height:1.4;">Apply Now</a>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer id="contact" class="footer">
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-three-col">
-                <!-- COLUMN 1: CONTACT -->
                 <div class="footer-col-1">
                     <h3>Contact us</h3>
                     <div class="contact-item">
-                        <a href="mailto:info@saresearcher.in" class="contact-icon-link"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:info@saresearcher.in" class="contact-icon-link" aria-label="Email us"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                         <a href="mailto:info@saresearcher.in">info@saresearcher.in</a>
                     </div>
                     <div class="contact-item">
-                        <a href="tel:+917982190362" class="contact-icon-link"><i class="fas fa-phone"></i></a>
+                        <a href="tel:+917982190362" class="contact-icon-link" aria-label="Call us"><i class="fas fa-phone" aria-hidden="true"></i></a>
                         <a href="tel:+917982190362">+91 7982190362</a>
                     </div>
                     <div class="contact-item">
-                        <a href="https://in.linkedin.com/company/saresearch" target="_blank" rel="noopener noreferrer" class="contact-icon-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://in.linkedin.com/company/saresearch" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                         <a href="https://in.linkedin.com/company/saresearch" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
                     </div>
                     <div class="contact-item">
-                        <a href="https://maps.google.com/?q=1178,Gurgaon,India+122001" target="_blank" rel="noopener noreferrer" class="contact-icon-link"><i class="fas fa-location-dot"></i></a>
+                        <a href="https://maps.google.com/?q=1178,Gurgaon,India+122001" target="_blank" rel="noopener noreferrer" class="contact-icon-link" aria-label="Location"><i class="fas fa-location-dot" aria-hidden="true"></i></a>
                         <span>1178, Gurgaon, India 122001</span>
                     </div>
                 </div>
-
-                <!-- COLUMN 2: QUICK LINKS -->
                 <div class="footer-col-2">
                     <h3>Quick Links</h3>
                     <div class="quick-links-list">
                         <a href="#about" class="quick-link">About Us</a>
                         <a href="#services" class="quick-link">Services</a>
                         <a href="#reports" class="quick-link">Report &amp; Research</a>
-                        <a href="#" onclick="openModal('careerModal'); return false;" class="quick-link">Career</a>
+                        <button onclick="openModal('careerModal')" class="quick-link" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;color:white;padding:0;text-align:left;">Career</button>
                         <a href="#pricing" class="quick-link">Pricing</a>
-                        <a href="#" onclick="openModal('privacyModal'); return false;" class="quick-link">Privacy Policy</a>
+                        <button onclick="openModal('privacyModal')" class="quick-link" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;color:white;padding:0;text-align:left;">Privacy Policy</button>
                     </div>
                 </div>
-
-                <!-- COLUMN 3: STRATEGY FORM -->
                 <div class="footer-col-3">
                     <div class="strategy-form-wrap">
                         <h3 class="strategy-form-title">Schedule Your Strategy Call</h3>
                         <div class="strategy-grid">
                             <div class="form-group">
-                                <label class="strategy-label">Full Name *</label>
-                                <input type="text" id="sc-fullname" class="strategy-input" placeholder="Your name">
+                                <label class="strategy-label" for="sc-fullname">Full Name *</label>
+                                <input type="text" id="sc-fullname" class="strategy-input" placeholder="Your name" autocomplete="name">
                             </div>
                             <div class="form-group">
-                                <label class="strategy-label">Email Address *</label>
-                                <input type="email" id="sc-email" class="strategy-input" placeholder="Your email">
+                                <label class="strategy-label" for="sc-email">Email Address *</label>
+                                <input type="email" id="sc-email" class="strategy-input" placeholder="Your email" autocomplete="email">
                             </div>
                             <div class="form-group">
-                                <label class="strategy-label">Phone Number</label>
-                                <input type="tel" id="sc-phone" class="strategy-input" placeholder="+91 XXXXX XXXXX">
+                                <label class="strategy-label" for="sc-phone">Phone Number</label>
+                                <input type="tel" id="sc-phone" class="strategy-input" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
                             </div>
                             <div class="form-group">
-                                <label class="strategy-label">Call Duration (Optional)</label>
+                                <label class="strategy-label" for="sc-duration">Call Duration (Optional)</label>
                                 <select id="sc-duration" class="strategy-select">
                                     <option value="">Select Duration</option>
                                     <option value="15 min">15 minutes</option>
@@ -962,13 +1087,13 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="strategy-label">Preferred Date (Optional)</label>
+                                <label class="strategy-label" for="sc-date">Preferred Date (Optional)</label>
                                 <select id="sc-date" class="strategy-select">
                                     <option value="">Select Date</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label class="strategy-label">Time Slot (Optional)</label>
+                                <label class="strategy-label" for="sc-timeslot">Time Slot (Optional)</label>
                                 <select id="sc-timeslot" class="strategy-select">
                                     <option value="">Select</option>
                                     <option value="9:00 AM">9:00 AM</option>
@@ -983,12 +1108,12 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="strategy-label">What can our senior finance executive help you with? *</label>
+                            <label class="strategy-label" for="sc-message">What can our senior finance executive help you with? *</label>
                             <textarea id="sc-message" class="strategy-textarea" rows="4" placeholder="Tell us about your needs..."></textarea>
                         </div>
                         <button type="button" class="strategy-submit-btn" onclick="submitStrategyCall()">Submit</button>
-                        <div class="form-success" id="sc-success">
-                            <i class="fas fa-check-circle"></i> Thank you! We'll be in touch soon.
+                        <div class="form-success" id="sc-success" role="alert">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i> Thank you! We'll be in touch soon.
                         </div>
                     </div>
                 </div>
@@ -998,7 +1123,7 @@
     </footer>
 
     <script>
-        // Populate date dropdown
+        // ── Date dropdown ──
         (function() {
             var sel = document.getElementById('sc-date');
             var today = new Date();
@@ -1015,39 +1140,72 @@
             }
         })();
 
-        // Mobile nav toggle
+        // ── Mobile nav toggle ──
         var menuBtn = document.getElementById('menu-btn');
-        var navLinks = document.getElementById('nav-links');
+        var navDrawer = document.getElementById('nav-drawer');
         var menuIcon = document.getElementById('menu-icon');
+        var isNavOpen = false;
+
+        function openNav() {
+            isNavOpen = true;
+            navDrawer.classList.add('active');
+            menuBtn.setAttribute('aria-expanded', 'true');
+            menuBtn.setAttribute('aria-label', 'Close navigation menu');
+            menuIcon.className = 'fas fa-times';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeNav() {
+            isNavOpen = false;
+            navDrawer.classList.remove('active');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.setAttribute('aria-label', 'Open navigation menu');
+            menuIcon.className = 'fas fa-bars';
+            document.body.style.overflow = '';
+        }
         menuBtn.addEventListener('click', function() {
-            var isOpen = navLinks.classList.toggle('active');
-            menuBtn.setAttribute('aria-expanded', isOpen);
-            menuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+            isNavOpen ? closeNav() : openNav();
         });
-        navLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
-                menuBtn.setAttribute('aria-expanded', false);
-                menuIcon.className = 'fas fa-bars';
+
+        // Close nav on link/button tap
+        navDrawer.querySelectorAll('a, button').forEach(function(el) {
+            el.addEventListener('click', closeNav);
+        });
+
+        // Close nav on outside tap
+        document.addEventListener('click', function(e) {
+            if (isNavOpen && !navDrawer.contains(e.target) && !menuBtn.contains(e.target)) closeNav();
+        });
+
+        // Keyboard: Escape closes nav/modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeNav();
+                ['careerModal','privacyModal'].forEach(closeModal);
+            }
+        });
+
+        // ── Modals ──
+        function openModal(id) {
+            var m = document.getElementById(id);
+            m.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Focus first focusable element
+            setTimeout(function() {
+                var first = m.querySelector('button, a, input, textarea');
+                if (first) first.focus();
+            }, 50);
+        }
+        function closeModal(id) {
+            var m = document.getElementById(id);
+            if (m) { m.style.display = 'none'; document.body.style.overflow = ''; }
+        }
+        document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) closeModal(overlay.id);
             });
         });
 
-        // Modal helpers
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        window.onclick = function(e) {
-            if (e.target.classList.contains('modal-overlay')) {
-                ['careerModal','privacyModal'].forEach(function(id) { closeModal(id); });
-            }
-        };
-
-        // Team avatar toggle
+        // ── Team avatar toggle ──
         document.querySelectorAll('.team-avatar-wrap').forEach(function(wrap) {
             wrap.addEventListener('click', function(e) {
                 if (e.target.closest('.team-connect-btn')) return;
@@ -1055,7 +1213,14 @@
             });
         });
 
-        // Report & Research inline viewer
+        // ── Report cards: keyboard enter/space ──
+        document.querySelectorAll('.rr-card').forEach(function(card) {
+            card.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+            });
+        });
+
+        // ── Report viewer ──
         function openReport(url, title) {
             document.getElementById('rr-iframe').src = url;
             document.getElementById('rr-viewer-title').textContent = title;
@@ -1072,7 +1237,7 @@
             document.getElementById('reports').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // EmailJS form
+        // ── EmailJS form ──
         var EMAILJS_PUBLIC_KEY  = "_CQnbmFQo2X0KA2Py";
         var EMAILJS_SERVICE_ID  = "service_r4ppl21";
         var EMAILJS_TEMPLATE_ID = "template_ycghjtq";
