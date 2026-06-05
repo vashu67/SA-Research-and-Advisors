@@ -42,7 +42,6 @@
             --price-text: #1e3a8a;
             --dark-blue: #1e3a5f;
             --accent: #1565c0;
-            /* Touch target minimum */
             --touch-min: 44px;
         }
 
@@ -89,7 +88,6 @@
             line-height: 1.2;
         }
 
-        /* Desktop nav */
         .nav-links {
             display: flex;
             list-style: none;
@@ -114,7 +112,6 @@
         }
         .nav-links li a:hover, .nav-links li button:hover { color: var(--accent); }
 
-        /* Hamburger */
         .menu-toggle {
             display: none;
             color: var(--navy);
@@ -134,7 +131,6 @@
         }
         .menu-toggle:hover { background: var(--light-grey); }
 
-        /* Mobile nav drawer */
         .nav-drawer {
             display: none;
             position: fixed;
@@ -225,6 +221,59 @@
             letter-spacing: 3px;
             font-weight: 700;
             color: var(--navy);
+            margin-bottom: 14px;
+        }
+
+        /* ── HERO SUBTITLE & CTA ── */
+        .hero-subtitle {
+            font-size: clamp(0.92rem, 2vw, 1.05rem);
+            color: var(--text-muted);
+            line-height: 1.75;
+            margin-top: 18px;
+            max-width: 560px;
+        }
+        .hero-cta-row {
+            display: flex;
+            gap: 16px;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        .hero-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s, color 0.2s;
+            min-height: var(--touch-min);
+            letter-spacing: 0.2px;
+            font-family: inherit;
+        }
+        .hero-btn-primary {
+            background: var(--navy);
+            color: white;
+            border: 2px solid var(--navy);
+            box-shadow: 0 4px 16px rgba(0,31,63,0.18);
+        }
+        .hero-btn-primary:hover {
+            background: var(--dark-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,31,63,0.28);
+        }
+        .hero-btn-outline {
+            background: transparent;
+            color: var(--navy);
+            border: 2px solid var(--navy);
+        }
+        .hero-btn-outline:hover {
+            background: var(--navy);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,31,63,0.18);
         }
 
         /* ── SECTIONS ── */
@@ -316,7 +365,6 @@
             display: inline-flex; align-items: center; justify-content: center;
             width: 28px; height: 28px; border-radius: 50%; border: 2px solid white;
             box-shadow: 0 4px 14px rgba(0,31,63,0.35); transition: background 0.2s, transform 0.15s;
-            /* Bigger touch target */
             min-width: 28px; min-height: 28px;
         }
         .team-connect-btn:hover { background: var(--accent); transform: translateX(-50%) scale(1.1); }
@@ -482,7 +530,6 @@
            MOBILE BREAKPOINTS
         ══════════════════════════════ */
 
-        /* ── Tablet: 768–1100px ── */
         @media (max-width: 1100px) {
             .footer-three-col { grid-template-columns: 1fr 1fr; gap: 40px; }
             .footer-col-3 { grid-column: 1 / -1; }
@@ -497,27 +544,25 @@
             .rr-grid { grid-template-columns: 1fr 1fr; }
         }
 
-        /* ── Tablet/Mobile: ≤ 768px ── */
         @media (max-width: 768px) {
-            /* Nav */
             .menu-toggle { display: flex; }
             .nav-links { display: none; }
             .logo-text { font-size: 0.7rem; letter-spacing: 0.5px; }
             .logo-img { height: 32px; }
 
-            /* Hero */
             .hero { min-height: calc(100svh - 60px); align-items: center; }
             .hero-right { clip-path: none; opacity: 0.08; position: absolute; inset: 0; width: 100%; height: 100%; flex: none; }
             .hero-left { padding: 32px 5% 48px; text-align: center; width: 100%; z-index: 2; display: flex; align-items: center; justify-content: center; }
             .hero-content { border-left: none; border-top: 5px solid var(--navy); padding: 20px 0 0; max-width: 100%; }
             .hero-content h1 { font-size: clamp(1.15rem, 5vw, 1.55rem); margin-bottom: 14px; }
             .hero-brand { font-size: 0.7rem; letter-spacing: 2px; }
+            .hero-subtitle { font-size: 0.9rem; margin-top: 14px; text-align: center; }
+            .hero-cta-row { justify-content: center; gap: 12px; margin-top: 22px; }
+            .hero-btn { font-size: 0.85rem; padding: 12px 20px; }
 
-            /* Sections */
             .section { padding: 44px 5%; }
             .section-title { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
 
-            /* About split — stacked */
             .about-split { flex-direction: column; margin-top: 30px; border-top: none; }
             .about-left { border-right: none; border-bottom: 2px solid #e8edf2; padding: 0 0 28px; }
             .team-members-row { flex-direction: row; justify-content: center; gap: 20px; }
@@ -535,11 +580,9 @@
             .vision-block { padding: 24px 18px; }
             .mv-vision-text { font-size: 0.9rem; }
 
-            /* Approach */
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
             .approach-card { border-radius: 14px; padding: 20px 14px; font-size: 0.82rem; }
 
-            /* Services */
             .services-cards-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
             .service-card { padding: 20px 16px; }
             .service-card-icon { width: 38px; height: 38px; }
@@ -551,14 +594,12 @@
             .services-category-desc { font-size: 0.9rem; margin-bottom: 20px; }
             .services-divider { margin: 36px 0; }
 
-            /* Reports */
             .rr-grid { grid-template-columns: 1fr; }
             .rr-card-thumb { height: 200px; }
             .rr-iframe-wrap { height: 60vw; min-height: 300px; }
             .rr-viewer-header { flex-direction: column; align-items: flex-start; }
             .rr-back-btn { align-self: flex-start; }
 
-            /* Pricing */
             .pricing-subtitle { font-size: 1rem; margin: 28px 0 20px; }
             .price-row { flex-direction: column; gap: 10px; padding-bottom: 18px; margin-bottom: 18px; }
             .price-item-header { font-size: 1rem; gap: 8px; }
@@ -566,11 +607,9 @@
             .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.95rem; padding: 12px 16px; min-width: unset; }
             .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.85; }
 
-            /* Modal */
             .modal-content { padding: 28px 20px; border-radius: 12px; }
             .close-modal { top: 10px; right: 12px; font-size: 1.8rem; }
 
-            /* Footer */
             .footer { padding: 44px 5% 36px; }
             .footer-three-col { grid-template-columns: 1fr; gap: 32px; margin-bottom: 40px; }
             .footer-col-3 { grid-column: auto; }
@@ -578,7 +617,6 @@
             .footer-col-1 h3 { font-size: 1.2rem; }
             .contact-item a, .contact-item span { font-size: 0.9rem; }
 
-            /* Form */
             .strategy-form-wrap { padding: 22px 16px 20px; border-radius: 12px; }
             .strategy-form-title { font-size: 1.1rem; margin-bottom: 18px; }
             .strategy-grid { grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 12px; }
@@ -588,7 +626,6 @@
             .strategy-submit-btn { font-size: 0.9rem; padding: 13px; margin-top: 12px; }
         }
 
-        /* ── Small phones: ≤ 480px ── */
         @media (max-width: 480px) {
             nav { padding: 0 4%; }
             .logo-text { font-size: 0.65rem; }
@@ -598,20 +635,18 @@
             .section { padding: 36px 4%; }
             .section-title { font-size: 1.65rem; margin-bottom: 22px; }
 
-            /* Hero */
             .hero-content h1 { font-size: clamp(1rem, 4.5vw, 1.2rem); }
             .hero-brand { font-size: 0.65rem; }
+            .hero-cta-row { flex-direction: column; gap: 10px; }
+            .hero-btn { width: 100%; justify-content: center; }
 
-            /* Approach — single col on tiny screens */
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
 
-            /* Team — keep 2-up */
             .team-avatar-wrap { width: 76px; height: 76px; }
             .team-avatar { width: 76px; height: 76px; }
             .team-name { font-size: 0.8rem; }
             .team-connect-btn { width: 24px; height: 24px; }
 
-            /* Services — single col */
             .services-cards-grid { grid-template-columns: 1fr; gap: 10px; }
             .service-card { flex-direction: row; align-items: flex-start; gap: 14px; padding: 16px; }
             .service-card-icon { flex-shrink: 0; margin-bottom: 0; }
@@ -619,26 +654,21 @@
             .service-card-title { font-size: 0.88rem; }
             .service-card-desc { font-size: 0.8rem; }
 
-            /* Reports */
             .rr-card-thumb { height: 170px; }
             .rr-iframe-wrap { height: 56vw; min-height: 260px; }
 
-            /* Pricing */
             .price-item-header { font-size: 0.92rem; }
             .price-pill { font-size: 0.9rem; }
 
-            /* Form — single col */
             .strategy-grid { grid-template-columns: 1fr; gap: 8px; }
             .strategy-form-wrap { padding: 18px 14px; }
             .strategy-form-title { font-size: 1rem; }
 
-            /* Footer */
             .footer { padding: 36px 4% 28px; }
             .footer-col-1 h3 { font-size: 1.05rem; }
             .contact-item a, .contact-item span { font-size: 0.84rem; }
         }
 
-        /* ── Very tiny: ≤ 360px ── */
         @media (max-width: 360px) {
             .logo-text { font-size: 0.6rem; letter-spacing: 0.3px; }
             .logo-img { height: 30px; }
@@ -647,19 +677,16 @@
             .team-members-row { gap: 14px; }
         }
 
-        /* ── Safe areas (notch, home bar) ── */
         @supports (padding: env(safe-area-inset-bottom)) {
             .footer { padding-bottom: max(36px, calc(28px + env(safe-area-inset-bottom))); }
             nav { padding-left: max(5%, env(safe-area-inset-left)); padding-right: max(5%, env(safe-area-inset-right)); }
         }
 
-        /* ── Focus styles for accessibility ── */
         :focus-visible {
             outline: 2px solid var(--accent);
             outline-offset: 2px;
         }
 
-        /* ── Reduce motion ── */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
             html { scroll-behavior: auto; }
@@ -677,7 +704,6 @@
         <button class="menu-toggle" id="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-drawer">
             <i class="fas fa-bars" id="menu-icon" aria-hidden="true"></i>
         </button>
-        <!-- Desktop nav -->
         <ul class="nav-links" role="list">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
@@ -705,8 +731,17 @@
         <header class="hero">
             <div class="hero-left">
                 <div class="hero-content">
-                    <h1>We work as an extension of your team, delivering strategic FP&amp;A and valuation support to drive informed decisions.</h1>
                     <div class="hero-brand">SA Research and Advisors</div>
+                    <h1>We work as an extension of your team, delivering strategic FP&amp;A and valuation support to drive informed decisions.</h1>
+                    <p class="hero-subtitle">Serving startups, SMEs, and growth-stage companies across India with institutional-grade financial clarity and investor-ready outputs.</p>
+                    <div class="hero-cta-row">
+                        <a href="#contact" class="hero-btn hero-btn-primary">
+                            <i class="fas fa-phone-volume" aria-hidden="true"></i> Schedule a Call
+                        </a>
+                        <a href="#services" class="hero-btn hero-btn-outline">
+                            <i class="fas fa-briefcase" aria-hidden="true"></i> Our Services
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="hero-right" aria-hidden="true"></div>
@@ -791,7 +826,6 @@
                     Comprehensive financial advisory solutions covering every pillar of the modern finance function.
                 </p>
 
-                <!-- FP&A Category -->
                 <div class="services-category-wrap">
                     <div class="services-category-header">
                         <i class="fas fa-chart-pie" aria-hidden="true"></i>
@@ -846,7 +880,6 @@
 
                 <hr class="services-divider">
 
-                <!-- Valuation Category -->
                 <div class="services-category-wrap">
                     <div class="services-category-header">
                         <i class="fas fa-scale-balanced" aria-hidden="true"></i>
@@ -1175,17 +1208,14 @@
             isNavOpen ? closeNav() : openNav();
         });
 
-        // Close nav on link/button tap
         navDrawer.querySelectorAll('a, button').forEach(function(el) {
             el.addEventListener('click', closeNav);
         });
 
-        // Close nav on outside tap
         document.addEventListener('click', function(e) {
             if (isNavOpen && !navDrawer.contains(e.target) && !menuBtn.contains(e.target)) closeNav();
         });
 
-        // Keyboard: Escape closes nav/modals
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeNav();
@@ -1198,7 +1228,6 @@
             var m = document.getElementById(id);
             m.style.display = 'flex';
             document.body.style.overflow = 'hidden';
-            // Focus first focusable element
             setTimeout(function() {
                 var first = m.querySelector('button, a, input, textarea');
                 if (first) first.focus();
