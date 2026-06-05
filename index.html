@@ -326,6 +326,14 @@
         .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
         /* ── SERVICES ── */
+        .section-subtitle {
+            text-align: center;
+            max-width: 780px;
+            margin: -10px auto 40px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
         #services { background-color: var(--light-grey) !important; }
         #services .section-title { text-align: center; }
         .services-category-wrap { margin-bottom: 56px; }
@@ -539,6 +547,7 @@
             .service-card-title { font-size: 0.9rem; }
             .service-card-desc { font-size: 0.82rem; }
             .services-category-title { font-size: 1.1rem; }
+            .section-subtitle { margin: 0 auto 28px; font-size: 0.92rem; padding: 0 4px; }
             .services-category-desc { font-size: 0.9rem; margin-bottom: 20px; }
             .services-divider { margin: 36px 0; }
 
@@ -631,7 +640,7 @@
 
         /* ── Very tiny: ≤ 360px ── */
         @media (max-width: 360px) {
-            .logo-text { display: none; }
+            .logo-text { font-size: 0.6rem; letter-spacing: 0.3px; }
             .logo-img { height: 30px; }
             .hero-content h1 { font-size: 0.95rem; }
             .approach-grid { grid-template-columns: 1fr; }
@@ -778,7 +787,7 @@
         <section id="services" class="section light-bg">
             <div class="content-wrap">
                 <h2 class="section-title" style="text-align:center;">Our Services</h2>
-                <p style="text-align:center; max-width:780px; margin:-30px auto 50px; font-size:1rem; color:var(--text-muted);">
+                <p class="section-subtitle">
                     Comprehensive financial advisory solutions covering every pillar of the modern finance function.
                 </p>
 
