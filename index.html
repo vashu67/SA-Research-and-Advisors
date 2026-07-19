@@ -321,16 +321,8 @@
             border-top: 2px solid #e8edf2;
             align-items: stretch;
         }
-        .about-left {
-            flex: 3;
-            padding: 40px 40px 40px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-right: 2px solid #e8edf2;
-        }
-        .about-right { flex: 7; display: flex; flex-direction: column; }
-        .mv-block { padding: 40px 0 40px 40px; }
+        .about-right { flex: 1; display: flex; flex-direction: column; }
+        .mv-block { padding: 40px 0; }
         .mv-block + .mv-block { border-top: 2px solid #e8edf2; }
         .vision-block { background: var(--navy); padding: 40px; flex: 1; }
         .mv-card-header { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
@@ -348,30 +340,6 @@
         .mv-points li::before { content: "\2192"; color: var(--navy); font-weight: 700; font-size: 1rem; flex-shrink: 0; }
         .mv-points li strong { color: var(--navy); font-weight: 700; }
         .mv-vision-text { font-size: 1rem; color: rgba(255,255,255,0.92); line-height: 1.85; }
-
-        /* Team */
-        .team-members-row { display: flex; flex-direction: column; gap: 32px; width: 100%; }
-        .team-card-inline { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; }
-        .team-avatar-wrap { position: relative; width: 130px; height: 130px; margin-bottom: 14px; cursor: pointer; }
-        .team-avatar {
-            width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: top center;
-            border: 4px solid #e8edf2; box-shadow: 0 8px 24px rgba(0,31,63,0.14);
-            display: block; transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .team-avatar-wrap:hover .team-avatar, .team-avatar-wrap.active .team-avatar { transform: translateY(-3px); border-color: var(--navy); }
-        .team-connect-btn {
-            position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
-            background: var(--navy); color: white; text-decoration: none;
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 28px; height: 28px; border-radius: 50%; border: 2px solid white;
-            box-shadow: 0 4px 14px rgba(0,31,63,0.35); transition: background 0.2s, transform 0.15s;
-            min-width: 28px; min-height: 28px;
-        }
-        .team-connect-btn:hover { background: var(--accent); transform: translateX(-50%) scale(1.1); }
-        .team-connect-btn i { font-size: 0.6rem; }
-        .team-name { font-size: 1.05rem; font-weight: 800; color: var(--navy); margin-bottom: 5px; }
-        .team-role { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 10px; }
-        .team-bio { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
 
         /* ── SERVICES ── */
         .section-subtitle {
@@ -455,17 +423,6 @@
         .rr-back-btn:hover { background: var(--navy); color: white; }
         .rr-iframe-wrap { border: 1px solid #e8edf2; border-radius: 12px; overflow: hidden; height: 620px; }
         .rr-iframe-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-
-        /* ── PRICING ── */
-        .pricing-subtitle { color: var(--navy); font-size: clamp(1.1rem, 2.5vw, 1.65rem); font-weight: 700; margin: 50px 0 35px; font-family: inherit; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
-        .price-row { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; gap: 20px; border-bottom: 1px solid #eee; padding-bottom: 12px; }
-        .price-content { flex: 1; min-width: 0; }
-        .price-item-header { display: flex; align-items: center; gap: 12px; color: var(--navy); font-size: 1.3rem; font-weight: 700; flex-wrap: wrap; }
-        .price-item-header i { flex-shrink: 0; }
-        .price-sub-desc { color: var(--text-muted); font-size: 0.95rem; padding-left: 42px; margin-top: 8px; }
-        .price-pill { background: var(--price-bg); color: var(--price-text); padding: 12px 24px; border-radius: 10px; font-weight: 800; white-space: nowrap; font-size: 1rem; text-align: center; min-width: 180px; flex-shrink: 0; }
-        .pipe-list { padding-left: 42px; margin-top: 10px; font-size: 1rem; color: var(--text-dark); line-height: 2; letter-spacing: 0.01em; }
-        .pipe-sep { color: var(--navy); font-weight: 700; margin: 0 6px; }
 
         /* ── MODAL ── */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,31,63,0.96); z-index: 2000; justify-content: center; align-items: flex-start; padding: 16px; padding-top: max(16px, env(safe-area-inset-top)); overflow-y: auto; -webkit-overflow-scrolling: touch; }
@@ -564,16 +521,8 @@
             .section-title { text-align: center; font-size: 1.9rem; margin-bottom: 30px; }
 
             .about-split { flex-direction: column; margin-top: 30px; border-top: none; }
-            .about-left { border-right: none; border-bottom: 2px solid #e8edf2; padding: 0 0 28px; }
-            .team-members-row { flex-direction: row; justify-content: center; gap: 20px; }
-            .team-card-inline { width: calc(50% - 10px); }
-            .team-avatar-wrap { width: 90px; height: 90px; }
-            .team-avatar { width: 90px; height: 90px; }
-            .team-name { font-size: 0.88rem; }
-            .team-role { font-size: 0.6rem; }
-            .team-bio { font-size: 0.78rem; }
 
-            .mv-block { padding: 24px 0 24px 18px; }
+            .mv-block { padding: 24px 0; }
             .mv-card-label { font-size: 1.05rem; }
             .mv-lead { font-size: 0.9rem; }
             .mv-points li { font-size: 0.9rem; }
@@ -599,13 +548,6 @@
             .rr-iframe-wrap { height: 60vw; min-height: 300px; }
             .rr-viewer-header { flex-direction: column; align-items: flex-start; }
             .rr-back-btn { align-self: flex-start; }
-
-            .pricing-subtitle { font-size: 1rem; margin: 28px 0 20px; }
-            .price-row { flex-direction: column; gap: 10px; padding-bottom: 18px; margin-bottom: 18px; }
-            .price-item-header { font-size: 1rem; gap: 8px; }
-            .price-sub-desc { padding-left: 0; font-size: 0.85rem; margin-top: 6px; }
-            .price-pill { align-self: stretch; width: 100%; text-align: center; font-size: 0.95rem; padding: 12px 16px; min-width: unset; }
-            .pipe-list { padding-left: 0; font-size: 0.85rem; line-height: 1.85; }
 
             .modal-content { padding: 28px 20px; border-radius: 12px; }
             .close-modal { top: 10px; right: 12px; font-size: 1.8rem; }
@@ -642,11 +584,6 @@
 
             .approach-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
 
-            .team-avatar-wrap { width: 76px; height: 76px; }
-            .team-avatar { width: 76px; height: 76px; }
-            .team-name { font-size: 0.8rem; }
-            .team-connect-btn { width: 24px; height: 24px; }
-
             .services-cards-grid { grid-template-columns: 1fr; gap: 10px; }
             .service-card { flex-direction: row; align-items: flex-start; gap: 14px; padding: 16px; }
             .service-card-icon { flex-shrink: 0; margin-bottom: 0; }
@@ -656,9 +593,6 @@
 
             .rr-card-thumb { height: 170px; }
             .rr-iframe-wrap { height: 56vw; min-height: 260px; }
-
-            .price-item-header { font-size: 0.92rem; }
-            .price-pill { font-size: 0.9rem; }
 
             .strategy-grid { grid-template-columns: 1fr; gap: 8px; }
             .strategy-form-wrap { padding: 18px 14px; }
@@ -674,7 +608,6 @@
             .logo-img { height: 30px; }
             .hero-content h1 { font-size: 0.95rem; }
             .approach-grid { grid-template-columns: 1fr; }
-            .team-members-row { gap: 14px; }
         }
 
         @supports (padding: env(safe-area-inset-bottom)) {
@@ -709,7 +642,6 @@
             <li><a href="#services">Services</a></li>
             <li><a href="#reports">Work Samples</a></li>
             <li><button onclick="openModal('careerModal')">Career</button></li>
-            <li><a href="#pricing">Pricing</a></li>
             <li><button onclick="openModal('privacyModal')">Privacy Policy</button></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -721,7 +653,6 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#reports">Work Samples</a></li>
         <li><button onclick="openModal('careerModal')">Career</button></li>
-        <li><a href="#pricing">Pricing</a></li>
         <li><button onclick="openModal('privacyModal')">Privacy Policy</button></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
@@ -762,37 +693,6 @@
                 </div>
 
                 <div class="about-split">
-                    <div class="about-left">
-                        <div class="mv-card-header" style="justify-content:center; margin-bottom:20px;">
-                            <i class="fas fa-users" aria-hidden="true"></i>
-                            <span class="mv-card-label">Meet the Team</span>
-                        </div>
-                        <div class="team-members-row">
-                            <div class="team-card-inline">
-                                <div class="team-avatar-wrap">
-                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223687/Image1_oss7f5.png" alt="Shwet Kumar Rai, Co-Founder & Lead Advisor" class="team-avatar" loading="lazy">
-                                    <a href="https://www.linkedin.com/in/shwet-kumar-rai-131a15218/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Shwet Kumar Rai on LinkedIn">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="team-name">Shwet Kumar Rai</div>
-                                <div class="team-role">Co-Founder &amp; Lead Advisor</div>
-                                <p class="team-bio">Strategic finance professional with deep expertise in FP&amp;A and business valuation for startups, growth-stage companies and investors.</p>
-                            </div>
-                            <div class="team-card-inline">
-                                <div class="team-avatar-wrap">
-                                    <img src="https://res.cloudinary.com/djldnhmfn/image/upload/v1780223686/image2_gjvyqc.png" alt="Aditya Harshvardhan, Co-Founder & Advisor" class="team-avatar" loading="lazy">
-                                    <a href="https://www.linkedin.com/in/aditya-harshvardhan-3a3b41267/" target="_blank" rel="noopener noreferrer" class="team-connect-btn" aria-label="Connect with Aditya Harshvardhan on LinkedIn">
-                                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="team-name">Aditya Harshvardhan</div>
-                                <div class="team-role">Co-Founder &amp; Advisor</div>
-                                <p class="team-bio">Specializes in cash flow forecasting, budgeting frameworks, and investor-ready financial models.</p>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="about-right">
                         <div class="mv-block">
                             <div class="mv-card-header">
@@ -975,57 +875,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- PRICING -->
-        <section id="pricing" class="section light-bg">
-            <div class="content-wrap">
-                <h2 class="section-title">Professional Fees</h2>
-                <h3 class="pricing-subtitle">Monthly Retainer Pricing</h3>
-                <div class="price-row">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> FP&amp;A Partner</div>
-                        <p class="pipe-list">Annual Budgeting <span class="pipe-sep">|</span> Quarterly Forecast Updates <span class="pipe-sep">|</span> 13-Week Cash Flow Forecasting <span class="pipe-sep">|</span> Working Capital Management <span class="pipe-sep">|</span> MIS Reporting <span class="pipe-sep">|</span> KPI Tracking <span class="pipe-sep">|</span> Investor Presentations <span class="pipe-sep">|</span> Industry Research <span class="pipe-sep">|</span> Fundraising Financial Model</p>
-                    </div>
-                    <div class="price-pill">($600 – $1,000) /month</div>
-                </div>
-                <h3 class="pricing-subtitle">Project-Based Pricing</h3>
-                <div class="price-row">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Budgeting &amp; Planning Setup</div>
-                        <div class="price-sub-desc">Annual operating budget, department-wise budgets, quarterly planning templates, budget vs actual framework</div>
-                    </div>
-                    <div class="price-pill">($600 – $800)</div>
-                </div>
-                <div class="price-row">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Business Valuation Services</div>
-                        <div class="price-sub-desc">DCF valuation, comparable company analysis, precedent transactions, valuation sensitivity analysis, investor valuation support</div>
-                    </div>
-                    <div class="price-pill">($500 – $900)</div>
-                </div>
-                <div class="price-row">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> Fundraising Financial Model</div>
-                        <div class="price-sub-desc">3–5 year integrated model, scenario analysis, unit economics, investor-ready outputs</div>
-                    </div>
-                    <div class="price-pill">($300 – $700)</div>
-                </div>
-                <div class="price-row">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> MIS Reporting &amp; Dashboard Setup</div>
-                        <div class="price-sub-desc">KPI dashboards, MIS reports, variance analysis, investor reporting templates</div>
-                    </div>
-                    <div class="price-pill">($400 – $600)</div>
-                </div>
-                <div class="price-row" style="border:none;">
-                    <div class="price-content">
-                        <div class="price-item-header"><i class="fas fa-circle-arrow-right" aria-hidden="true"></i> 3-Week Cash Flow Forecasting Model</div>
-                        <div class="price-sub-desc">Dynamic cash flow model, liquidity planning, runway tracking, working capital monitoring</div>
-                    </div>
-                    <div class="price-pill">($400 – $600)</div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- PRIVACY POLICY MODAL -->
@@ -1064,7 +913,7 @@
             <h2 id="career-title" style="color:var(--navy); margin-bottom:25px; font-size:2.2rem;">Careers</h2>
             <p style="font-size:1rem; line-height:1.7; color:var(--text-muted); margin-bottom:8px;">Join our team. Send your resume to:</p>
             <p style="font-weight:800; font-size:1.3rem; margin:15px 0;"><a href="mailto:info@saresearcher.in" style="color:var(--navy);">info@saresearcher.in</a></p>
-            <a href="mailto:info@saresearcher.in" class="price-pill" style="text-decoration:none; display:inline-block; margin-top:20px; border-radius:10px; font-weight:800; min-height:var(--touch-min); line-height:1.4;">Apply Now</a>
+            <a href="mailto:info@saresearcher.in" class="price-pill" style="text-decoration:none; display:inline-block; margin-top:20px; border-radius:10px; font-weight:800; min-height:var(--touch-min); line-height:1.4; background:var(--price-bg); color:var(--price-text); padding:12px 24px;">Apply Now</a>
         </div>
     </div>
 
@@ -1098,7 +947,6 @@
                         <a href="#services" class="quick-link">Services</a>
                         <a href="#reports" class="quick-link">Work Samples</a>
                         <button onclick="openModal('careerModal')" class="quick-link" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;color:white;padding:0;text-align:left;">Career</button>
-                        <a href="#pricing" class="quick-link">Pricing</a>
                         <button onclick="openModal('privacyModal')" class="quick-link" style="background:none;border:none;cursor:pointer;font-family:inherit;font-size:1rem;color:white;padding:0;text-align:left;">Privacy Policy</button>
                     </div>
                 </div>
@@ -1240,14 +1088,6 @@
         document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) closeModal(overlay.id);
-            });
-        });
-
-        // ── Team avatar toggle ──
-        document.querySelectorAll('.team-avatar-wrap').forEach(function(wrap) {
-            wrap.addEventListener('click', function(e) {
-                if (e.target.closest('.team-connect-btn')) return;
-                wrap.classList.toggle('active');
             });
         });
 
