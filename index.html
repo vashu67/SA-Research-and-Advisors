@@ -1159,10 +1159,11 @@
         function openModal(id) {
             var m = document.getElementById(id);
             m.style.display = 'flex';
+            m.scrollTop = 0;
             document.body.style.overflow = 'hidden';
             setTimeout(function() {
                 var first = m.querySelector('button, a, input, textarea');
-                if (first) first.focus();
+                if (first) first.focus({ preventScroll: true });
             }, 50);
         }
         function closeModal(id) {
@@ -1175,10 +1176,12 @@
             });
         });
 
-        // Focus the fraud modal's acknowledge button on load
+        // Ensure fraud modal opens scrolled to the top, then focus without re-scrolling
         window.addEventListener('DOMContentLoaded', function() {
+            var fraudOverlay = document.getElementById('fraudModal');
             var fraudBtn = document.querySelector('#fraudModal .fraud-alert-ack-btn');
-            if (fraudBtn) fraudBtn.focus();
+            if (fraudOverlay) fraudOverlay.scrollTop = 0;
+            if (fraudBtn) fraudBtn.focus({ preventScroll: true });
         });
 
         // ── Report cards: keyboard enter/space ──
