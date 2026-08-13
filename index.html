@@ -429,6 +429,61 @@
         .modal-content { background: white; width: 100%; max-width: 950px; padding: 40px; border-radius: 15px; position: relative; margin: auto; }
         .close-modal { position: absolute; top: 14px; right: 20px; font-size: 2rem; color: var(--navy); cursor: pointer; font-weight: bold; z-index: 2100; min-width: var(--touch-min); min-height: var(--touch-min); display: flex; align-items: center; justify-content: center; line-height: 1; }
 
+        /* ── FRAUD ALERT MODAL ── */
+        .fraud-modal-content {
+            max-width: 640px;
+            border-top: 6px solid #c0392b;
+        }
+        .fraud-alert-icon {
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #fdecea; color: #c0392b;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin-bottom: 18px;
+        }
+        .fraud-alert-title {
+            color: #c0392b;
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            line-height: 1.4;
+        }
+        .fraud-alert-block { margin-bottom: 22px; }
+        .fraud-alert-block:last-of-type { margin-bottom: 0; }
+        .fraud-alert-text {
+            font-size: 0.93rem;
+            color: var(--text-dark);
+            line-height: 1.85;
+            margin-bottom: 10px;
+        }
+        .fraud-alert-text:last-child { margin-bottom: 0; }
+        .fraud-alert-text a { color: var(--accent); font-weight: 700; text-decoration: underline; }
+        .fraud-alert-hr { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+        .fraud-alert-phone {
+            font-weight: 800; color: var(--navy);
+        }
+        .fraud-alert-ack-btn {
+            margin-top: 8px;
+            width: 100%;
+            background: var(--navy);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 14px 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.2s, transform 0.15s;
+            min-height: var(--touch-min);
+        }
+        .fraud-alert-ack-btn:hover { background: #0d1f2d; transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .fraud-modal-content { padding: 26px 20px; }
+            .fraud-alert-title { font-size: 1.1rem; }
+            .fraud-alert-text { font-size: 0.87rem; }
+        }
+
         /* ── FOOTER ── */
         .footer { background: var(--navy); color: white; padding: 60px 6% 50px; }
         .footer-content { max-width: 1320px; margin: 0 auto; }
@@ -627,6 +682,32 @@
     </style>
 </head>
 <body>
+
+    <!-- FRAUD ALERT MODAL (shown first on page load) -->
+    <div id="fraudModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="fraud-title" style="display:flex;">
+        <div class="modal-content fraud-modal-content">
+            <div class="fraud-alert-icon" aria-hidden="true"><i class="fas fa-triangle-exclamation"></i></div>
+            <h2 id="fraud-title" class="fraud-alert-title">⚠️ महत्वपूर्ण धोखाधड़ी चेतावनी / Important Fraud Alert</h2>
+
+            <div class="fraud-alert-block">
+                <p class="fraud-alert-text">हमें जानकारी मिली है कि कोई अनधिकृत व्यक्ति SA Research and Advisors के नाम का गलत तरीके से उपयोग करके Nifty, Bank Nifty, Sensex Options, Free Demo Trial और Market Calls से संबंधित संदेश भेज रहा है।</p>
+                <p class="fraud-alert-text">कृपया ध्यान दें: यह व्यक्ति SA Research and Advisors से किसी भी प्रकार से संबद्ध नहीं है। कृपया ऐसे किसी भी संदेश के आधार पर अपनी व्यक्तिगत, वित्तीय, OTP या ट्रेडिंग अकाउंट की जानकारी साझा न करें और कोई भुगतान न करें।</p>
+                <p class="fraud-alert-text">आधिकारिक जानकारी और सत्यापन के लिए केवल हमारी आधिकारिक वेबसाइट <a href="https://www.saresearcher.in" target="_blank" rel="noopener noreferrer">SA Research and Advisors</a> का उपयोग करें।</p>
+                <p class="fraud-alert-text">सतर्क रहें और किसी भी संदिग्ध संदेश की जानकारी तुरंत हमें दें। <span class="fraud-alert-phone">9554571817</span></p>
+            </div>
+
+            <hr class="fraud-alert-hr">
+
+            <div class="fraud-alert-block">
+                <p class="fraud-alert-text">We have been informed that an unauthorized person is using the name SA Research and Advisors and sending messages related to Nifty, Bank Nifty, Sensex options, free demo trials, and market calls.</p>
+                <p class="fraud-alert-text">Please note: This person is not associated with SA Research and Advisors. We request all our clients not to share any personal, financial, OTP, or trading account information and not to make any payment based on such messages.</p>
+                <p class="fraud-alert-text">For official information and communication, please verify only through our official website: <a href="https://www.saresearcher.in" target="_blank" rel="noopener noreferrer">SA Research and Advisors</a></p>
+                <p class="fraud-alert-text">Stay alert and please report any suspicious communication to us immediately. <span class="fraud-alert-phone">9554571817</span></p>
+            </div>
+
+            <button type="button" class="fraud-alert-ack-btn" onclick="closeModal('fraudModal')">I Understand / मैंने समझ लिया</button>
+        </div>
+    </div>
 
     <!-- NAVIGATION -->
     <nav role="navigation" aria-label="Main navigation">
@@ -1013,6 +1094,9 @@
     </footer>
 
     <script>
+        // ── Fraud alert modal: lock scroll on load ──
+        document.body.style.overflow = 'hidden';
+
         // ── Date dropdown ──
         (function() {
             var sel = document.getElementById('sc-date');
@@ -1087,8 +1171,14 @@
         }
         document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
             overlay.addEventListener('click', function(e) {
-                if (e.target === overlay) closeModal(overlay.id);
+                if (e.target === overlay && overlay.id !== 'fraudModal') closeModal(overlay.id);
             });
+        });
+
+        // Focus the fraud modal's acknowledge button on load
+        window.addEventListener('DOMContentLoaded', function() {
+            var fraudBtn = document.querySelector('#fraudModal .fraud-alert-ack-btn');
+            if (fraudBtn) fraudBtn.focus();
         });
 
         // ── Report cards: keyboard enter/space ──
